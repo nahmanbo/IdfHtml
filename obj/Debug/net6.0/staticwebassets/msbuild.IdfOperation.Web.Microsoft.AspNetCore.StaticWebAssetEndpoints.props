@@ -1,0 +1,28 @@
+﻿<Project>
+  <ItemGroup>
+    <StaticWebAssetEndpoint Include="_content/IdfOperation.Web/index.html">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\index.html'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-rYpw9YXqbS7q5GgOefzTyrbxLCbfqSlTNpZGfYzjKHc="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"1075"},{"Name":"Content-Type","Value":"text/html"},{"Name":"ETag","Value":"\u0022rYpw9YXqbS7q5GgOefzTyrbxLCbfqSlTNpZGfYzjKHc=\u0022"},{"Name":"Last-Modified","Value":"Tue, 27 May 2025 09:52:12 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/IdfOperation.Web/index.n7s2ez0pmi.html">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\index.html'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"n7s2ez0pmi"},{"Name":"integrity","Value":"sha256-rYpw9YXqbS7q5GgOefzTyrbxLCbfqSlTNpZGfYzjKHc="},{"Name":"label","Value":"_content/IdfOperation.Web/index.html"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"1075"},{"Name":"Content-Type","Value":"text/html"},{"Name":"ETag","Value":"\u0022rYpw9YXqbS7q5GgOefzTyrbxLCbfqSlTNpZGfYzjKHc=\u0022"},{"Name":"Last-Modified","Value":"Tue, 27 May 2025 09:52:12 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/IdfOperation.Web/js/menu.js">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\menu.js'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-xlZ1daZ8Zmcj500\u002BlhZK\u002BHBC\u002BvqJn6Iv8QfQnr3jrPM="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"760"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u0022xlZ1daZ8Zmcj500\u002BlhZK\u002BHBC\u002BvqJn6Iv8QfQnr3jrPM=\u0022"},{"Name":"Last-Modified","Value":"Tue, 27 May 2025 14:34:37 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/IdfOperation.Web/js/menu.y1we5qzzci.js">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\menu.js'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"y1we5qzzci"},{"Name":"integrity","Value":"sha256-xlZ1daZ8Zmcj500\u002BlhZK\u002BHBC\u002BvqJn6Iv8QfQnr3jrPM="},{"Name":"label","Value":"_content/IdfOperation.Web/js/menu.js"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"760"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u0022xlZ1daZ8Zmcj500\u002BlhZK\u002BHBC\u002BvqJn6Iv8QfQnr3jrPM=\u0022"},{"Name":"Last-Modified","Value":"Tue, 27 May 2025 14:34:37 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+  </ItemGroup>
+</Project>

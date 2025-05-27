@@ -1,0 +1,228 @@
+{
+  "Version": 1,
+  "Hash": "op9nXwqkDGDZncdARl0/A1USYk2soJ3M5n8jxQf7bAo=",
+  "Source": "IdfOperation.Web",
+  "BasePath": "_content/IdfOperation.Web",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "IdfOperation.Web/wwwroot",
+      "Source": "IdfOperation.Web",
+      "ContentRoot": "/Users/nahmanbo1/Downloads/IdfOperation.Web/wwwroot/",
+      "BasePath": "_content/IdfOperation.Web",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "/Users/nahmanbo1/Downloads/IdfOperation.Web/wwwroot/index.html",
+      "SourceId": "IdfOperation.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/nahmanbo1/Downloads/IdfOperation.Web/wwwroot/",
+      "BasePath": "_content/IdfOperation.Web",
+      "RelativePath": "index#[.{fingerprint}]?.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "n7s2ez0pmi",
+      "Integrity": "rYpw9YXqbS7q5GgOefzTyrbxLCbfqSlTNpZGfYzjKHc=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/index.html"
+    },
+    {
+      "Identity": "/Users/nahmanbo1/Downloads/IdfOperation.Web/wwwroot/js/menu.js",
+      "SourceId": "IdfOperation.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/nahmanbo1/Downloads/IdfOperation.Web/wwwroot/",
+      "BasePath": "_content/IdfOperation.Web",
+      "RelativePath": "js/menu#[.{fingerprint}]?.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "y1we5qzzci",
+      "Integrity": "xlZ1daZ8Zmcj500+lhZK+HBC+vqJn6Iv8QfQnr3jrPM=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/js/menu.js"
+    }
+  ],
+  "Endpoints": [
+    {
+      "Route": "index.html",
+      "AssetFile": "/Users/nahmanbo1/Downloads/IdfOperation.Web/wwwroot/index.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1075"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"rYpw9YXqbS7q5GgOefzTyrbxLCbfqSlTNpZGfYzjKHc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 27 May 2025 09:52:12 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-rYpw9YXqbS7q5GgOefzTyrbxLCbfqSlTNpZGfYzjKHc="
+        }
+      ]
+    },
+    {
+      "Route": "index.n7s2ez0pmi.html",
+      "AssetFile": "/Users/nahmanbo1/Downloads/IdfOperation.Web/wwwroot/index.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1075"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"rYpw9YXqbS7q5GgOefzTyrbxLCbfqSlTNpZGfYzjKHc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 27 May 2025 09:52:12 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "n7s2ez0pmi"
+        },
+        {
+          "Name": "label",
+          "Value": "index.html"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-rYpw9YXqbS7q5GgOefzTyrbxLCbfqSlTNpZGfYzjKHc="
+        }
+      ]
+    },
+    {
+      "Route": "js/menu.js",
+      "AssetFile": "/Users/nahmanbo1/Downloads/IdfOperation.Web/wwwroot/js/menu.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "760"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"xlZ1daZ8Zmcj500+lhZK+HBC+vqJn6Iv8QfQnr3jrPM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 27 May 2025 14:34:37 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-xlZ1daZ8Zmcj500+lhZK+HBC+vqJn6Iv8QfQnr3jrPM="
+        }
+      ]
+    },
+    {
+      "Route": "js/menu.y1we5qzzci.js",
+      "AssetFile": "/Users/nahmanbo1/Downloads/IdfOperation.Web/wwwroot/js/menu.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "760"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"xlZ1daZ8Zmcj500+lhZK+HBC+vqJn6Iv8QfQnr3jrPM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 27 May 2025 14:34:37 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "y1we5qzzci"
+        },
+        {
+          "Name": "label",
+          "Value": "js/menu.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-xlZ1daZ8Zmcj500+lhZK+HBC+vqJn6Iv8QfQnr3jrPM="
+        }
+      ]
+    }
+  ]
+}

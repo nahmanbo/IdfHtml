@@ -1,0 +1,33 @@
+{
+  "Files": [
+    {
+      "Id": "/Users/nahmanbo1/Downloads/IdfOperation.Web/wwwroot/index.html",
+      "PackagePath": "staticwebassets/index.html"
+    },
+    {
+      "Id": "/Users/nahmanbo1/Downloads/IdfOperation.Web/wwwroot/js/menu.js",
+      "PackagePath": "staticwebassets/js/menu.js"
+    },
+    {
+      "Id": "obj/Debug/net6.0/staticwebassets/msbuild.IdfOperation.Web.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
+    },
+    {
+      "Id": "obj/Debug/net6.0/staticwebassets/msbuild.IdfOperation.Web.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj/Debug/net6.0/staticwebassets/msbuild.build.IdfOperation.Web.props",
+      "PackagePath": "build\\IdfOperation.Web.props"
+    },
+    {
+      "Id": "obj/Debug/net6.0/staticwebassets/msbuild.buildMultiTargeting.IdfOperation.Web.props",
+      "PackagePath": "buildMultiTargeting\\IdfOperation.Web.props"
+    },
+    {
+      "Id": "obj/Debug/net6.0/staticwebassets/msbuild.buildTransitive.IdfOperation.Web.props",
+      "PackagePath": "buildTransitive\\IdfOperation.Web.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
