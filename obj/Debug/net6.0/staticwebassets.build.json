@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "op9nXwqkDGDZncdARl0/A1USYk2soJ3M5n8jxQf7bAo=",
+  "Hash": "3iUgIjvdZPhnSdu3wQJIbReZ0fEfut0JPgTwAZfjxBI=",
   "Source": "IdfOperation.Web",
   "BasePath": "_content/IdfOperation.Web",
   "Mode": "Default",
@@ -31,8 +31,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "n7s2ez0pmi",
-      "Integrity": "rYpw9YXqbS7q5GgOefzTyrbxLCbfqSlTNpZGfYzjKHc=",
+      "Fingerprint": "jq4ptxsl5h",
+      "Integrity": "O0XSwL39txhq2v7nG0d8+Pq6na1L5gNcAFmJp1CR534=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/index.html"
@@ -57,6 +57,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/js/menu.js"
+    },
+    {
+      "Identity": "/Users/nahmanbo1/Downloads/IdfOperation.Web/wwwroot/styles.css",
+      "SourceId": "IdfOperation.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/nahmanbo1/Downloads/IdfOperation.Web/wwwroot/",
+      "BasePath": "_content/IdfOperation.Web",
+      "RelativePath": "styles#[.{fingerprint}]?.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "ez33qb7wnq",
+      "Integrity": "6gwi9GtmUNc5t6zHHs/lGGy4vbEgz1EVV1A64RZS/6s=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/styles.css"
     }
   ],
   "Endpoints": [
@@ -71,7 +92,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1075"
+          "Value": "1232"
         },
         {
           "Name": "Content-Type",
@@ -79,11 +100,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"rYpw9YXqbS7q5GgOefzTyrbxLCbfqSlTNpZGfYzjKHc=\""
+          "Value": "\"O0XSwL39txhq2v7nG0d8+Pq6na1L5gNcAFmJp1CR534=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 27 May 2025 09:52:12 GMT"
+          "Value": "Tue, 27 May 2025 17:22:41 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -93,12 +114,12 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-rYpw9YXqbS7q5GgOefzTyrbxLCbfqSlTNpZGfYzjKHc="
+          "Value": "sha256-O0XSwL39txhq2v7nG0d8+Pq6na1L5gNcAFmJp1CR534="
         }
       ]
     },
     {
-      "Route": "index.n7s2ez0pmi.html",
+      "Route": "index.jq4ptxsl5h.html",
       "AssetFile": "/Users/nahmanbo1/Downloads/IdfOperation.Web/wwwroot/index.html",
       "Selectors": [],
       "ResponseHeaders": [
@@ -108,7 +129,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1075"
+          "Value": "1232"
         },
         {
           "Name": "Content-Type",
@@ -116,11 +137,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"rYpw9YXqbS7q5GgOefzTyrbxLCbfqSlTNpZGfYzjKHc=\""
+          "Value": "\"O0XSwL39txhq2v7nG0d8+Pq6na1L5gNcAFmJp1CR534=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 27 May 2025 09:52:12 GMT"
+          "Value": "Tue, 27 May 2025 17:22:41 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -130,7 +151,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "n7s2ez0pmi"
+          "Value": "jq4ptxsl5h"
         },
         {
           "Name": "label",
@@ -138,7 +159,7 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-rYpw9YXqbS7q5GgOefzTyrbxLCbfqSlTNpZGfYzjKHc="
+          "Value": "sha256-O0XSwL39txhq2v7nG0d8+Pq6na1L5gNcAFmJp1CR534="
         }
       ]
     },
@@ -221,6 +242,88 @@
         {
           "Name": "integrity",
           "Value": "sha256-xlZ1daZ8Zmcj500+lhZK+HBC+vqJn6Iv8QfQnr3jrPM="
+        }
+      ]
+    },
+    {
+      "Route": "styles.css",
+      "AssetFile": "/Users/nahmanbo1/Downloads/IdfOperation.Web/wwwroot/styles.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "973"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"6gwi9GtmUNc5t6zHHs/lGGy4vbEgz1EVV1A64RZS/6s=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 27 May 2025 17:21:07 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-6gwi9GtmUNc5t6zHHs/lGGy4vbEgz1EVV1A64RZS/6s="
+        }
+      ]
+    },
+    {
+      "Route": "styles.ez33qb7wnq.css",
+      "AssetFile": "/Users/nahmanbo1/Downloads/IdfOperation.Web/wwwroot/styles.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "973"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"6gwi9GtmUNc5t6zHHs/lGGy4vbEgz1EVV1A64RZS/6s=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 27 May 2025 17:21:07 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "ez33qb7wnq"
+        },
+        {
+          "Name": "label",
+          "Value": "styles.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-6gwi9GtmUNc5t6zHHs/lGGy4vbEgz1EVV1A64RZS/6s="
         }
       ]
     }
