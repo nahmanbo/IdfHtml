@@ -17,7 +17,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1075"
+          "Value": "1232"
         },
         {
           "Name": "Content-Type",
@@ -25,22 +25,22 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"rYpw9YXqbS7q5GgOefzTyrbxLCbfqSlTNpZGfYzjKHc=\""
+          "Value": "\"O0XSwL39txhq2v7nG0d8+Pq6na1L5gNcAFmJp1CR534=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 27 May 2025 09:52:12 GMT"
+          "Value": "Tue, 27 May 2025 17:22:41 GMT"
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-rYpw9YXqbS7q5GgOefzTyrbxLCbfqSlTNpZGfYzjKHc="
+          "Value": "sha256-O0XSwL39txhq2v7nG0d8+Pq6na1L5gNcAFmJp1CR534="
         }
       ]
     },
     {
-      "Route": "index.n7s2ez0pmi.html",
+      "Route": "index.jq4ptxsl5h.html",
       "AssetFile": "index.html",
       "Selectors": [],
       "ResponseHeaders": [
@@ -54,7 +54,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1075"
+          "Value": "1232"
         },
         {
           "Name": "Content-Type",
@@ -62,21 +62,21 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"rYpw9YXqbS7q5GgOefzTyrbxLCbfqSlTNpZGfYzjKHc=\""
+          "Value": "\"O0XSwL39txhq2v7nG0d8+Pq6na1L5gNcAFmJp1CR534=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 27 May 2025 09:52:12 GMT"
+          "Value": "Tue, 27 May 2025 17:22:41 GMT"
         }
       ],
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "n7s2ez0pmi"
+          "Value": "jq4ptxsl5h"
         },
         {
           "Name": "integrity",
-          "Value": "sha256-rYpw9YXqbS7q5GgOefzTyrbxLCbfqSlTNpZGfYzjKHc="
+          "Value": "sha256-O0XSwL39txhq2v7nG0d8+Pq6na1L5gNcAFmJp1CR534="
         },
         {
           "Name": "label",
@@ -163,6 +163,88 @@
         {
           "Name": "label",
           "Value": "js/menu.js"
+        }
+      ]
+    },
+    {
+      "Route": "styles.css",
+      "AssetFile": "styles.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "973"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"6gwi9GtmUNc5t6zHHs/lGGy4vbEgz1EVV1A64RZS/6s=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 27 May 2025 17:21:07 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-6gwi9GtmUNc5t6zHHs/lGGy4vbEgz1EVV1A64RZS/6s="
+        }
+      ]
+    },
+    {
+      "Route": "styles.ez33qb7wnq.css",
+      "AssetFile": "styles.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "973"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"6gwi9GtmUNc5t6zHHs/lGGy4vbEgz1EVV1A64RZS/6s=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 27 May 2025 17:21:07 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "ez33qb7wnq"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-6gwi9GtmUNc5t6zHHs/lGGy4vbEgz1EVV1A64RZS/6s="
+        },
+        {
+          "Name": "label",
+          "Value": "styles.css"
         }
       ]
     }

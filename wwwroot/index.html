@@ -1,23 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>IDF Operation WebApp</title>
-    <script src="js/menu.js" defer></script>
+  <meta charset="UTF-8" />
+  <title>IDF Operation Dashboard</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="js/menu.js" defer></script>
 </head>
 <body>
-    <h1>IDF Operation Menu</h1>
-    <div id="menu">
-        <button onclick="sendRequest(1)">1. View full IDF information</button><br>
-        <button onclick="sendRequest(2)">2. View full Hamas information</button><br>
-        <button onclick="sendRequest(3)">3. View Firepower Division data</button><br>
-        <button onclick="sendRequest(4)">4. View Intelligence Division reports</button><br>
-        <button onclick="sendRequest(5)">5. View terrorist report by name</button><br>
-        <button onclick="sendRequest(6)">6. View most dangerous terrorist report</button><br>
-        <button onclick="sendRequest(7)">7. Eliminate terrorist by name</button><br>
-        <button onclick="sendRequest(8)">8. Eliminate the most dangerous terrorist</button><br>
-        <button onclick="sendRequest(9)">9. Eliminate terrorists by target type</button><br>
-    </div>
-    <pre id="output"></pre>
+  <header class="header">
+    <h1>🛡️ IDF Operation Command Center</h1>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <nav class="menu">
+        <button onclick="sendRequest(1)">📊 View full IDF information</button>
+        <button onclick="sendRequest(2)">🕵️‍♂️ View full Hamas information</button>
+        <button onclick="sendRequest(3)">🔥 View Firepower Division data</button>
+        <button onclick="sendRequest(4)">📡 View Intelligence Division reports</button>
+        <button onclick="sendRequest(5)">🧠 View terrorist report by name</button>
+        <button onclick="sendRequest(6)">⚠️ View most dangerous terrorist report</button>
+        <button onclick="sendRequest(7)">💥 Eliminate terrorist by name</button>
+        <button onclick="sendRequest(8)">🎯 Eliminate the most dangerous terrorist</button>
+        <button onclick="sendRequest(9)">🚁 Eliminate terrorists by target type</button>
+      </nav>
+    </aside>
+
+    <main class="content">
+      <section class="output-box">
+        <pre id="output">🧭 Select an action from the right menu to begin</pre>
+      </section>
+    </main>
+  </div>
 </body>
 </html>

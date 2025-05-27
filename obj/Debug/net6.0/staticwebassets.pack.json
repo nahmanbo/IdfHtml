@@ -9,6 +9,10 @@
       "PackagePath": "staticwebassets/js/menu.js"
     },
     {
+      "Id": "/Users/nahmanbo1/Downloads/IdfOperation.Web/wwwroot/styles.css",
+      "PackagePath": "staticwebassets/styles.css"
+    },
+    {
       "Id": "obj/Debug/net6.0/staticwebassets/msbuild.IdfOperation.Web.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
       "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
     },
