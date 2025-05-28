@@ -1,9 +1,8 @@
-
 using System;
 using System.Collections.Generic;
-using System.Text;
+using System.Linq;
+using System.Text.Json;
 using IdfOperation.GoodGuys.Firepower;
-using IdfOperation.BadGuys;
 
 namespace IdfOperation.GoodGuys.Firepower
 {
@@ -32,7 +31,6 @@ namespace IdfOperation.GoodGuys.Firepower
             }
         }
 
-        //--------------------------------------------------------------
         private void AddZik(int count)
         {
             for (int i = 0; i < count; i++)
@@ -42,7 +40,6 @@ namespace IdfOperation.GoodGuys.Firepower
             }
         }
 
-        //--------------------------------------------------------------
         private void AddTank(int count)
         {
             for (int i = 0; i < count; i++)
@@ -52,7 +49,6 @@ namespace IdfOperation.GoodGuys.Firepower
             }
         }
 
-        //--------------------------------------------------------------
         private void AddEyeFire(int count)
         {
             for (int i = 0; i < count; i++)
@@ -80,7 +76,6 @@ namespace IdfOperation.GoodGuys.Firepower
             return _weaponsByTarget;
         }
 
-        //--------------------------------------------------------------
         public Weapon? FindAvailableWeaponFor(string targetType)
         {
             if (!_weaponsByTarget.ContainsKey(targetType))
@@ -101,24 +96,14 @@ namespace IdfOperation.GoodGuys.Firepower
         }
 
         //--------------------------------------------------------------
-        public string GetInfo()
+        public string GetInfoJson()
         {
-            var sb = new System.Text.StringBuilder();
-            sb.AppendLine("=== Firepower Table ===");
-            sb.AppendLine("Name | Ammo | Targets | Fuel");
+            var allWeapons = _weaponsByTarget
+                .SelectMany(kvp => kvp.Value)
+                .Distinct()
+                .Select(w => JsonSerializer.Deserialize<object>(w.GetInfoJson()));
 
-            var added = new HashSet<Weapon>();
-            foreach (var kvp in _weaponsByTarget)
-            {
-                foreach (var weapon in kvp.Value)
-                {
-                    if (added.Add(weapon))
-                        sb.AppendLine(weapon.GetInfo());
-                }
-            }
-
-            return sb.ToString();
+            return JsonSerializer.Serialize(allWeapons, new JsonSerializerOptions { WriteIndented = true });
         }
-
     }
 }

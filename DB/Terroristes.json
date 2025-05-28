@@ -1,0 +1,180 @@
+[
+  {
+    "Name": "Yonatan",
+    "Id": 1,
+    "Rank": 5,
+    "IsAlive": true,
+    "Weapons": [
+      "Rifle",
+      "Grenade"
+    ]
+  },
+  {
+    "Name": "Avi",
+    "Id": 2,
+    "Rank": 3,
+    "IsAlive": true,
+    "Weapons": [
+      "Knife"
+    ]
+  },
+  {
+    "Name": "Lior",
+    "Id": 3,
+    "Rank": 4,
+    "IsAlive": false,
+    "Weapons": [
+      "Rifle"
+    ]
+  },
+  {
+    "Name": "Noam",
+    "Id": 4,
+    "Rank": 2,
+    "IsAlive": true,
+    "Weapons": [
+      "Grenade",
+      "Knife"
+    ]
+  },
+  {
+    "Name": "Tomer",
+    "Id": 5,
+    "Rank": 6,
+    "IsAlive": true,
+    "Weapons": [
+      "Rifle",
+      "Knife",
+      "Grenade"
+    ]
+  },
+  {
+    "Name": "Shai",
+    "Id": 6,
+    "Rank": 1,
+    "IsAlive": false,
+    "Weapons": [
+      "dgfg",
+      "dgfdg"
+    ]
+  },
+  {
+    "Name": "Eli",
+    "Id": 7,
+    "Rank": 3,
+    "IsAlive": true,
+    "Weapons": [
+      "Rifle"
+    ]
+  },
+  {
+    "Name": "Daniel",
+    "Id": 8,
+    "Rank": 7,
+    "IsAlive": true,
+    "Weapons": [
+      "Grenade",
+      "Rifle"
+    ]
+  },
+  {
+    "Name": "Ofir",
+    "Id": 9,
+    "Rank": 2,
+    "IsAlive": false,
+    "Weapons": [
+      "Knife"
+    ]
+  },
+  {
+    "Name": "Itay",
+    "Id": 10,
+    "Rank": 4,
+    "IsAlive": true,
+    "Weapons": [
+      "Rifle",
+      "Grenade"
+    ]
+  },
+  {
+    "Name": "gsg",
+    "Id": 66,
+    "Rank": 3,
+    "IsAlive": false,
+    "Weapons": [
+      "dfd"
+    ]
+  },
+  {
+    "Name": "gsg",
+    "Id": 66,
+    "Rank": 3,
+    "IsAlive": false,
+    "Weapons": [
+      "dfd"
+    ]
+  },
+  {
+    "Name": "gsg",
+    "Id": 66,
+    "Rank": 3,
+    "IsAlive": false,
+    "Weapons": [
+      "dfd"
+    ]
+  },
+  {
+    "Name": "gsg",
+    "Id": 66,
+    "Rank": 3,
+    "IsAlive": false,
+    "Weapons": [
+      "dfd"
+    ]
+  },
+  {
+    "Name": "gsg",
+    "Id": 66,
+    "Rank": 3,
+    "IsAlive": false,
+    "Weapons": [
+      "dfd"
+    ]
+  },
+  {
+    "Name": "gsg",
+    "Id": 66,
+    "Rank": 3,
+    "IsAlive": false,
+    "Weapons": [
+      "dfd"
+    ]
+  },
+  {
+    "Name": "gsg",
+    "Id": 66,
+    "Rank": 3,
+    "IsAlive": false,
+    "Weapons": [
+      "dfd"
+    ]
+  },
+  {
+    "Name": "gsg",
+    "Id": 66,
+    "Rank": 3,
+    "IsAlive": false,
+    "Weapons": [
+      "dfd"
+    ]
+  },
+  {
+    "Name": "gsg",
+    "Id": 66,
+    "Rank": 3,
+    "IsAlive": false,
+    "Weapons": [
+      "dfd"
+    ]
+  }
+]

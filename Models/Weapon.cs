@@ -1,5 +1,5 @@
-
 using IdfOperation.BadGuys;
+using System.Text.Json;
 
 namespace IdfOperation.GoodGuys.Firepower
 {
@@ -41,11 +41,20 @@ namespace IdfOperation.GoodGuys.Firepower
         }
 
         //--------------------------------------------------------------
-        public virtual string GetInfo()
+        public virtual string GetInfoJson()
         {
-            string fuel = this is IFuelable f ? $"{f.GetFuel()} liters" : "N/A";
-            return $"{Name} | {Ammo} / {MaxAmmo} | {string.Join(", ", TargetTypes)} | {fuel}";
+            var info = new
+            {
+                Name,
+                Ammo,
+                MaxAmmo,
+                TargetTypes,
+                Fuel = this is IFuelable f ? $"{f.GetFuel()} liters" : "N/A"
+            };
+
+            return JsonSerializer.Serialize(info, new JsonSerializerOptions { WriteIndented = true });
         }
+
         //--------------------------------------------------------------
         public void AttackTarget(Terrorist terrorist)
         {

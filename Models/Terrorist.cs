@@ -1,3 +1,5 @@
+using System.Text.Json;
+
 namespace IdfOperation.BadGuys
 {
     public class Terrorist
@@ -19,13 +21,11 @@ namespace IdfOperation.BadGuys
         }
 
         //--------------------------------------------------------------
-        public string GetInfo()
+        public string GetInfoJson()
         {
-            string status = IsAlive ? "Alive" : "Dead";
-            string weaponList = string.Join(", ", Weapons);
-            return $"{Name} | {Id} | {Rank} | {status} | {weaponList}";
+            return JsonSerializer.Serialize(this, new JsonSerializerOptions { WriteIndented = true });
         }
-        
+
         //--------------------------------------------------------------
         public void Kill()
         {
