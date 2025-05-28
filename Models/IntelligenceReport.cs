@@ -1,5 +1,5 @@
 using IdfOperation.BadGuys;
-using System.Text;
+using System.Text.Json;
 
 namespace IdfOperation.GoodGuys.Intelligence
 {
@@ -78,12 +78,21 @@ namespace IdfOperation.GoodGuys.Intelligence
         }
 
         //--------------------------------------------------------------
-        public string GetInfo()
+        public string GetInfoJson()
         {
-            string status = _terrorist.IsAlive ? "Alive" : "Dead";
-            string weapons = string.Join(", ", _terrorist.Weapons);
-            return $"=== Intelligence Reports Table ===\nName | Id | Rank | Status | Weapons | Threat | Location | Report Time\n" +
-                   $"{_terrorist.Name} | {_terrorist.Id} | {_terrorist.Rank} | {status} | {weapons} | {_threatLevel} | {_lastKnownLocation} | {_reportTime:yyyy-MM-dd HH:mm}";
+            var info = new
+            {
+                Name = _terrorist.Name,
+                Id = _terrorist.Id,
+                Rank = _terrorist.Rank,
+                Status = _terrorist.IsAlive ? "Alive" : "Dead",
+                Weapons = _terrorist.Weapons,
+                Threat = _threatLevel,
+                Location = _lastKnownLocation,
+                ReportTime = _reportTime.ToString("yyyy-MM-dd HH:mm")
+            };
+
+            return JsonSerializer.Serialize(info, new JsonSerializerOptions { WriteIndented = true });
         }
     }
 }

@@ -68,36 +68,44 @@ html, body {
 .output-box {
   background-color: #202428;
   border: 1px solid #2c3e50;
-  padding: 20px;
+  padding: 24px;
+  padding-bottom: 40px;
   border-radius: 8px;
-  white-space: pre-wrap;
+  margin-bottom: 40px;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
   direction: ltr;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-/* טבלת דו"ח בפורמט שדה: ערך */
 .output-box table {
   width: 100%;
   border-collapse: collapse;
-  margin-top: 20px;
+  margin-top: 16px;
+  margin-bottom: 0;
   background-color: #2a2e32;
   border: 1px solid #2c3e50;
+  table-layout: fixed;
+  flex-grow: 1;
 }
 
 .output-box th,
 .output-box td {
-  padding: 12px 14px;
+  padding: 14px 16px;
   text-align: left;
   border: 1px solid #444;
   color: #f4f4f4;
-  min-width: 120px;
-  max-width: 120px;
-  word-wrap: break-word;
+  word-break: break-word;
+  white-space: normal;
 }
 
 .output-box th {
   background-color: #1abc9c;
   color: white;
+  position: sticky;
+  top: 0;
+  z-index: 1;
 }
 
 .output-box tr:hover {
@@ -109,4 +117,27 @@ html, body {
   margin-bottom: 10px;
   border-bottom: 1px solid #1abc9c;
   padding-bottom: 5px;
+}
+
+.output-box td:nth-child(1),
+.output-box th:nth-child(1) {
+  min-width: 140px;
+}
+
+.output-box td:nth-child(2),
+.output-box th:nth-child(2) {
+  min-width: 100px;
+  text-align: center;
+}
+
+.output-box td:nth-child(3),
+.output-box th:nth-child(3) {
+  min-width: 80px;
+  text-align: center;
+}
+
+.output-box td:nth-child(4),
+.output-box th:nth-child(4) {
+  min-width: 100px;
+  text-align: center;
 }

@@ -1,4 +1,4 @@
-using System.Text;
+using System.Text.Json;
 using IdfOperation.BadGuys;
 
 namespace IdfOperation.GoodGuys.Intelligence
@@ -57,7 +57,7 @@ namespace IdfOperation.GoodGuys.Intelligence
         //--------------------------------------------------------------
         public IntelligenceReport? GetReportByTerroristName(string name)
         {
-            name = name.Trim();  // מסיר רווחים מיותרים או ירידת שורה
+            name = name.Trim();
 
             foreach (var report in _reports)
             {
@@ -72,18 +72,21 @@ namespace IdfOperation.GoodGuys.Intelligence
         }
 
         //--------------------------------------------------------------
-        public string GetInfo()
+        public string GetInfoJson()
         {
-            var sb = new System.Text.StringBuilder();
-            sb.AppendLine("=== Intelligence Reports Table ===");
-            sb.AppendLine("Name | Id | Rank | Status | Weapons | Threat | Location | Report Time");
-
-            foreach (var report in _reports)
+            var reports = _reports.Select(r => new
             {
-                sb.AppendLine(report.GetInfo());
-            }
+                Name = r.GetTerrorist().Name,
+                Id = r.GetTerrorist().Id,
+                Rank = r.GetTerrorist().Rank,
+                Status = r.GetTerrorist().IsAlive ? "Alive" : "Dead",
+                Weapons = r.GetTerrorist().Weapons,
+                Threat = r.GetThreatLevel(),
+                Location = r.GetLastKnownLocation(),
+                ReportTime = r.GetReportTime().ToString("yyyy-MM-dd HH:mm")
+            });
 
-            return sb.ToString();
+            return JsonSerializer.Serialize(reports, new JsonSerializerOptions { WriteIndented = true });
         }
     }
 }

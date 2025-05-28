@@ -1,8 +1,7 @@
-
 using IdfOperation.Organizations;
 using IdfOperation.GoodGuys.Firepower;
 using IdfOperation.GoodGuys.Intelligence;
-using System.Text;
+using System.Text.Json;
 
 namespace IdfOperation.GoodGuys
 {
@@ -20,21 +19,13 @@ namespace IdfOperation.GoodGuys
 
         public override string GetInfo()
         {
-            var sb = new System.Text.StringBuilder();
-            sb.AppendLine("=== Firepower Table ===");
-            sb.AppendLine("Name | Ammo | Targets | Fuel");
-            sb.AppendLine(string.Join("\n", Firepower.GetInfo()
-                .Split('\n')
-                .Skip(2))); // skip duplicated title and headers
+            var info = new
+            {
+                Firepower = JsonSerializer.Deserialize<object>(Firepower.GetInfoJson()),
+                IntelligenceReports = JsonSerializer.Deserialize<object>(Intelligence.GetInfoJson())
+            };
 
-            sb.AppendLine();
-            sb.AppendLine("=== Intelligence Reports Table ===");
-            sb.AppendLine("Name | Id | Rank | Status | Weapons | Threat | Location | Report Time");
-            sb.AppendLine(string.Join("\n", Intelligence.GetInfo()
-                .Split('\n')
-                .Skip(2))); // skip duplicated title and headers
-
-            return sb.ToString();
+            return JsonSerializer.Serialize(info, new JsonSerializerOptions { WriteIndented = true });
         }
     }
 }
