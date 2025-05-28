@@ -1,13 +1,14 @@
-
 namespace IdfOperation.GoodGuys.Firepower
 {
     public class Zik : Weapon, IFuelable
     {
         private int _fuel = 30;
 
-        //==============================================================
+        //====================================
         public Zik(int number)
-            : base($"Zik-{number}", 3, new List<string> { "people", "vehicles" }, 3) {}
+            : base($"Zik-{number}", 3, new List<string> { "people", "vehicles" }, 3)
+        {
+        }
 
         //--------------------------------------------------------------
         public void AddFuel()
@@ -26,6 +27,7 @@ namespace IdfOperation.GoodGuys.Firepower
         {
             return _fuel;
         }
+
         //--------------------------------------------------------------
         public override void UseAmmo()
         {

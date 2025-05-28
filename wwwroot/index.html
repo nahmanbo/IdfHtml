@@ -7,30 +7,40 @@
   <script src="js/menu.js" defer></script>
 </head>
 <body>
-  <header class="header">
-    <h1>🛡️ IDF Operation Command Center</h1>
-  </header>
+<header class="header">
+  <h1>🛡️ IDF Operation Command Center</h1>
+</header>
 
-  <div class="layout">
-    <aside class="sidebar">
-      <nav class="menu">
-        <button onclick="sendRequest(1)">📊 View full IDF information</button>
-        <button onclick="sendRequest(2)">🕵️‍♂️ View full Hamas information</button>
-        <button onclick="sendRequest(3)">🔥 View Firepower Division data</button>
-        <button onclick="sendRequest(4)">📡 View Intelligence Division reports</button>
-        <button onclick="sendRequest(5)">🧠 View terrorist report by name</button>
-        <button onclick="sendRequest(6)">⚠️ View most dangerous terrorist report</button>
-        <button onclick="sendRequest(7)">💥 Eliminate terrorist by name</button>
-        <button onclick="sendRequest(8)">🎯 Eliminate the most dangerous terrorist</button>
-        <button onclick="sendRequest(9)">🚁 Eliminate terrorists by target type</button>
-      </nav>
-    </aside>
+<div class="layout">
+  <aside class="sidebar">
+    <nav class="menu">
+      <button onclick="sendRequest(1)">📊 View full IDF information</button>
+      <button onclick="sendRequest(2)">🕵️‍♂️ View full Hamas information</button>
+      <button onclick="sendRequest(3)">🔥 View Firepower Division data</button>
+      <button onclick="sendRequest(4)">📡 View Intelligence Division reports</button>
+      <button onclick="sendRequest(5)">🧠 View terrorist report by name</button>
+      <button onclick="sendRequest(6)">⚠️ View most dangerous terrorist report</button>
+      <button onclick="sendRequest(7)">💥 Eliminate terrorist by name</button>
+      <button onclick="sendRequest(8)">🎯 Eliminate the most dangerous terrorist</button>
+      <button onclick="sendRequest(9)">🚁 Eliminate terrorists by target type</button>
+      <hr />
+      <button onclick="promptForAmmo('F16')">✈️ Use F16</button>
+      <button onclick="promptForAmmo('Tank')">🛡️ Use Tank</button>
+    </nav>
+  </aside>
 
-    <main class="content">
-      <section class="output-box" id="output">
-        🧭 Select an action from the right menu to begin
-      </section>
-    </main>
-  </div>
+  <main class="content">
+    <section class="output-box" id="output">
+      🧭 Select an action from the right menu to begin
+    </section>
+
+    <!-- ✅ תא קלט דינאמי שמופיע רק כשצריך -->
+    <section id="input-section" style="display: none; margin-top: 1em;">
+      <label id="input-label" for="input-field"></label>
+      <input type="text" id="input-field" />
+      <button onclick="submitInput()">Submit</button>
+    </section>
+  </main>
+</div>
 </body>
 </html>

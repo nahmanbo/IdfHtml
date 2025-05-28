@@ -11,7 +11,7 @@ namespace IdfOperation.GoodGuys.Firepower
         protected List<string> TargetTypes { get; }
 
         //====================================
-        protected Weapon(string name, float ammo, List<string> effective, int maxAmmo)
+        protected Weapon(string name, double ammo, List<string> effective, int maxAmmo)
         {
             Name = name;
             Ammo = ammo;
@@ -29,7 +29,7 @@ namespace IdfOperation.GoodGuys.Firepower
         public abstract void UseAmmo();
 
         //--------------------------------------------------------------
-        public void UpdateAmmo(float count)
+        public void UpdateAmmo(double count)
         {
             Ammo = Math.Min(Ammo + count, MaxAmmo);
         }
