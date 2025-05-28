@@ -19,6 +19,7 @@ namespace IdfOperation.GoodGuys.Firepower
             AddEyeFire(2);
             AddZik(8);
             AddTank(3);
+
         }
 
         //--------------------------------------------------------------

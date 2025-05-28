@@ -1,5 +1,6 @@
 using System.Text.Json;
 using IdfOperation.BadGuys;
+using IdfOperation.Factory;
 
 namespace IdfOperation.GoodGuys.Intelligence
 {
@@ -12,14 +13,15 @@ namespace IdfOperation.GoodGuys.Intelligence
         //====================================
         public IntelligenceDivision()
         {
-            _reports = new List<IntelligenceReport>();
+            _reports = DbManager.GetIntelligenceReportFromDB();
+            /*_reports = new List<IntelligenceReport>();
 
             foreach (var terrorist in Hamas.Instance.GetTerrorists())
             {
                 string location = GetRandomLocation();
                 var report = new IntelligenceReport(terrorist, location, DateTime.Now);
                 _reports.Add(report);
-            }
+            }*/
         }
 
         //--------------------------------------------------------------

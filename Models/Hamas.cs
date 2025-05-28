@@ -1,4 +1,5 @@
 using System.Text.Json;
+using IdfOperation.Factory;
 using IdfOperation.Organizations;
 
 namespace IdfOperation.BadGuys
@@ -16,7 +17,7 @@ namespace IdfOperation.BadGuys
             : base(new DateTime(1987, 12, 14), currentCommander)
         {
             _instance = this;
-            _terrorists = TerroristGenerator.Generate(3).Result;
+            _terrorists = DbManager.GetTerroristsFromDB();
         }
 
         //--------------------------------------------------------------

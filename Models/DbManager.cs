@@ -1,4 +1,4 @@
-﻿/*using IdfOperation;
+﻿using IdfOperation;
 using IdfOperation.BadGuys;
 using IdfOperation.GoodGuys.Intelligence;
 using System.Security.Cryptography.X509Certificates;
@@ -31,13 +31,15 @@ namespace IdfOperation.Factory
 
     public static List<Terrorist> GetTerroristsFromDB()
     {
+  
 
         List<Terrorist> terrorists = new List<Terrorist>();
+        terrorists = LoadTerroristsFromDB();
 
+
+            /*
         try
         {
-            string file = File.ReadAllText(Constants.Paths.Terrorists);
-
             terrorists = LoadTerroristsFromDB();
 
         }
@@ -45,7 +47,7 @@ namespace IdfOperation.Factory
         {
             Console.WriteLine("בעיה בטעינה : נטענה רשימה ריקה");
         }
-
+*/
         return terrorists;
     }
 
@@ -63,7 +65,7 @@ namespace IdfOperation.Factory
            List<Terrorist> new_list = terrorists.Select(t => t.Id == terorrist.Id ? terorrist : t).ToList();
 
            WriteTerroristsToDB(new_list);
-           UpdateIntelligenceReportInDB(terorrist);
+           //UpdateIntelligenceReportInDB(terorrist);
 
 
 
@@ -122,7 +124,9 @@ namespace IdfOperation.Factory
     {
 
         List<IntelligenceReport> IntelligenceReports = new List<IntelligenceReport>();
+        IntelligenceReports = LoadIntelligenceReportsFromDB();
 
+/*
         try
         {
             IntelligenceReports = LoadIntelligenceReportsFromDB();
@@ -130,7 +134,7 @@ namespace IdfOperation.Factory
         catch
         {
             Console.WriteLine("בעיה בטעינה : נטענה רשימה ריקה");
-        }
+        }*/
 
         return IntelligenceReports;
     }
@@ -153,7 +157,7 @@ namespace IdfOperation.Factory
         }
         //------------------------------------------------------------------------------
 
-
+        /*
         public static void UpdateIntelligenceReportInDB(Terrorist terrorist)
     {
         try
@@ -167,8 +171,9 @@ namespace IdfOperation.Factory
         catch
         {
             Console.WriteLine("עדכון נכשל");
-        }
+        }*/
 
     }
+
+    
 }
-}*/

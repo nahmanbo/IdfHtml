@@ -5,12 +5,16 @@ namespace IdfOperation.GoodGuys.Intelligence
 {
     public class IntelligenceReport
     {
-        private Terrorist _terrorist;
-        private int _threatLevel;
-        private string _lastKnownLocation;
-        private DateTime _reportTime;
+        public Terrorist _terrorist{get;set;}
+        public int _threatLevel{get;set;}
+        public string _lastKnownLocation{get;set;}
+        public DateTime _reportTime{get;set;}
 
         //====================================
+        public IntelligenceReport()
+        {
+
+        }
         public IntelligenceReport(Terrorist terrorist, string lastKnownLocation, DateTime reportTime)
         {
             _terrorist = terrorist;
@@ -18,6 +22,8 @@ namespace IdfOperation.GoodGuys.Intelligence
             _lastKnownLocation = lastKnownLocation;
             _reportTime = reportTime;
         }
+
+
 
         //--------------------------------------------------------------
         private int CalculateThreatScore()

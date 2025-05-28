@@ -5,9 +5,8 @@
         // נתיבי קבצים
         public static class Paths
         {
-            public const string Terrorists = @"..\..\..\db\Terrorists.json";
-            public const string IntelligenceReports = @"..\..\..\db\Reports.json";
-            public const string SecretsFile = @"secrets.json";
+            public static readonly string Terrorists = @"DB/Terroristes.json";
+            public const string IntelligenceReports = @"DB/Reports.json";
         }
 
         // API Tokens / Keys (לא מומלץ לשים כאן מפתחות אמיתיים בקוד פתוח!)
