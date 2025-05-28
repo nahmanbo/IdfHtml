@@ -1,4 +1,3 @@
-
 namespace IdfOperation.GoodGuys.Firepower
 {
     public class Tank : Weapon, IFuelable
@@ -32,26 +31,16 @@ namespace IdfOperation.GoodGuys.Firepower
         //--------------------------------------------------------------
         public override void UseAmmo()
         {
-            while (true)
-            {
-                Console.WriteLine($"You need a {Name}. Select quantity of shell: (2 or 3)");
-                string input = Console.ReadLine()!;
-
-                switch (input)
-                {
-                    case "2":
-                        Ammo -= 2;
-                        return;
-                    case "3":
-                        Ammo -= 3;
-                        return;
-                    default:
-                        Console.WriteLine("Enter a valid number.");
-                        break;
-                }
-            }
+            throw new NotImplementedException("UseAmmo(int shells) must be used instead.");
         }
 
+        //--------------------------------------------------------------
+        public void UseAmmo(int shells)
+        {
+            if (shells != 2 && shells != 3)
+                throw new ArgumentException("Invalid shell quantity. Must be 2 or 3.");
 
+            Ammo -= shells;
+        }
     }
 }

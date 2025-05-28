@@ -1,4 +1,3 @@
-
 namespace IdfOperation.GoodGuys.Firepower
 {
     public class F16 : Weapon, IFuelable
@@ -7,7 +6,9 @@ namespace IdfOperation.GoodGuys.Firepower
 
         //====================================
         public F16(int number)
-            : base($"F16-{number}", 8, new List<string> { "buildings" }, 8) {}
+            : base($"F16-{number}", 8, new List<string> { "buildings" }, 8)
+        {
+        }
 
         //--------------------------------------------------------------
         public void AddFuel()
@@ -30,24 +31,16 @@ namespace IdfOperation.GoodGuys.Firepower
         //--------------------------------------------------------------
         public override void UseAmmo()
         {
-            while (true)
-            {
-                Console.Write($"You need a {Name}. Enter Bomb weight (0.5 or 1): ");
-                string input = Console.ReadLine()!;
+            throw new NotImplementedException("UseAmmo(double weight) must be used instead.");
+        }
 
-                switch (input)
-                {
-                    case "1":
-                        Ammo -= 1;
-                        return;
-                    case "0.5":
-                        Ammo -= 0.5;
-                        return;
-                    default:
-                        Console.WriteLine("Enter a valid number.");
-                        break;
-                }
-            }
+        //--------------------------------------------------------------
+        public void UseAmmo(double weight)
+        {
+            if (weight != 0.5 && weight != 1)
+                throw new ArgumentException("Invalid bomb weight. Must be 0.5 or 1.");
+
+            Ammo -= weight;
         }
     }
 }

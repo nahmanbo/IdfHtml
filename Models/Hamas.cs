@@ -17,7 +17,8 @@ namespace IdfOperation.BadGuys
             : base(new DateTime(1987, 12, 14), currentCommander)
         {
             _instance = this;
-            _terrorists = DbManager.GetTerroristsFromDB();
+            _terrorists =  TerroristGenerator.Generate(5).Result;
+            //_terrorists = DbManager.GetTerroristsFromDB();
         }
 
         //--------------------------------------------------------------

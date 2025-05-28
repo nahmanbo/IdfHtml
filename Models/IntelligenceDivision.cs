@@ -13,7 +13,7 @@ namespace IdfOperation.GoodGuys.Intelligence
         //====================================
         public IntelligenceDivision()
         {
-            _reports = DbManager.GetIntelligenceReportFromDB();
+            //_reports = DbManager.GetIntelligenceReportFromDB();
             /*_reports = new List<IntelligenceReport>();
 
             foreach (var terrorist in Hamas.Instance.GetTerrorists())

@@ -1,4 +1,3 @@
-
 namespace IdfOperation.GoodGuys.Firepower
 {
     public class EyeFire : Weapon
