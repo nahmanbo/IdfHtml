@@ -20,12 +20,20 @@ namespace IdfOperation.GoodGuys
 
         public override string GetInfo()
         {
-            var sb = new StringBuilder();
-            sb.AppendLine($"IDF - Commander: {GetCommander()}, Established: {GetEstablishmentDate():d}");
-            sb.AppendLine("=== Firepower Division ===");
-            sb.AppendLine(Firepower.GetInfo());
-            sb.AppendLine("=== Intelligence Division ===");
-            sb.AppendLine(Intelligence.GetInfo());
+            var sb = new System.Text.StringBuilder();
+            sb.AppendLine("=== Firepower Table ===");
+            sb.AppendLine("Name | Ammo | Targets | Fuel");
+            sb.AppendLine(string.Join("\n", Firepower.GetInfo()
+                .Split('\n')
+                .Skip(2))); // skip duplicated title and headers
+
+            sb.AppendLine();
+            sb.AppendLine("=== Intelligence Reports Table ===");
+            sb.AppendLine("Name | Id | Rank | Status | Weapons | Threat | Location | Report Time");
+            sb.AppendLine(string.Join("\n", Intelligence.GetInfo()
+                .Split('\n')
+                .Skip(2))); // skip duplicated title and headers
+
             return sb.ToString();
         }
     }

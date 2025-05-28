@@ -23,7 +23,7 @@ namespace IdfOperation.BadGuys
         {
             string status = IsAlive ? "Alive" : "Dead";
             string weaponList = string.Join(", ", Weapons);
-            return $"Terrorist: {Name} | Id: {Id} | Rank: {Rank} | Status: {status} | Weapons: {weaponList}";
+            return $"{Name} | {Id} | {Rank} | {status} | {weaponList}";
         }
         
         //--------------------------------------------------------------

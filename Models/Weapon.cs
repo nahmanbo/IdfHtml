@@ -41,8 +41,11 @@ namespace IdfOperation.GoodGuys.Firepower
         }
 
         //--------------------------------------------------------------
-        public abstract string GetInfo();
-
+        public virtual string GetInfo()
+        {
+            string fuel = this is IFuelable f ? $"{f.GetFuel()} liters" : "N/A";
+            return $"{Name} | {Ammo} / {MaxAmmo} | {string.Join(", ", TargetTypes)} | {fuel}";
+        }
         //--------------------------------------------------------------
         public void AttackTarget(Terrorist terrorist)
         {

@@ -14,11 +14,5 @@ namespace IdfOperation.GoodGuys.Firepower
         {
             Ammo -= 30;
         }
-
-        //--------------------------------------------------------------
-        public override string GetInfo()
-        {
-            return $"Name: {Name}, Ammo: {Ammo}/{MaxAmmo}, Effective Against: {string.Join(", ", TargetTypes)}";
-        }
     }
 }

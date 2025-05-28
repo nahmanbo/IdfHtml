@@ -49,11 +49,5 @@ namespace IdfOperation.GoodGuys.Firepower
                 }
             }
         }
-
-        //--------------------------------------------------------------
-        public override string GetInfo()
-        {
-            return $"Name: {Name}, Ammo: {Ammo}/{MaxAmmo}, Effective Against: {string.Join(", ", TargetTypes)}, Fuel: {_fuel} liters";
-        }
     }
 }

@@ -80,15 +80,10 @@ namespace IdfOperation.GoodGuys.Intelligence
         //--------------------------------------------------------------
         public string GetInfo()
         {
-            var sb = new StringBuilder();
-
-            sb.AppendLine("=== Intelligence Report ===");
-            sb.AppendLine(_terrorist.GetInfo());
-            sb.AppendLine($"Threat Level: {_threatLevel}");
-            sb.AppendLine($"Last Known Location: {_lastKnownLocation}");
-            sb.AppendLine($"Report Date: {_reportTime:yyyy-MM-dd HH:mm}");
-
-            return sb.ToString();
+            string status = _terrorist.IsAlive ? "Alive" : "Dead";
+            string weapons = string.Join(", ", _terrorist.Weapons);
+            return $"=== Intelligence Reports Table ===\nName | Id | Rank | Status | Weapons | Threat | Location | Report Time\n" +
+                   $"{_terrorist.Name} | {_terrorist.Id} | {_terrorist.Rank} | {status} | {weapons} | {_threatLevel} | {_lastKnownLocation} | {_reportTime:yyyy-MM-dd HH:mm}";
         }
     }
 }

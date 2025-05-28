@@ -103,19 +103,22 @@ namespace IdfOperation.GoodGuys.Firepower
         //--------------------------------------------------------------
         public string GetInfo()
         {
-            var sb = new StringBuilder();
+            var sb = new System.Text.StringBuilder();
+            sb.AppendLine("=== Firepower Table ===");
+            sb.AppendLine("Name | Ammo | Targets | Fuel");
 
+            var added = new HashSet<Weapon>();
             foreach (var kvp in _weaponsByTarget)
             {
-                sb.AppendLine($"Target Type: {kvp.Key}");
                 foreach (var weapon in kvp.Value)
                 {
-                    sb.AppendLine(weapon.GetInfo());
+                    if (added.Add(weapon))
+                        sb.AppendLine(weapon.GetInfo());
                 }
-                sb.AppendLine("--------------------------------");
             }
 
             return sb.ToString();
         }
+
     }
 }

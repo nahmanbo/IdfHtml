@@ -74,12 +74,13 @@ namespace IdfOperation.GoodGuys.Intelligence
         //--------------------------------------------------------------
         public string GetInfo()
         {
-            var sb = new StringBuilder();
+            var sb = new System.Text.StringBuilder();
+            sb.AppendLine("=== Intelligence Reports Table ===");
+            sb.AppendLine("Name | Id | Rank | Status | Weapons | Threat | Location | Report Time");
 
             foreach (var report in _reports)
             {
                 sb.AppendLine(report.GetInfo());
-                sb.AppendLine("--------------------------------");
             }
 
             return sb.ToString();

@@ -1,3 +1,4 @@
+
 using IdfOperation.GoodGuys;
 using IdfOperation.BadGuys;
 using System.Text;
@@ -22,8 +23,7 @@ namespace IdfOperation.Web.Services
 
         public string ViewFullHamasInfo()
         {
-            return  _hamas.GetInfo();
-
+            return _hamas.GetInfo();
         }
 
         public string ViewFirepowerData()
@@ -39,10 +39,10 @@ namespace IdfOperation.Web.Services
         public string ViewReportByName(string name)
         {
             var report = _idf.Intelligence.GetReportByTerroristName(name);
-            
+
             if (report == null)
                 return $"No report found for terrorist: {name}";
-            
+
             return report.GetInfo();
         }
 
@@ -54,6 +54,7 @@ namespace IdfOperation.Web.Services
 
             return report.GetInfo();
         }
+
         private string? TryEliminate(Terrorist terrorist, string targetType)
         {
             if (!terrorist.IsAlive)
@@ -64,8 +65,10 @@ namespace IdfOperation.Web.Services
                 return $"No weapon available for target type: {targetType}";
 
             weapon.AttackTarget(terrorist);
-            return $"{weapon.GetInfo().Split(',')[0]} eliminated {terrorist.Name} successfully.";
+            return
+                $"=== Elimination Result ===Weapon: {weapon.GetType().Name} Target: {terrorist.Name} Status: Eliminated";
         }
+
         public string EliminateByName(string name)
         {
             name = name.Trim();
@@ -74,9 +77,10 @@ namespace IdfOperation.Web.Services
             if (report == null)
                 return $"No intelligence report found for terrorist: {name}";
 
-            return TryEliminate(report.GetTerrorist(), report.GetLastKnownLocation()) 
+            return TryEliminate(report.GetTerrorist(), report.GetLastKnownLocation())
                    ?? $"Unable to eliminate {name}.";
         }
+
         public string EliminateMostDangerous()
         {
             var report = _idf.Intelligence.GetMostDangerousAliveReport();
@@ -87,8 +91,6 @@ namespace IdfOperation.Web.Services
             return TryEliminate(terrorist, report.GetLastKnownLocation())
                    ?? $"Unable to eliminate {terrorist.Name}.";
         }
-
-
 
         public string EliminateByTargetType(string targetType)
         {
@@ -106,7 +108,7 @@ namespace IdfOperation.Web.Services
             }
 
             return messages.Count > 0
-                ? string.Join("\n", messages)
+                ? string.Join("\n---\n", messages)
                 : $"No eligible terrorists found for target type: {targetType}";
         }
     }

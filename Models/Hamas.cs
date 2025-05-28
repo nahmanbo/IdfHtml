@@ -32,21 +32,17 @@ namespace IdfOperation.BadGuys
         }
 
         //--------------------------------------------------------------
-        public override string GetInfo()
+        public override string GetInfo()        
         {
-            var sb = new StringBuilder();
-
-            sb.AppendLine($"Hamas - Commander: {GetCommander()}, Established: {GetEstablishmentDate():d}");
-            sb.AppendLine($"Terrorist Count: {_terrorists.Count}");
-            sb.AppendLine("=== Terrorists ===");
+            var sb = new System.Text.StringBuilder();
+            sb.AppendLine("=== Terrorist Table ===");
+            sb.AppendLine("Name | Id | Rank | Status | Weapons");
 
             foreach (var terrorist in _terrorists)
             {
                 sb.AppendLine(terrorist.GetInfo());
             }
 
-            sb.AppendLine("==================");
             return sb.ToString();
-        }
-    }
+        }    }
 }
