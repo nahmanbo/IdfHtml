@@ -1,4 +1,4 @@
-using System.Text;
+using System.Text.Json;
 using IdfOperation.Organizations;
 
 namespace IdfOperation.BadGuys
@@ -32,17 +32,9 @@ namespace IdfOperation.BadGuys
         }
 
         //--------------------------------------------------------------
-        public override string GetInfo()        
+        public override string GetInfo()
         {
-            var sb = new System.Text.StringBuilder();
-            sb.AppendLine("=== Terrorist Table ===");
-            sb.AppendLine("Name | Id | Rank | Status | Weapons");
-
-            foreach (var terrorist in _terrorists)
-            {
-                sb.AppendLine(terrorist.GetInfo());
-            }
-
-            return sb.ToString();
-        }    }
+            return JsonSerializer.Serialize(_terrorists, new JsonSerializerOptions { WriteIndented = true });
+        }
+    }
 }

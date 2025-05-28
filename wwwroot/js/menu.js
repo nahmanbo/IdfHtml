@@ -1,4 +1,3 @@
-
 async function sendRequest(option) {
     const output = document.getElementById("output");
     output.innerHTML = "⌛ Loading...";
@@ -24,73 +23,71 @@ async function sendRequest(option) {
             body
         });
 
-        const result = await response.text();
-        console.log("📨 Server response:\n" + result);
+        const text = await response.text();
+        console.log("📨 Server response:\n" + text);
 
-        if (result.includes("===") && result.includes("|")) {
-            displayAllTables(result);
-        } else if (result.includes("===")) {
-            displayReport(result);
-        } else {
-            output.textContent = result;
+        try {
+            const json = JSON.parse(text);
+            displayJsonAsTable(json);
+        } catch (e) {
+            if (text.includes("===") && text.includes("|")) {
+                displayAllTables(text);
+            } else if (text.includes("===")) {
+                displayReport(text);
+            } else {
+                output.textContent = text;
+            }
         }
     } catch (err) {
         output.textContent = "⚠️ Error: " + err.message;
     }
 }
 
-function displayAllTables(text) {
+// 🆕 תצוגת JSON בטבלה
+function displayJsonAsTable(data) {
     const output = document.getElementById("output");
-    const blocks = text.trim().split(/(?=^=== )/m);
-    let finalHtml = "";
+    output.innerHTML = ""; // ננקה לפני הצגה
 
-    for (const block of blocks) {
-        if (block.startsWith("=== ") && block.includes("|")) {
-            const lines = block.trim().split("\n");
-            const title = lines[0].replace(/=+/g, '').trim();
-            const headers = lines[1].split("|").map(h => h.trim());
-
-            let html = `<h2>${title}</h2><table><thead><tr>`;
-            headers.forEach(header => {
-                html += `<th>${header}</th>`;
-            });
-            html += "</tr></thead><tbody>";
-
-            for (let i = 2; i < lines.length; i++) {
-                const row = lines[i].split("|").map(c => c.trim());
-                html += "<tr>" + row.map(cell => `<td>${cell}</td>`).join("") + "</tr>";
+    // אם זה אובייקט עם מערכים בפנים – ניצור טבלה עבור כל מפתח
+    if (!Array.isArray(data) && typeof data === "object") {
+        for (const key in data) {
+            if (Array.isArray(data[key])) {
+                output.innerHTML += `<h2>${key}</h2>`;
+                output.innerHTML += buildTableFromArray(data[key]);
             }
-
-            html += "</tbody></table>";
-            finalHtml += html + "<br/>";
-        } else {
-            finalHtml += `<p>${block}</p>`;
         }
+        return;
     }
 
-    output.innerHTML = finalHtml;
+    // אם מדובר במערך פשוט
+    if (Array.isArray(data)) {
+        output.innerHTML = buildTableFromArray(data);
+        return;
+    }
+
+    // אחרת – נדפיס אותו כטקסט פשוט
+    output.textContent = JSON.stringify(data, null, 2);
 }
 
-function displayReport(text) {
-    const output = document.getElementById("output");
-    const lines = text.trim().split("\n");
+function buildTableFromArray(arr) {
+    if (!arr || arr.length === 0) return "<p>No data available.</p>";
 
-    const titleLine = lines[0].startsWith("===")
-        ? `<h2>${lines[0].replace(/=+/g, '').trim()}</h2>`
-        : "";
+    const headers = Object.keys(arr[0]);
+    let html = "<table><thead><tr>";
+    headers.forEach(h => {
+        html += `<th>${h}</th>`;
+    });
+    html += "</tr></thead><tbody>";
 
-    let table = "<table><tbody>";
+    arr.forEach(item => {
+        html += "<tr>";
+        headers.forEach(h => {
+            const val = item[h];
+            html += `<td>${Array.isArray(val) ? val.join(", ") : val}</td>`;
+        });
+        html += "</tr>";
+    });
 
-    for (let i = 1; i < lines.length; i++) {
-        const line = lines[i].trim();
-        const [label, value] = line.split(/:(.+)/).map(s => s?.trim());
-        if (value) {
-            table += `<tr><th>${label}</th><td>${value}</td></tr>`;
-        } else {
-            table += `<tr><td colspan="2">${line}</td></tr>`;
-        }
-    }
-
-    table += "</tbody></table>";
-    output.innerHTML = titleLine + table;
+    html += "</tbody></table>";
+    return html;
 }

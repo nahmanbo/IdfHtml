@@ -28,12 +28,12 @@ namespace IdfOperation.Web.Services
 
         public string ViewFirepowerData()
         {
-            return _idf.Firepower.GetInfo();
+            return _idf.Firepower.GetInfoJson();
         }
 
         public string ViewIntelligenceReports()
         {
-            return _idf.Intelligence.GetInfo();
+            return _idf.Intelligence.GetInfoJson();
         }
 
         public string ViewReportByName(string name)
@@ -43,7 +43,7 @@ namespace IdfOperation.Web.Services
             if (report == null)
                 return $"No report found for terrorist: {name}";
 
-            return report.GetInfo();
+            return report.GetInfoJson();
         }
 
         public string ViewMostDangerous()
@@ -52,7 +52,7 @@ namespace IdfOperation.Web.Services
             if (report == null)
                 return "No alive terrorist reports available.";
 
-            return report.GetInfo();
+            return report.GetInfoJson();
         }
 
         private string? TryEliminate(Terrorist terrorist, string targetType)

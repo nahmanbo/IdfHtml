@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "IdfOperation": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "OPENAI_API_KEY": "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"
+      }
+    }
+  }
+}

@@ -1,0 +1,188 @@
+[
+  {
+    "_terrorist": {
+      "Name": "Abu Mazen",
+      "Id": 1,
+      "Rank": 5,
+      "IsAlive": true,
+      "Weapons": [
+        "Rifle",
+        "Grenade"
+      ]
+    },
+    "_threatLevel": 4,
+    "_lastKnownLocation": "Gaza City",
+    "_reportTime": "2025-05-27T14:00:00"
+  },
+  {
+    "_terrorist": {
+      "Name": "Hassan",
+      "Id": 2,
+      "Rank": 3,
+      "IsAlive": false,
+      "Weapons": [
+        "Knife"
+      ]
+    },
+    "_threatLevel": 2,
+    "_lastKnownLocation": "Rafah",
+    "_reportTime": "2025-05-26T09:30:00"
+  },
+  {
+    "_terrorist": {
+      "Name": "Mahmoud",
+      "Id": 3,
+      "Rank": 4,
+      "IsAlive": true,
+      "Weapons": [
+        "Rifle"
+      ]
+    },
+    "_threatLevel": 5,
+    "_lastKnownLocation": "Khan Yunis",
+    "_reportTime": "2025-05-25T16:45:00"
+  },
+  {
+    "_terrorist": {
+      "Name": "Khaled",
+      "Id": 4,
+      "Rank": 2,
+      "IsAlive": true,
+      "Weapons": [
+        "Grenade",
+        "Knife"
+      ]
+    },
+    "_threatLevel": 3,
+    "_lastKnownLocation": "Jabalia",
+    "_reportTime": "2025-05-27T10:15:00"
+  },
+  {
+    "_terrorist": {
+      "Name": "Sami",
+      "Id": 5,
+      "Rank": 6,
+      "IsAlive": true,
+      "Weapons": [
+        "Rifle",
+        "Knife",
+        "Grenade"
+      ]
+    },
+    "_threatLevel": 5,
+    "_lastKnownLocation": "Beit Hanoun",
+    "_reportTime": "2025-05-27T06:00:00"
+  },
+  {
+    "_terrorist": {
+      "Name": "Nasser",
+      "Id": 6,
+      "Rank": 1,
+      "IsAlive": false,
+      "Weapons": []
+    },
+    "_threatLevel": 1,
+    "_lastKnownLocation": "Unknown",
+    "_reportTime": "2025-05-24T18:00:00"
+  },
+  {
+    "_terrorist": {
+      "Name": "Fadi",
+      "Id": 7,
+      "Rank": 3,
+      "IsAlive": true,
+      "Weapons": [
+        "Rifle"
+      ]
+    },
+    "_threatLevel": 3,
+    "_lastKnownLocation": "Deir al-Balah",
+    "_reportTime": "2025-05-26T14:30:00"
+  },
+  {
+    "_terrorist": {
+      "Name": "Ibrahim",
+      "Id": 8,
+      "Rank": 7,
+      "IsAlive": true,
+      "Weapons": [
+        "Grenade",
+        "Rifle"
+      ]
+    },
+    "_threatLevel": 4,
+    "_lastKnownLocation": "Gaza Strip",
+    "_reportTime": "2025-05-27T13:00:00"
+  },
+  {
+    "_terrorist": {
+      "Name": "Yousef",
+      "Id": 9,
+      "Rank": 2,
+      "IsAlive": false,
+      "Weapons": [
+        "Knife"
+      ]
+    },
+    "_threatLevel": 2,
+    "_lastKnownLocation": "Sinai",
+    "_reportTime": "2025-05-25T20:10:00"
+  },
+  {
+    "_terrorist": {
+      "Name": "Amir",
+      "Id": 10,
+      "Rank": 4,
+      "IsAlive": true,
+      "Weapons": [
+        "Rifle",
+        "Grenade"
+      ]
+    },
+    "_threatLevel": 5,
+    "_lastKnownLocation": "Unknown",
+    "_reportTime": "2025-05-27T17:20:00"
+  },
+  {
+    "_terrorist": {
+      "Name": "gsg",
+      "Id": 66,
+      "Rank": 3,
+      "IsAlive": true,
+      "Weapons": [
+        "dfd"
+      ]
+    },
+    "_threatLevel": 0,
+    "_lastKnownLocation": "aaaaaaaaaaa",
+    "_reportTime": "2025-05-27T17:20:00"
+  },
+  {
+    "_terrorist": {
+      "Name": "gsg",
+      "Id": 66,
+      "Rank": 3,
+      "IsAlive": true,
+      "Weapons": [
+        "dfd"
+      ]
+    },
+    "_threatLevel": 0,
+    "_lastKnownLocation": "aaaaaaaaaaa",
+    "_reportTime": "2025-05-27T17:20:00"
+  },
+  {
+    "_terrorist": {
+      "Name": "gsg",
+      "Id": 88,
+      "Rank": 3,
+      "IsAlive": true,
+      "Weapons": [
+        "dfd"
+      ]
+    },
+    "_threatLevel": 0,
+    "_lastKnownLocation": "aaaaaaaaaaa",
+    "_reportTime": "2025-05-27T17:20:00"
+  }
+]

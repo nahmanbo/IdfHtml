@@ -26,3 +26,5 @@
 /Users/nahmanbo1/Downloads/IdfOperation.Web/obj/Debug/net6.0/IdfOperation.Web.genruntimeconfig.cache
 /Users/nahmanbo1/Downloads/IdfOperation.Web/obj/Debug/net6.0/ref/IdfOperation.Web.dll
 /Users/nahmanbo1/Downloads/IdfOperation.Web/obj/Debug/net6.0/IdfOperation.Web.sourcelink.json
+/Users/nahmanbo1/Downloads/IdfOperation.Web/bin/Debug/net6.0/DB/Reports.json
+/Users/nahmanbo1/Downloads/IdfOperation.Web/bin/Debug/net6.0/DB/Terroristes.json
