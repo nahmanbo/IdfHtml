@@ -1,180 +1,205 @@
 [
   {
-    "Name": "Yonatan",
-    "Id": 1,
+    "Name": "Abdul Rahman",
+    "Id": 123456,
+    "Rank": 1,
+    "IsAlive": true,
+    "Weapons": [
+      "Knife",
+      "M16"
+    ]
+  },
+  {
+    "Name": "Mohammed Abu Bakr",
+    "Id": 234567,
+    "Rank": 2,
+    "IsAlive": true,
+    "Weapons": [
+      "Gun",
+      "AK47"
+    ]
+  },
+  {
+    "Name": "Ahmed Ali",
+    "Id": 345678,
+    "Rank": 3,
+    "IsAlive": true,
+    "Weapons": [
+      "M16",
+      "AK47"
+    ]
+  },
+  {
+    "Name": "Omar Hussein",
+    "Id": 456789,
+    "Rank": 4,
+    "IsAlive": true,
+    "Weapons": [
+      "Knife",
+      "Gun"
+    ]
+  },
+  {
+    "Name": "Ibrahim al-Jabr",
+    "Id": 567890,
     "Rank": 5,
     "IsAlive": true,
     "Weapons": [
-      "Rifle",
-      "Grenade"
+      "M16"
     ]
   },
   {
-    "Name": "Avi",
-    "Id": 2,
-    "Rank": 3,
-    "IsAlive": true,
-    "Weapons": [
-      "Knife"
-    ]
-  },
-  {
-    "Name": "Lior",
-    "Id": 3,
-    "Rank": 4,
-    "IsAlive": false,
-    "Weapons": [
-      "Rifle"
-    ]
-  },
-  {
-    "Name": "Noam",
-    "Id": 4,
-    "Rank": 2,
-    "IsAlive": true,
-    "Weapons": [
-      "Grenade",
-      "Knife"
-    ]
-  },
-  {
-    "Name": "Tomer",
-    "Id": 5,
-    "Rank": 6,
-    "IsAlive": true,
-    "Weapons": [
-      "Rifle",
-      "Knife",
-      "Grenade"
-    ]
-  },
-  {
-    "Name": "Shai",
-    "Id": 6,
+    "Name": "Yusuf Salman",
+    "Id": 678901,
     "Rank": 1,
-    "IsAlive": false,
+    "IsAlive": true,
     "Weapons": [
-      "dgfg",
-      "dgfdg"
+      "AK47",
+      "Knife"
     ]
   },
   {
-    "Name": "Eli",
-    "Id": 7,
+    "Name": "Nasser al-Rajhi",
+    "Id": 789012,
+    "Rank": 2,
+    "IsAlive": true,
+    "Weapons": [
+      "Gun",
+      "M16"
+    ]
+  },
+  {
+    "Name": "Suleiman Saad",
+    "Id": 890123,
     "Rank": 3,
     "IsAlive": true,
     "Weapons": [
-      "Rifle"
+      "AK47"
     ]
   },
   {
-    "Name": "Daniel",
-    "Id": 8,
-    "Rank": 7,
+    "Name": "Zakir Zaid",
+    "Id": 901234,
+    "Rank": 4,
     "IsAlive": true,
-    "Weapons": [
-      "Grenade",
-      "Rifle"
-    ]
-  },
-  {
-    "Name": "Ofir",
-    "Id": 9,
-    "Rank": 2,
-    "IsAlive": false,
     "Weapons": [
       "Knife"
     ]
   },
   {
-    "Name": "Itay",
-    "Id": 10,
+    "Name": "Qasim Ameen",
+    "Id": 128406,
+    "Rank": 5,
+    "IsAlive": true,
+    "Weapons": [
+      "M16",
+      "Gun",
+      "AK47"
+    ]
+  },
+  {
+    "Name": "Hisham Farouk",
+    "Id": 175309,
+    "Rank": 1,
+    "IsAlive": true,
+    "Weapons": [
+      "Knife",
+      "AK47"
+    ]
+  },
+  {
+    "Name": "Faisal Tariq",
+    "Id": 293847,
+    "Rank": 2,
+    "IsAlive": true,
+    "Weapons": [
+      "Gun",
+      "M16",
+      "AK47"
+    ]
+  },
+  {
+    "Name": "Rashid Khalil",
+    "Id": 365498,
+    "Rank": 3,
+    "IsAlive": true,
+    "Weapons": [
+      "Knife",
+      "Gun",
+      "M16"
+    ]
+  },
+  {
+    "Name": "Adil Hashim",
+    "Id": 485720,
     "Rank": 4,
     "IsAlive": true,
     "Weapons": [
-      "Rifle",
-      "Grenade"
+      "AK47",
+      "Knife",
+      "Gun"
     ]
   },
   {
-    "Name": "gsg",
-    "Id": 66,
-    "Rank": 3,
-    "IsAlive": false,
+    "Name": "Bassam Naif",
+    "Id": 564389,
+    "Rank": 5,
+    "IsAlive": true,
     "Weapons": [
-      "dfd"
+      "M16",
+      "AK47"
     ]
   },
   {
-    "Name": "gsg",
-    "Id": 66,
-    "Rank": 3,
-    "IsAlive": false,
+    "Name": "Kareem Zamir",
+    "Id": 652897,
+    "Rank": 1,
+    "IsAlive": true,
     "Weapons": [
-      "dfd"
+      "Knife",
+      "Gun",
+      "M16"
     ]
   },
   {
-    "Name": "gsg",
-    "Id": 66,
-    "Rank": 3,
-    "IsAlive": false,
+    "Name": "Wahid Raheem",
+    "Id": 759216,
+    "Rank": 2,
+    "IsAlive": true,
     "Weapons": [
-      "dfd"
+      "Gun",
+      "AK47"
     ]
   },
   {
-    "Name": "gsg",
-    "Id": 66,
+    "Name": "Sami Jaffer",
+    "Id": 837405,
     "Rank": 3,
-    "IsAlive": false,
+    "IsAlive": true,
     "Weapons": [
-      "dfd"
+      "Knife",
+      "Gun"
     ]
   },
   {
-    "Name": "gsg",
-    "Id": 66,
-    "Rank": 3,
-    "IsAlive": false,
+    "Name": "Munir Fahd",
+    "Id": 907623,
+    "Rank": 4,
+    "IsAlive": true,
     "Weapons": [
-      "dfd"
+      "M16",
+      "AK47"
     ]
   },
   {
-    "Name": "gsg",
-    "Id": 66,
-    "Rank": 3,
-    "IsAlive": false,
+    "Name": "Najib Yasser",
+    "Id": 956918,
+    "Rank": 5,
+    "IsAlive": true,
     "Weapons": [
-      "dfd"
-    ]
-  },
-  {
-    "Name": "gsg",
-    "Id": 66,
-    "Rank": 3,
-    "IsAlive": false,
-    "Weapons": [
-      "dfd"
-    ]
-  },
-  {
-    "Name": "gsg",
-    "Id": 66,
-    "Rank": 3,
-    "IsAlive": false,
-    "Weapons": [
-      "dfd"
-    ]
-  },
-  {
-    "Name": "gsg",
-    "Id": 66,
-    "Rank": 3,
-    "IsAlive": false,
-    "Weapons": [
-      "dfd"
+      "Knife",
+      "M16",
+      "AK47"
     ]
   }
 ]

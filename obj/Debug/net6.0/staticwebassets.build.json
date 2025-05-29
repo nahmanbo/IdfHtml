@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "/DzPcM0HI2BjJWry1w5NVEl9Y22zIxO/gqBCMscY9kg=",
+  "Hash": "iFuBn3WMqo9Fxdi6VSixefBcyU+OQXFhW8mYG0+SWwY=",
   "Source": "IdfOperation.Web",
   "BasePath": "_content/IdfOperation.Web",
   "Mode": "Default",
@@ -104,7 +104,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 28 May 2025 12:43:01 GMT"
+          "Value": "Wed, 28 May 2025 13:21:20 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -149,7 +149,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 28 May 2025 12:43:01 GMT"
+          "Value": "Wed, 28 May 2025 13:21:20 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -186,7 +186,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 28 May 2025 12:41:53 GMT"
+          "Value": "Wed, 28 May 2025 13:21:20 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -223,7 +223,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 28 May 2025 12:41:53 GMT"
+          "Value": "Wed, 28 May 2025 13:21:20 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -268,7 +268,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 28 May 2025 12:43:26 GMT"
+          "Value": "Wed, 28 May 2025 13:21:20 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -305,7 +305,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 28 May 2025 12:43:26 GMT"
+          "Value": "Wed, 28 May 2025 13:21:20 GMT"
         },
         {
           "Name": "Cache-Control",

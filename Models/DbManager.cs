@@ -1,179 +1,89 @@
 ﻿using IdfOperation;
 using IdfOperation.BadGuys;
 using IdfOperation.GoodGuys.Intelligence;
-using System.Security.Cryptography.X509Certificates;
 using System.Text.Json;
 
 namespace IdfOperation.Factory
-    {
-    public static class DbManager
 {
-    //-------------------------------------------------------------------------------
-    public static List<Terrorist> LoadTerroristsFromDB()
+    public static class DbManager
     {
-        string file = File.ReadAllText(Constants.Paths.Terrorists);
-
-        List<Terrorist> terrorists = JsonSerializer.Deserialize<List<Terrorist>>(file)!;
-
-        return terrorists;
-
-    }
-    //---------------------------------------------------------------------------------
-
-    private static void WriteTerroristsToDB(List<Terrorist> terrorists)
-    {
-        string str = JsonSerializer.Serialize(terrorists, new JsonSerializerOptions { WriteIndented = true });
-
-        File.WriteAllText(Constants.Paths.Terrorists, str);
-    }
-
-    //-----------------------------------------------------------------------------------
-
-    public static List<Terrorist> GetTerroristsFromDB()
-    {
-  
-
-        List<Terrorist> terrorists = new List<Terrorist>();
-        terrorists = LoadTerroristsFromDB();
-
-
-            /*
-        try
+        //==============================================================
+        public static List<Terrorist> LoadTerrorists()
         {
-            terrorists = LoadTerroristsFromDB();
-
-        }
-        catch
-        {
-            Console.WriteLine("בעיה בטעינה : נטענה רשימה ריקה");
-        }
-*/
-        return terrorists;
-    }
-
-    //---------------------------------------------------------------
-    public static void UpdateTerroristInDB(Terrorist terorrist)
-    {
-
-        try
-        {
-
-            
-
-           List<Terrorist> terrorists = LoadTerroristsFromDB();
-
-           List<Terrorist> new_list = terrorists.Select(t => t.Id == terorrist.Id ? terorrist : t).ToList();
-
-           WriteTerroristsToDB(new_list);
-           //UpdateIntelligenceReportInDB(terorrist);
-
-
-
-        }
-        catch
-        {
-            Console.WriteLine("עדכון בדאטה בייס נכשל");
+            string file = File.ReadAllText(Constants.Paths.Terrorists);
+            return JsonSerializer.Deserialize<List<Terrorist>>(file)!;
         }
 
-
-    }
-
-    //------------------------------------------------------------------
-    public static void AddTerroristToDB(Terrorist terorrist)
-    {
-        try
+        //--------------------------------------------------------------
+        public static void SaveTerroristsToDB(List<Terrorist> terrorists)
         {
-            List<Terrorist> terrorists = LoadTerroristsFromDB();
-
-            terrorists.Add(terorrist);
-
-            WriteTerroristsToDB(terrorists);
+            string str = JsonSerializer.Serialize(terrorists, new JsonSerializerOptions { WriteIndented = true });
+            File.WriteAllText(Constants.Paths.Terrorists, str);
         }
-        catch
-        {
-            Console.WriteLine("עדכון בדאטה בייס נכשל");
-        }
-    }
 
-
-
-    //-----------------------------------------------------------------------------------
-    //------------------------------------------------------------------------------------
-
-    public static List<IntelligenceReport> LoadIntelligenceReportsFromDB()
-    {
-
-        string file = File.ReadAllText(Constants.Paths.IntelligenceReports);
-           
-        List<IntelligenceReport> IntelligenceReports = JsonSerializer.Deserialize<List<IntelligenceReport>>(file)!;
-           
-        return IntelligenceReports;
-
-    }
-    //---------------------------------------------------------------------------------
-
-    private static void WriteIntelligenceReportsToDB(List<IntelligenceReport> IntelligenceReports)
-    {
-        string str = JsonSerializer.Serialize(IntelligenceReports, new JsonSerializerOptions { WriteIndented = true });
-
-        File.WriteAllText(Constants.Paths.IntelligenceReports, str);
-    }
-
-    //-----------------------------------------------------------------------------------
-    public static List<IntelligenceReport> GetIntelligenceReportFromDB()
-    {
-
-        List<IntelligenceReport> IntelligenceReports = new List<IntelligenceReport>();
-        IntelligenceReports = LoadIntelligenceReportsFromDB();
-
-/*
-        try
-        {
-            IntelligenceReports = LoadIntelligenceReportsFromDB();
-        }
-        catch
-        {
-            Console.WriteLine("בעיה בטעינה : נטענה רשימה ריקה");
-        }*/
-
-        return IntelligenceReports;
-    }
-        //--------------------------------------------------------------------------------------------------
-        public static void AddIntelligenceReportToDB(IntelligenceReport intelligenceReport)
+        //--------------------------------------------------------------
+        public static void UpdateTerroristInDB(Terrorist terrorist)
         {
             try
             {
-                List<IntelligenceReport> IntelligenceReports = LoadIntelligenceReportsFromDB();
+                List<Terrorist> terrorists = LoadTerrorists();
+                List<Terrorist> newList = terrorists.Select(t => t.Id == terrorist.Id ? terrorist : t).ToList();
+                SaveTerroristsToDB(newList);
+            }
+            catch
+            {
+                Console.WriteLine("עדכון בדאטה בייס נכשל");
+            }
+        }
 
-                IntelligenceReports.Add(intelligenceReport);
+        //--------------------------------------------------------------
+        public static void AddTerroristToDB(Terrorist terrorist)
+        {
+            try
+            {
+                List<Terrorist> terrorists = LoadTerrorists();
+                terrorists.Add(terrorist);
+                SaveTerroristsToDB(terrorists);
+            }
+            catch
+            {
+                Console.WriteLine("עדכון בדאטה בייס נכשל");
+            }
+        }
 
-                WriteIntelligenceReportsToDB(IntelligenceReports);
+        //==============================================================
+        public static List<IntelligenceReport> LoadIntelligenceReports()
+        {
+            string file = File.ReadAllText(Constants.Paths.IntelligenceReports);
+            return JsonSerializer.Deserialize<List<IntelligenceReport>>(file)!;
+        }
+
+        //--------------------------------------------------------------
+        private static void SaveIntelligenceReportsToDB(List<IntelligenceReport> reports)
+        {
+            string str = JsonSerializer.Serialize(reports, new JsonSerializerOptions { WriteIndented = true });
+            File.WriteAllText(Constants.Paths.IntelligenceReports, str);
+        }
+
+        //--------------------------------------------------------------
+        public static List<IntelligenceReport> GetIntelligenceReportFromDB()
+        {
+            return LoadIntelligenceReports();
+        }
+
+        //--------------------------------------------------------------
+        public static void AddIntelligenceReportToDB(IntelligenceReport report)
+        {
+            try
+            {
+                List<IntelligenceReport> reports = LoadIntelligenceReports();
+                reports.Add(report);
+                SaveIntelligenceReportsToDB(reports);
             }
             catch
             {
                 Console.WriteLine("הוספה נכשלה");
             }
-
         }
-        //------------------------------------------------------------------------------
-
-        /*
-        public static void UpdateIntelligenceReportInDB(Terrorist terrorist)
-    {
-        try
-        {
-            List<IntelligenceReport> IntelligenceReports = LoadIntelligenceReportsFromDB();
-
-               IntelligenceReports.Find(i => i._terrorist.Id == terrorist.Id)!._terrorist=terrorist;
-
-            WriteIntelligenceReportsToDB(IntelligenceReports);
-        }
-        catch
-        {
-            Console.WriteLine("עדכון נכשל");
-        }*/
-
     }
-
-    
 }

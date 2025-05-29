@@ -1,6 +1,6 @@
 using System.Text.Json;
 
-namespace IdfOperation.BadGuys
+namespace IdfOperation
 {
     public class Terrorist
     {
@@ -10,7 +10,7 @@ namespace IdfOperation.BadGuys
         public bool IsAlive { get; set; }
         public List<string> Weapons { get; set; }
 
-        //==============================================================
+        //====================================
         public Terrorist(string name, int id, int rank, List<string> weapons)
         {
             Name = name;

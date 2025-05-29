@@ -1,4 +1,5 @@
 using System.Text.Json;
+using IdfOperation.BadGuys;
 using IdfOperation.Factory;
 using IdfOperation.Organizations;
 
@@ -16,9 +17,8 @@ namespace IdfOperation.BadGuys
         public Hamas(string currentCommander)
             : base(new DateTime(1987, 12, 14), currentCommander)
         {
+            _terrorists = TerroristManager.GetOrGenerateAsync().Result;
             _instance = this;
-            _terrorists =  TerroristGenerator.Generate(5).Result;
-            //_terrorists = DbManager.GetTerroristsFromDB();
         }
 
         //--------------------------------------------------------------
@@ -26,13 +26,7 @@ namespace IdfOperation.BadGuys
         {
             return _terrorists.AsReadOnly();
         }
-
-        //--------------------------------------------------------------
-        public void AddTerrorist(Terrorist terrorist)
-        {
-            _terrorists.Add(terrorist);
-        }
-
+        
         //--------------------------------------------------------------
         public override string GetInfo()
         {
