@@ -1,7 +1,6 @@
 using System.Text.Json;
-using IdfOperation.Factory;
 
-namespace IdfOperation.BadGuys
+namespace IdfOperation.Web.Models
 {
     public static class TerroristManager
     {

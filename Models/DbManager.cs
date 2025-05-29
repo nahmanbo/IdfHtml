@@ -1,9 +1,6 @@
-﻿using IdfOperation;
-using IdfOperation.BadGuys;
-using IdfOperation.GoodGuys.Intelligence;
-using System.Text.Json;
+﻿using System.Text.Json;
 
-namespace IdfOperation.Factory
+namespace IdfOperation.Web.Models
 {
     public static class DbManager
     {

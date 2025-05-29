@@ -1,7 +1,7 @@
 ﻿using System.Text;
 using System.Text.Json;
 
-namespace IdfOperation.Factory
+namespace IdfOperation.Web.Models
 {
     public static class AiFactory
     {

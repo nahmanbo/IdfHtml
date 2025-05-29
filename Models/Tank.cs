@@ -1,4 +1,4 @@
-namespace IdfOperation.GoodGuys.Firepower
+namespace IdfOperation.Web.Models
 {
     public class Tank : Weapon, IFuelable
     {

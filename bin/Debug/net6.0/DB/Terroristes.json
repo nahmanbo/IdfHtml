@@ -81,7 +81,7 @@
     "Name": "Zakir Zaid",
     "Id": 901234,
     "Rank": 4,
-    "IsAlive": true,
+    "IsAlive": false,
     "Weapons": [
       "Knife"
     ]
@@ -303,6 +303,16 @@
       "Gun",
       "M16",
       "AK47"
+    ]
+  },
+  {
+    "Name": "Ahmed Abdallah",
+    "Id": 879381,
+    "Rank": 3,
+    "IsAlive": true,
+    "Weapons": [
+      "Knife",
+      "Gun"
     ]
   }
 ]

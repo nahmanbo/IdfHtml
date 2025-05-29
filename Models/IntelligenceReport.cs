@@ -1,7 +1,6 @@
-using IdfOperation.BadGuys;
 using System.Text.Json;
 
-namespace IdfOperation.GoodGuys.Intelligence
+namespace IdfOperation.Web.Models
 {
     public class IntelligenceReport
     {

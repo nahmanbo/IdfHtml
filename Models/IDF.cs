@@ -1,9 +1,6 @@
-using IdfOperation.Organizations;
-using IdfOperation.GoodGuys.Firepower;
-using IdfOperation.GoodGuys.Intelligence;
 using System.Text.Json;
 
-namespace IdfOperation.GoodGuys
+namespace IdfOperation.Web.Models
 {
     public class Idf : Organization
     {

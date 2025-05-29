@@ -1,4 +1,4 @@
-namespace IdfOperation.Organizations
+namespace IdfOperation.Web.Models
 {
     public abstract class Organization
     {

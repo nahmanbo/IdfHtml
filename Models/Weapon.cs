@@ -1,8 +1,6 @@
-using IdfOperation.BadGuys;
 using System.Text.Json;
-using IdfOperation.Factory;
 
-namespace IdfOperation.GoodGuys.Firepower
+namespace IdfOperation.Web.Models
 {
     public abstract class Weapon
     {

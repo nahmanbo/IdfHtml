@@ -1,9 +1,6 @@
 using System.Text.Json;
-using IdfOperation.BadGuys;
-using IdfOperation.Factory;
-using IdfOperation.Organizations;
 
-namespace IdfOperation.BadGuys
+namespace IdfOperation.Web.Models
 {
     public class Hamas : Organization
     {
