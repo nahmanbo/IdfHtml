@@ -1,3 +1,4 @@
+// Updated sendRequest to handle table vs message display properly
 async function sendRequest(option) {
     const output = document.getElementById("output");
     output.innerHTML = "⌛ Loading...";
@@ -7,9 +8,9 @@ async function sendRequest(option) {
     let body = "";
 
     if (option === 5 || option === 7) {
-        const name = prompt("Enter terrorist name:");
-        if (!name) return;
-        body = name;
+        const id = prompt("Enter terrorist ID:");
+        if (!id) return;
+        body = id;
     } else if (option === 9) {
         const targetType = prompt("Enter target type:");
         if (!targetType) return;
@@ -31,9 +32,9 @@ async function sendRequest(option) {
             displayJsonAsTable(json);
         } catch (e) {
             if (text.includes("===") && text.includes("|")) {
-                displayAllTables(text);
+                displayTextBlock(text);
             } else if (text.includes("===")) {
-                displayReport(text);
+                displayTextBlock(text);
             } else {
                 output.textContent = text;
             }
@@ -88,9 +89,14 @@ function buildTableFromArray(arr) {
     return html;
 }
 
-// ---------------------------
-// Added for Tank/F16 input
-// ---------------------------
+function displayTextBlock(text) {
+    const output = document.getElementById("output");
+    const pre = document.createElement("pre");
+    pre.textContent = text;
+    output.innerHTML = "";
+    output.appendChild(pre);
+}
+
 function promptForAmmo(weaponType) {
     const inputSection = document.getElementById("input-section");
     const label = document.getElementById("input-label");

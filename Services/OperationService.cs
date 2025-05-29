@@ -65,16 +65,30 @@ namespace IdfOperation.Web.Services
         //--------------------------------------------------------------
         private string? TryEliminate(Terrorist terrorist, string targetType)
         {
+            Console.WriteLine($"➡️ Attempting to eliminate: {terrorist.Name} (ID: {terrorist.Id})");
+            Console.WriteLine($"    Alive before: {terrorist.IsAlive}");
+
             if (!terrorist.IsAlive)
+            {
+                Console.WriteLine("⛔ Already dead.");
                 return $"{terrorist.Name} is already dead.";
+            }
 
             var weapon = _idf.Firepower.FindAvailableWeaponFor(targetType);
             if (weapon == null)
+            {
+                Console.WriteLine("⚠️ No weapon available for target type: " + targetType);
                 return $"No weapon available for target type: {targetType}";
+            }
 
+            Console.WriteLine($"✅ Using weapon: {weapon.GetType().Name}");
             weapon.AttackTarget(terrorist);
+
+            Console.WriteLine($"    Alive after: {terrorist.IsAlive}");
+
             return $"=== Elimination Result ===\nWeapon: {weapon.GetType().Name} | Target: {terrorist.Name} | Status: Eliminated";
         }
+
 
         //--------------------------------------------------------------
         public string EliminateById(int id)
