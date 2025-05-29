@@ -1,4 +1,5 @@
-// Updated sendRequest to handle 3-part array response for display
+// menu.js - handles various response formats including triplets and flat triplet sequences
+
 async function sendRequest(option) {
     const output = document.getElementById("output");
     output.innerHTML = "⌛ Loading...";
@@ -29,153 +30,125 @@ async function sendRequest(option) {
 
         try {
             const parsed = JSON.parse(text);
-            if (Array.isArray(parsed) && parsed.length === 3 && typeof parsed[2] === 'object') {
-                displayLabeledJson(parsed);
+
+            if (Array.isArray(parsed)) {
+                // Flat array of triplet groups (title, subtitle, table or grouped data)
+                if (parsed.length % 3 === 0 && typeof parsed[0] === "string" && typeof parsed[1] === "string") {
+                    displaySequentialTriplets(parsed);
+                }
+                else if (parsed.length === 3 && typeof parsed[0] === "string" && isDictionaryOfArrays(parsed[2])) {
+                    displayTripletWithGroupedTables(parsed);
+                }
+                else if (parsed.length === 3 && typeof parsed[0] === "string" && Array.isArray(parsed[2])) {
+                    displayTripletWithArray(parsed);
+                }
+                else if (parsed.every(item => Array.isArray(item) && item.length === 3)) {
+                    displayMultipleTriplets(parsed);
+                }
+                else {
+                    output.innerHTML = `<pre>${JSON.stringify(parsed, null, 2)}</pre>`;
+                }
             } else {
-                displayJsonAsTable(parsed);
+                output.innerHTML = `<pre>${JSON.stringify(parsed, null, 2)}</pre>`;
             }
         } catch (e) {
-            if (text.includes("===") && text.includes("|")) {
-                displayTextBlock(text);
-            } else if (text.includes("===")) {
-                displayTextBlock(text);
-            } else {
-                output.textContent = text;
-            }
+            output.textContent = text;
         }
     } catch (err) {
         output.textContent = "⚠️ Error: " + err.message;
     }
 }
 
-function displayJsonAsTable(data) {
+function isDictionaryOfArrays(obj) {
+    if (!obj || typeof obj !== "object" || Array.isArray(obj)) return false;
+    return Object.values(obj).every(value => Array.isArray(value));
+}
+
+function displayTripletWithArray([title, subtitle, data]) {
+    const output = document.getElementById("output");
+    output.innerHTML = `<h2>${title}</h2><h4>${subtitle}</h4>`;
+    output.innerHTML += Array.isArray(data) && data.length > 0 ? buildTable(data) : `<p><em>No data</em></p>`;
+}
+
+function displayTripletWithGroupedTables([title, subtitle, grouped]) {
+    const output = document.getElementById("output");
+    output.innerHTML = `<h2>${title}</h2><h4>${subtitle}</h4>`;
+
+    for (const group in grouped) {
+        output.innerHTML += `<h3>${group}</h3>`;
+        output.innerHTML += Array.isArray(grouped[group]) && grouped[group].length > 0 ? buildTable(grouped[group]) : `<p><em>No data for category</em></p>`;
+    }
+}
+
+function displayMultipleTriplets(triplets) {
     const output = document.getElementById("output");
     output.innerHTML = "";
 
-    if (!Array.isArray(data) && typeof data === "object") {
-        for (const key in data) {
-            if (Array.isArray(data[key])) {
-                output.innerHTML += `<h2>${key}</h2>`;
-                output.innerHTML += buildTableFromArray(data[key]);
-            }
-        }
-        return;
-    }
-
-    if (Array.isArray(data)) {
-        output.innerHTML = buildTableFromArray(data);
-        return;
-    }
-
-    output.textContent = JSON.stringify(data, null, 2);
+    triplets.forEach(([title, subtitle, data], i) => {
+        output.innerHTML += `<h2>${title}</h2><h4>${subtitle}</h4>`;
+        output.innerHTML += Array.isArray(data) && data.length > 0 ? buildTable(data) : `<p><em>No data</em></p>`;
+        if (i < triplets.length - 1) output.innerHTML += `<hr/>`;
+    });
 }
 
-function buildTableFromArray(arr) {
-    if (!arr || arr.length === 0) return "<p>No data available.</p>";
+function displaySequentialTriplets(flatArray) {
+    const output = document.getElementById("output");
+    output.innerHTML = "";
 
-    const headers = Object.keys(arr[0]);
-    let html = "<table><thead><tr>";
-    headers.forEach(h => {
-        html += `<th>${h}</th>`;
-    });
-    html += "</tr></thead><tbody>";
+    for (let i = 0; i < flatArray.length; i += 3) {
+        const title = flatArray[i];
+        const subtitle = flatArray[i + 1];
+        const data = flatArray[i + 2];
 
-    arr.forEach(item => {
-        html += "<tr>";
-        headers.forEach(h => {
-            const val = item[h];
-            html += `<td>${Array.isArray(val) ? val.join(", ") : val}</td>`;
-        });
-        html += "</tr>";
+        output.innerHTML += `<h2>${title}</h2><h4>${subtitle}</h4>`;
+
+        if (Array.isArray(data)) {
+            output.innerHTML += buildTable(data);
+        } else if (typeof data === "object" && data !== null) {
+            for (const category in data) {
+                output.innerHTML += `<h3>${category}</h3>`;
+                output.innerHTML += buildTable(data[category]);
+            }
+        } else {
+            output.innerHTML += `<p><em>No data</em></p>`;
+        }
+
+        if (i + 3 < flatArray.length) output.innerHTML += `<hr/>`;
+    }
+}
+
+function buildTable(dataArray) {
+    if (!Array.isArray(dataArray) || dataArray.length === 0) return "<p>No data available.</p>";
+
+    const headers = Object.keys(dataArray[0]);
+    let html = "<table><thead><tr>" + headers.map(h => `<th>${h}</th>`).join("") + "</tr></thead><tbody>";
+
+    dataArray.forEach(row => {
+        html += "<tr>" + headers.map(h => `<td>${Array.isArray(row[h]) ? row[h].join(", ") : row[h] ?? ""}</td>`).join("") + "</tr>";
     });
 
     html += "</tbody></table>";
     return html;
 }
 
-function displayTextBlock(text) {
-    const output = document.getElementById("output");
-    const pre = document.createElement("pre");
-    pre.textContent = text;
-    output.innerHTML = "";
-    output.appendChild(pre);
-}
-
-function displayLabeledJson([mainTitle, subTitle, data]) {
-    const output = document.getElementById("output");
-    output.innerHTML = "";
-    output.innerHTML += `<h1>${mainTitle}</h1>`;
-    output.innerHTML += `<h3>${subTitle}</h3>`;
-
-    if (typeof data === "object" && !Array.isArray(data)) {
-        for (const key in data) {
-            output.innerHTML += `<h2>${key}</h2>`;
-            output.innerHTML += buildTableFromArray(data[key]);
+// ✅ TEST MODE (optional)
+window.onload = function () {
+    const testOutput = [
+        "Firepower",
+        "🔥 Weapons Available",
+        {
+            "vehicles": [
+                { "Name": "Zik", "Ammo": "2/5" }
+            ]
+        },
+        "Intelligence",
+        "🧠 Status Overview",
+        {
+            "Alive": [
+                { "Name": "Ahmed", "Id": 123 }
+            ],
+            "Dead": []
         }
-    } else {
-        output.innerHTML += buildTableFromArray(Array.isArray(data) ? data : [data]);
-    }
-}
-
-
-function promptForAmmo(weaponType) {
-    const inputSection = document.getElementById("input-section");
-    const label = document.getElementById("input-label");
-    const input = document.getElementById("input-field");
-
-    input.value = "";
-    inputSection.style.display = "block";
-
-    if (weaponType === "F16") {
-        label.textContent = "Enter Bomb Weight (0.5 or 1):";
-        input.placeholder = "0.5 or 1";
-    } else if (weaponType === "Tank") {
-        label.textContent = "Enter Shell Quantity (2 or 3):";
-        input.placeholder = "2 or 3";
-    }
-
-    window.currentWeaponType = weaponType;
-    input.focus();
-}
-
-function isValidInput(weaponType, input) {
-    if (weaponType === "F16") {
-        return input === "0.5" || input === "1";
-    }
-    if (weaponType === "Tank") {
-        return input === "2" || input === "3";
-    }
-    return false;
-}
-
-async function submitInput() {
-    const inputField = document.getElementById("input-field");
-    const input = inputField.value.trim();
-    const weaponType = window.currentWeaponType;
-
-    if (!isValidInput(weaponType, input)) {
-        alert("⚠️ Invalid input. Please try again.");
-        inputField.value = "";
-        inputField.focus();
-        return;
-    }
-
-    try {
-        const response = await fetch("/api/operation/weapon-use", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                weaponType,
-                input
-            })
-        });
-
-        const result = await response.text();
-        document.getElementById("output").innerHTML = result;
-        document.getElementById("input-section").style.display = "none";
-    } catch (error) {
-        document.getElementById("output").innerText = "⚠️ Error: " + error.message;
-    }
-}
+    ];
+    displaySequentialTriplets(testOutput);
+};

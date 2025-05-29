@@ -58,7 +58,7 @@ namespace IdfOperation.Web.Models
         }
 
         //--------------------------------------------------------------
-        public string GetInfoJson()
+        public object[] GetInfo()
         {
             var grouped = _reports
                 .Select(r => new
@@ -73,14 +73,13 @@ namespace IdfOperation.Web.Models
                     ReportTime = r.GetReportTime().ToString("yyyy-MM-dd HH:mm")
                 })
                 .GroupBy(r => r.Status)
-                .ToDictionary(g => g.Key, g => g.ToList());
+                .ToDictionary(g => g.Key, g => g.ToList<object>());
 
             var header = "IDF - Terrorist Reports";
             var description = $"Alive: {grouped.GetValueOrDefault("Alive")?.Count ?? 0}, Dead: {grouped.GetValueOrDefault("Dead")?.Count ?? 0}";
 
-            var wrapped = new object[] { header, description, grouped };
-
-            return JsonSerializer.Serialize(wrapped, new JsonSerializerOptions { WriteIndented = true });
+            return new object[] { header, description, grouped };
         }
+
     }
 }

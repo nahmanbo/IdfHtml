@@ -67,7 +67,7 @@ namespace IdfOperation.Web.Models
         }
 
         //--------------------------------------------------------------
-        public string GetInfoJson()
+        public object[] GetInfo()
         {
             var header = "IDF - Firepower Division";
             var description = "Weapons categorized by target type";
@@ -75,10 +75,9 @@ namespace IdfOperation.Web.Models
             var categorized = _weaponsByTarget
                 .ToDictionary(kvp => kvp.Key, kvp => kvp.Value.Select(w => JsonSerializer.Deserialize<object>(w.GetInfoJson())).ToList());
 
-            var wrapped = new object[] { header, description, categorized };
 
-            return JsonSerializer.Serialize(wrapped, new JsonSerializerOptions { WriteIndented = true });
+            return new object[] { header, description, categorized };
         }
-
+        
     }
 }

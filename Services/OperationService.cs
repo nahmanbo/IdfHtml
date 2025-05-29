@@ -32,13 +32,13 @@ namespace IdfOperation.Web.Services
         //--------------------------------------------------------------
         public string ViewFirepowerData()
         {
-            return _idf.Firepower.GetInfoJson();
+            return JsonSerializer.Serialize(_idf.Firepower.GetInfo(), new JsonSerializerOptions { WriteIndented = true });
         }
 
         //--------------------------------------------------------------
         public string ViewIntelligenceReports()
         {
-            return _idf.Intelligence.GetInfoJson();
+            return JsonSerializer.Serialize(_idf.Intelligence.GetInfo(), new JsonSerializerOptions { WriteIndented = true });
         }
         
         public string ViewReportById(int id)

@@ -316,5 +316,88 @@
       "Knife",
       "Gun"
     ]
+  },
+  {
+    "Name": "Abdul Al Kader",
+    "Id": 893626,
+    "Rank": 3,
+    "IsAlive": true,
+    "Weapons": [
+      "Knife",
+      "Gun"
+    ]
+  },
+  {
+    "Name": "Omar Al Maktoum",
+    "Id": 167830,
+    "Rank": 5,
+    "IsAlive": true,
+    "Weapons": [
+      "AK47",
+      "M16"
+    ]
+  },
+  {
+    "Name": "Mohammed Al Shaikh",
+    "Id": 773481,
+    "Rank": 4,
+    "IsAlive": true,
+    "Weapons": [
+      "M16"
+    ]
+  },
+  {
+    "Name": "Ali Al Thani",
+    "Id": 345872,
+    "Rank": 1,
+    "IsAlive": true,
+    "Weapons": [
+      "M16",
+      "Gun",
+      "AK47"
+    ]
+  },
+  {
+    "Name": "Saleh Al Sabah",
+    "Id": 889253,
+    "Rank": 2,
+    "IsAlive": true,
+    "Weapons": [
+      "Gun",
+      "Knife"
+    ]
+  },
+  {
+    "Name": "Rashid Al Mansour",
+    "Id": 457839,
+    "Rank": 1,
+    "IsAlive": true,
+    "Weapons": [
+      "AK47",
+      "Knife"
+    ]
+  },
+  {
+    "Name": "Faisal Al Nahyan",
+    "Id": 678249,
+    "Rank": 5,
+    "IsAlive": true,
+    "Weapons": [
+      "Gun",
+      "Knife",
+      "M16"
+    ]
+  },
+  {
+    "Name": "Jassim Al Khalifa",
+    "Id": 918276,
+    "Rank": 4,
+    "IsAlive": true,
+    "Weapons": [
+      "M16",
+      "Knife",
+      "Gun",
+      "AK47"
+    ]
   }
 ]
