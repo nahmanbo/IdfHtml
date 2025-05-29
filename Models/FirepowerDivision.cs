@@ -69,12 +69,16 @@ namespace IdfOperation.GoodGuys.Firepower
         //--------------------------------------------------------------
         public string GetInfoJson()
         {
-            var allWeapons = _weaponsByTarget
-                .SelectMany(kvp => kvp.Value)
-                .Distinct()
-                .Select(w => JsonSerializer.Deserialize<object>(w.GetInfoJson()));
+            var header = "IDF - Firepower Division";
+            var description = "Weapons categorized by target type";
 
-            return JsonSerializer.Serialize(allWeapons, new JsonSerializerOptions { WriteIndented = true });
+            var categorized = _weaponsByTarget
+                .ToDictionary(kvp => kvp.Key, kvp => kvp.Value.Select(w => JsonSerializer.Deserialize<object>(w.GetInfoJson())).ToList());
+
+            var wrapped = new object[] { header, description, categorized };
+
+            return JsonSerializer.Serialize(wrapped, new JsonSerializerOptions { WriteIndented = true });
         }
+
     }
 }

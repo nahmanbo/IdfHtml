@@ -30,7 +30,15 @@ namespace IdfOperation.BadGuys
         //--------------------------------------------------------------
         public override string GetInfo()
         {
-            return JsonSerializer.Serialize(_terrorists, new JsonSerializerOptions { WriteIndented = true });
+            var header = "Hamas";
+            var description = $"👤 Commander: {GetCommander()} | 👥 Total Terrorists: {_terrorists.Count}";
+            var data = _terrorists;
+
+            var wrapped = new object[] { header, description, data };
+            Console.WriteLine(JsonSerializer.Serialize(wrapped, new JsonSerializerOptions { WriteIndented = true }));
+
+            return JsonSerializer.Serialize(wrapped, new JsonSerializerOptions { WriteIndented = true });
         }
+
     }
 }

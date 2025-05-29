@@ -61,19 +61,27 @@ namespace IdfOperation.GoodGuys.Intelligence
         //--------------------------------------------------------------
         public string GetInfoJson()
         {
-            var reports = _reports.Select(r => new
-            {
-                Name = r.GetTerrorist().Name,
-                Id = r.GetTerrorist().Id,
-                Rank = r.GetTerrorist().Rank,
-                Status = r.GetTerrorist().IsAlive ? "Alive" : "Dead",
-                Weapons = r.GetTerrorist().Weapons,
-                Threat = r.GetThreatLevel(),
-                Location = r.GetLastKnownLocation(),
-                ReportTime = r.GetReportTime().ToString("yyyy-MM-dd HH:mm")
-            });
+            var grouped = _reports
+                .Select(r => new
+                {
+                    Name = r.GetTerrorist().Name,
+                    Id = r.GetTerrorist().Id,
+                    Rank = r.GetTerrorist().Rank,
+                    Status = r.GetTerrorist().IsAlive ? "Alive" : "Dead",
+                    Weapons = r.GetTerrorist().Weapons,
+                    Threat = r.GetThreatLevel(),
+                    Location = r.GetLastKnownLocation(),
+                    ReportTime = r.GetReportTime().ToString("yyyy-MM-dd HH:mm")
+                })
+                .GroupBy(r => r.Status)
+                .ToDictionary(g => g.Key, g => g.ToList());
 
-            return JsonSerializer.Serialize(reports, new JsonSerializerOptions { WriteIndented = true });
+            var header = "IDF - Terrorist Reports";
+            var description = $"Alive: {grouped.GetValueOrDefault("Alive")?.Count ?? 0}, Dead: {grouped.GetValueOrDefault("Dead")?.Count ?? 0}";
+
+            var wrapped = new object[] { header, description, grouped };
+
+            return JsonSerializer.Serialize(wrapped, new JsonSerializerOptions { WriteIndented = true });
         }
     }
 }

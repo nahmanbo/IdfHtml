@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Zr7FaoREU8vbRsCah9QwHYpnXJ1QsQKnFuP6jjm1Ykc=",
+  "Hash": "Q0Q7ZhtJitz/OWnrcr3Knc9xnHJxrClASsCltyjZycE=",
   "Source": "IdfOperation.Web",
   "BasePath": "_content/IdfOperation.Web",
   "Mode": "Default",
@@ -52,8 +52,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "w4igpmwp0g",
-      "Integrity": "0NA8OWlnIydsakMIaSxMb5LbotAmHBJ2g/DlSYMSDGw=",
+      "Fingerprint": "c4mz0x58rd",
+      "Integrity": "vM6Efv2hWBxCOPL20kYevxWLd3LuC5FXiiVRSinDZTI=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/js/menu.js"
@@ -164,6 +164,51 @@
       ]
     },
     {
+      "Route": "js/menu.c4mz0x58rd.js",
+      "AssetFile": "/Users/nahmanbo1/Downloads/IdfOperation.Web/wwwroot/js/menu.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "5327"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"vM6Efv2hWBxCOPL20kYevxWLd3LuC5FXiiVRSinDZTI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 29 May 2025 08:50:45 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "c4mz0x58rd"
+        },
+        {
+          "Name": "label",
+          "Value": "js/menu.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-vM6Efv2hWBxCOPL20kYevxWLd3LuC5FXiiVRSinDZTI="
+        }
+      ]
+    },
+    {
       "Route": "js/menu.js",
       "AssetFile": "/Users/nahmanbo1/Downloads/IdfOperation.Web/wwwroot/js/menu.js",
       "Selectors": [],
@@ -174,7 +219,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "4577"
+          "Value": "5327"
         },
         {
           "Name": "Content-Type",
@@ -182,11 +227,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"0NA8OWlnIydsakMIaSxMb5LbotAmHBJ2g/DlSYMSDGw=\""
+          "Value": "\"vM6Efv2hWBxCOPL20kYevxWLd3LuC5FXiiVRSinDZTI=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 29 May 2025 08:34:39 GMT"
+          "Value": "Thu, 29 May 2025 08:50:45 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -196,52 +241,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-0NA8OWlnIydsakMIaSxMb5LbotAmHBJ2g/DlSYMSDGw="
-        }
-      ]
-    },
-    {
-      "Route": "js/menu.w4igpmwp0g.js",
-      "AssetFile": "/Users/nahmanbo1/Downloads/IdfOperation.Web/wwwroot/js/menu.js",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "4577"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/javascript"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"0NA8OWlnIydsakMIaSxMb5LbotAmHBJ2g/DlSYMSDGw=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Thu, 29 May 2025 08:34:39 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "w4igpmwp0g"
-        },
-        {
-          "Name": "label",
-          "Value": "js/menu.js"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-0NA8OWlnIydsakMIaSxMb5LbotAmHBJ2g/DlSYMSDGw="
+          "Value": "sha256-vM6Efv2hWBxCOPL20kYevxWLd3LuC5FXiiVRSinDZTI="
         }
       ]
     },

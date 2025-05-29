@@ -11,13 +11,13 @@ namespace IdfOperation
         public List<string> Weapons { get; set; }
 
         //====================================
-        public Terrorist(string name, int id, int rank, List<string> weapons)
+        public Terrorist(string name, int id, int rank,bool isAlive, List<string> weapons)
         {
             Name = name;
             Id = id;
             Rank = rank;
+            IsAlive = isAlive;
             Weapons = weapons;
-            IsAlive = true;
         }
 
         //--------------------------------------------------------------

@@ -1,4 +1,4 @@
-// Updated sendRequest to handle table vs message display properly
+// Updated sendRequest to handle 3-part array response for display
 async function sendRequest(option) {
     const output = document.getElementById("output");
     output.innerHTML = "⌛ Loading...";
@@ -28,8 +28,12 @@ async function sendRequest(option) {
         console.log("📨 Server response:\n" + text);
 
         try {
-            const json = JSON.parse(text);
-            displayJsonAsTable(json);
+            const parsed = JSON.parse(text);
+            if (Array.isArray(parsed) && parsed.length === 3 && typeof parsed[2] === 'object') {
+                displayLabeledJson(parsed);
+            } else {
+                displayJsonAsTable(parsed);
+            }
         } catch (e) {
             if (text.includes("===") && text.includes("|")) {
                 displayTextBlock(text);
@@ -96,6 +100,23 @@ function displayTextBlock(text) {
     output.innerHTML = "";
     output.appendChild(pre);
 }
+
+function displayLabeledJson([mainTitle, subTitle, data]) {
+    const output = document.getElementById("output");
+    output.innerHTML = "";
+    output.innerHTML += `<h1>${mainTitle}</h1>`;
+    output.innerHTML += `<h3>${subTitle}</h3>`;
+
+    if (typeof data === "object" && !Array.isArray(data)) {
+        for (const key in data) {
+            output.innerHTML += `<h2>${key}</h2>`;
+            output.innerHTML += buildTableFromArray(data[key]);
+        }
+    } else {
+        output.innerHTML += buildTableFromArray(Array.isArray(data) ? data : [data]);
+    }
+}
+
 
 function promptForAmmo(weaponType) {
     const inputSection = document.getElementById("input-section");

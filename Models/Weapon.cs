@@ -1,5 +1,6 @@
 using IdfOperation.BadGuys;
 using System.Text.Json;
+using IdfOperation.Factory;
 
 namespace IdfOperation.GoodGuys.Firepower
 {
@@ -46,15 +47,14 @@ namespace IdfOperation.GoodGuys.Firepower
             var info = new
             {
                 Name,
-                Ammo,
-                MaxAmmo,
+                Ammo = $"{Ammo}/{MaxAmmo}",
                 TargetTypes,
                 Fuel = this is IFuelable f ? $"{f.GetFuel()} liters" : "N/A"
             };
 
             return JsonSerializer.Serialize(info, new JsonSerializerOptions { WriteIndented = true });
         }
-
+        
         //--------------------------------------------------------------
         public void AttackTarget(Terrorist terrorist)
         {
@@ -64,6 +64,7 @@ namespace IdfOperation.GoodGuys.Firepower
                 fuelable.LessFuel();
 
             terrorist.Kill();
+            DbManager.UpdateTerroristInDB(terrorist);
             Console.WriteLine($"{Name} attacked and killed {terrorist.Name}.");
         }
     }
