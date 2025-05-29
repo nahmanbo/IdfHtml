@@ -31,12 +31,24 @@ namespace IdfOperation.Web.Controllers
                     2 => _service.ViewFullHamasInfo(),
                     3 => _service.ViewFirepowerData(),
                     4 => _service.ViewIntelligenceReports(),
-                    5 => !string.IsNullOrWhiteSpace(body) ? _service.ViewReportByName(body) : "Missing terrorist name",
+
+                    5 => int.TryParse(body, out var reportId)
+                        ? _service.ViewReportById(reportId)
+                        : "❌ Missing or invalid terrorist ID",
+
                     6 => _service.ViewMostDangerous(),
-                    7 => !string.IsNullOrWhiteSpace(body) ? _service.EliminateByName(body) : "Missing terrorist name",
+
+                    7 => int.TryParse(body, out var elimId)
+                        ? _service.EliminateById(elimId)
+                        : "❌ Missing or invalid terrorist ID",
+
                     8 => _service.EliminateMostDangerous(),
-                    9 => !string.IsNullOrWhiteSpace(body) ? _service.EliminateByTargetType(body) : "Missing target type",
-                    _ => "Invalid option"
+
+                    9 => !string.IsNullOrWhiteSpace(body)
+                        ? _service.EliminateByTargetType(body.Trim())
+                        : "❌ Missing target type",
+
+                    _ => "❌ Invalid option"
                 };
 
                 return Ok(result);

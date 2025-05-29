@@ -1,4 +1,3 @@
-
 using IdfOperation.GoodGuys;
 using IdfOperation.BadGuys;
 using System.Text;
@@ -10,51 +9,60 @@ namespace IdfOperation.Web.Services
         private readonly Idf _idf;
         private readonly Hamas _hamas;
 
+        //====================================
         public OperationService()
         {
             _hamas = new Hamas("Yahya Sinwar");
             _idf = new Idf("Eyal Zamir");
         }
 
+        //--------------------------------------------------------------
         public string ViewFullIdfInfo()
         {
             return _idf.GetInfo();
         }
 
+        //--------------------------------------------------------------
         public string ViewFullHamasInfo()
         {
             return _hamas.GetInfo();
         }
 
+        //--------------------------------------------------------------
         public string ViewFirepowerData()
         {
             return _idf.Firepower.GetInfoJson();
         }
 
+        //--------------------------------------------------------------
         public string ViewIntelligenceReports()
         {
             return _idf.Intelligence.GetInfoJson();
         }
 
-        public string ViewReportByName(string name)
+        //--------------------------------------------------------------
+        public string ViewReportById(int id)
         {
-            var report = _idf.Intelligence.GetReportByTerroristName(name);
+            var report = _idf.Intelligence.GetById(id);
 
             if (report == null)
-                return $"No report found for terrorist: {name}";
+                return $"No report found for terrorist ID: {id}";
 
             return report.GetInfoJson();
         }
 
+        //--------------------------------------------------------------
         public string ViewMostDangerous()
         {
-            var report = _idf.Intelligence.GetMostDangerousAliveReport();
+            var report = _idf.Intelligence.GetMostDangerous();
             if (report == null)
                 return "No alive terrorist reports available.";
-
+            
+            Console.WriteLine(report.GetInfoJson());
             return report.GetInfoJson();
         }
 
+        //--------------------------------------------------------------
         private string? TryEliminate(Terrorist terrorist, string targetType)
         {
             if (!terrorist.IsAlive)
@@ -65,25 +73,25 @@ namespace IdfOperation.Web.Services
                 return $"No weapon available for target type: {targetType}";
 
             weapon.AttackTarget(terrorist);
-            return
-                $"=== Elimination Result ===Weapon: {weapon.GetType().Name} Target: {terrorist.Name} Status: Eliminated";
+            return $"=== Elimination Result ===\nWeapon: {weapon.GetType().Name} | Target: {terrorist.Name} | Status: Eliminated";
         }
 
-        public string EliminateByName(string name)
+        //--------------------------------------------------------------
+        public string EliminateById(int id)
         {
-            name = name.Trim();
-            var report = _idf.Intelligence.GetReportByTerroristName(name);
+            var report = _idf.Intelligence.GetById(id);
 
             if (report == null)
-                return $"No intelligence report found for terrorist: {name}";
+                return $"No intelligence report found for terrorist ID: {id}";
 
             return TryEliminate(report.GetTerrorist(), report.GetLastKnownLocation())
-                   ?? $"Unable to eliminate {name}.";
+                   ?? $"Unable to eliminate terrorist ID: {id}.";
         }
 
+        //--------------------------------------------------------------
         public string EliminateMostDangerous()
         {
-            var report = _idf.Intelligence.GetMostDangerousAliveReport();
+            var report = _idf.Intelligence.GetMostDangerous();
             if (report == null)
                 return "No alive intelligence reports available.";
 
@@ -92,6 +100,7 @@ namespace IdfOperation.Web.Services
                    ?? $"Unable to eliminate {terrorist.Name}.";
         }
 
+        //--------------------------------------------------------------
         public string EliminateByTargetType(string targetType)
         {
             targetType = targetType.Trim().ToLower();

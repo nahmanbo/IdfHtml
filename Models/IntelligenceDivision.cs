@@ -1,76 +1,61 @@
 using System.Text.Json;
 using IdfOperation.BadGuys;
-using IdfOperation.Factory;
 
 namespace IdfOperation.GoodGuys.Intelligence
 {
     public class IntelligenceDivision
     {
-        private readonly List<IntelligenceReport> _reports;
-        private static readonly List<string> Locations = new() { "buildings", "people", "vehicles", "open areas", "Fence space" };
-        private static readonly Random Random = new();
+        private List<IntelligenceReport> _reports = new();
+        private static Random _rand = new();
+
+        private static List<string> _locations = new()
+        {
+            "buildings", "people", "vehicles", "open areas", "Fence space"
+        };
 
         //====================================
         public IntelligenceDivision()
         {
-            //_reports = DbManager.GetIntelligenceReportFromDB();
-            /*_reports = new List<IntelligenceReport>();
-
             foreach (var terrorist in Hamas.Instance.GetTerrorists())
             {
-                string location = GetRandomLocation();
-                var report = new IntelligenceReport(terrorist, location, DateTime.Now);
-                _reports.Add(report);
-            }*/
-        }
-
-        //--------------------------------------------------------------
-        private string GetRandomLocation()
-        {
-            int index = Random.Next(Locations.Count);
-            return Locations[index];
-        }
-
-        //--------------------------------------------------------------
-        public IReadOnlyList<IntelligenceReport> GetReports()
-        {
-            return _reports.AsReadOnly();
-        }
-
-        //--------------------------------------------------------------
-        public IntelligenceReport? GetMostDangerousAliveReport()
-        {
-            IntelligenceReport? mostDangerous = null;
-
-            foreach (var report in _reports)
-            {
-                var terrorist = report.GetTerrorist();
-
-                if (!terrorist.IsAlive)
-                    continue;
-
-                if (mostDangerous == null || report.GetThreatLevel() > mostDangerous.GetThreatLevel())
-                    mostDangerous = report;
+                string location = _locations[_rand.Next(_locations.Count)];
+                _reports.Add(new IntelligenceReport(terrorist, location, DateTime.Now));
             }
-
-            return mostDangerous;
         }
 
         //--------------------------------------------------------------
-        public IntelligenceReport? GetReportByTerroristName(string name)
+        public List<IntelligenceReport> GetReports()
         {
-            name = name.Trim();
+            return _reports;
+        }
 
+        //--------------------------------------------------------------
+        public IntelligenceReport? GetById(int id)
+        {
             foreach (var report in _reports)
             {
-                var terrorist = report.GetTerrorist();
-
-                if (string.Equals(terrorist.Name, name, StringComparison.OrdinalIgnoreCase) && terrorist.IsAlive)
-                {
+                var t = report.GetTerrorist();
+                if (t.IsAlive && t.Id == id)
                     return report;
-                }
             }
             return null;
+        }
+
+        //--------------------------------------------------------------
+        public IntelligenceReport? GetMostDangerous()
+        {
+            IntelligenceReport? top = null;
+
+            foreach (var report in _reports)
+            {
+                var t = report.GetTerrorist();
+                if (!t.IsAlive) continue;
+
+                if (top == null || report.GetThreatLevel() > top.GetThreatLevel())
+                    top = report;
+            }
+
+            return top;
         }
 
         //--------------------------------------------------------------
