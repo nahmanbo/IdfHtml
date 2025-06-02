@@ -73,7 +73,7 @@
     "Name": "Suleiman Saad",
     "Id": 890123,
     "Rank": 3,
-    "IsAlive": true,
+    "IsAlive": false,
     "Weapons": [
       "AK47"
     ]
@@ -392,7 +392,7 @@
     "Name": "Jassim Al Khalifa",
     "Id": 918276,
     "Rank": 4,
-    "IsAlive": true,
+    "IsAlive": false,
     "Weapons": [
       "M16",
       "Knife",

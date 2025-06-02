@@ -17,7 +17,6 @@ namespace IdfOperation.Web.Services
         }
 
         //--------------------------------------------------------------
-        //--------------------------------------------------------------
         public string ViewFullIdfInfo()
         {
             return _idf.GetInfo();
@@ -46,28 +45,51 @@ namespace IdfOperation.Web.Services
         public string ViewReportById(int id)
         {
             var report = _idf.Intelligence.GetById(id);
-            return report != null
-                ? report.GetInfoJson()
-                : JsonSerializer.Serialize(new object[]
+
+            if (report == null)
+            {
+                return JsonSerializer.Serialize(new object[]
                 {
                     "❌ Report not found",
                     $"No report found for terrorist ID: {id}",
                     new object[0]
                 }, new JsonSerializerOptions { WriteIndented = true });
+            }
+
+            var reportData = JsonSerializer.Deserialize<object[]>(report.GetInfoJson());
+
+            return JsonSerializer.Serialize(new object[]
+            {
+                "📄 Report found",
+                $"Terrorist ID: {id}",
+                reportData
+            }, new JsonSerializerOptions { WriteIndented = true });
         }
+
 
         //--------------------------------------------------------------
         public string ViewMostDangerous()
         {
             var report = _idf.Intelligence.GetMostDangerous();
-            return report != null
-                ? report.GetInfoJson()
-                : JsonSerializer.Serialize(new object[]
+
+            if (report == null)
+            {
+                return JsonSerializer.Serialize(new object[]
                 {
                     "❌ No target",
                     "No alive terrorist reports available.",
                     new object[0]
                 }, new JsonSerializerOptions { WriteIndented = true });
+            }
+
+            var reportData = JsonSerializer.Deserialize<object[]>(report.GetInfoJson());
+
+            return JsonSerializer.Serialize(new object[]
+            {
+                "🎯 Target Found",
+                $"Most dangerous terrorist: {report.GetTerrorist().Name}",
+                reportData
+            }, new JsonSerializerOptions { WriteIndented = true });
         }
 
         //--------------------------------------------------------------
