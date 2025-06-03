@@ -11,7 +11,16 @@ namespace IdfOperation.Web.Models
         //--------------------------------------------------------------
         public override void UseAmmo()
         {
+            if (Ammo < 30)
+                throw new InvalidOperationException("Not enough ammo for EyeFire.");
+
             Ammo -= 30;
+        }
+
+        //--------------------------------------------------------------
+        public override void UseAmmo(double weight)
+        {
+            UseAmmo();
         }
     }
 }

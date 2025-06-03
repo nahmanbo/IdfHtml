@@ -2,12 +2,13 @@ namespace IdfOperation.Web.Models
 {
     public class Tank : Weapon, IFuelable
     {
-        private int _fuel = 50;
+        private int _fuel;
 
         //====================================
         public Tank(int number)
             : base($"Tank-{number}", 40, new List<string> { "open areas" }, 40)
         {
+            _fuel = 50;
         }
 
         //--------------------------------------------------------------
@@ -31,16 +32,25 @@ namespace IdfOperation.Web.Models
         //--------------------------------------------------------------
         public override void UseAmmo()
         {
-            throw new NotImplementedException("UseAmmo(int shells) must be used instead.");
+            throw new NotImplementedException("UseAmmo(weight) must be used for Tank.");
         }
 
         //--------------------------------------------------------------
-        public void UseAmmo(int shells)
+        public override void UseAmmo(double weight)
         {
-            if (shells != 2 && shells != 3)
-                throw new ArgumentException("Invalid shell quantity. Must be 2 or 3.");
+            switch (weight)
+            {
+                case 0.5:
+                case 1.0:
+                    break;
+                default:
+                    throw new ArgumentException("Invalid bomb weight. Must be 0.5 or 1.");
+            }
 
-            Ammo -= shells;
+            if (Ammo < weight)
+                throw new InvalidOperationException("Not enough ammo for Tank.");
+
+            Ammo -= weight;
         }
     }
 }

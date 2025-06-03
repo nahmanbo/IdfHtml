@@ -25,9 +25,6 @@ namespace IdfOperation.Web.Models
         }
 
         //--------------------------------------------------------------
-        public abstract void UseAmmo();
-
-        //--------------------------------------------------------------
         public void UpdateAmmo(double count)
         {
             Ammo = Math.Min(Ammo + count, MaxAmmo);
@@ -52,18 +49,30 @@ namespace IdfOperation.Web.Models
 
             return JsonSerializer.Serialize(info, new JsonSerializerOptions { WriteIndented = true });
         }
-        
+
         //--------------------------------------------------------------
-        public void AttackTarget(Terrorist terrorist)
+        public virtual void UseAmmo()
+        {
+            throw new NotImplementedException("UseAmmo() must be overridden for fixed-ammo weapons.");
+        }
+
+        //--------------------------------------------------------------
+        public virtual void UseAmmo(double weight)
         {
             UseAmmo();
+        }
+
+        //--------------------------------------------------------------
+        public void AttackTarget(Terrorist terrorist, double weight = 1)
+        {
+            UseAmmo(weight);
 
             if (this is IFuelable fuelable)
                 fuelable.LessFuel();
 
             terrorist.Kill();
             DbManager.UpdateTerroristInDB(terrorist);
-            Console.WriteLine($"{Name} attacked and killed {terrorist.Name}.");
+            Console.WriteLine($"{Name} attacked and killed {terrorist.Name} with {weight} bomb.");
         }
     }
 }
