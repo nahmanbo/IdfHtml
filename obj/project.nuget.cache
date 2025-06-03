@@ -1,12 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "TsLt9pl2tfk=",
+  "dgSpecHash": "bzDac+2jo6U=",
   "success": true,
-  "projectFilePath": "/Users/nahmanbo1/Downloads/IdfOperation.Web/IdfOperation.Web.csproj",
-  "expectedPackageFiles": [
-    "/Users/nahmanbo1/.nuget/packages/microsoft.netcore.app.ref/6.0.36/microsoft.netcore.app.ref.6.0.36.nupkg.sha512",
-    "/Users/nahmanbo1/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.36/microsoft.aspnetcore.app.ref.6.0.36.nupkg.sha512",
-    "/Users/nahmanbo1/.nuget/packages/microsoft.netcore.app.host.osx-arm64/6.0.36/microsoft.netcore.app.host.osx-arm64.6.0.36.nupkg.sha512"
-  ],
+  "projectFilePath": "C:\\Users\\user\\Desktop\\קודקוד\\פרויקטים מגיטהאב\\IdfHtml\\IdfOperation.Web.csproj",
+  "expectedPackageFiles": [],
   "logs": []
 }
