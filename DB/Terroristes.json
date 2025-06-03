@@ -13,7 +13,7 @@
     "Name": "Hassan Barghouti",
     "Id": 947230,
     "Rank": 5,
-    "IsAlive": true,
+    "IsAlive": false,
     "Weapons": [
       "M16"
     ]
@@ -73,7 +73,7 @@
     "Name": "Nidal Al-Qassam",
     "Id": 105672,
     "Rank": 3,
-    "IsAlive": true,
+    "IsAlive": false,
     "Weapons": [
       "M16",
       "Gun"
@@ -173,7 +173,7 @@
     "Name": "Yousef Salim",
     "Id": 345678,
     "Rank": 4,
-    "IsAlive": true,
+    "IsAlive": false,
     "Weapons": [
       "M16",
       "AK47",

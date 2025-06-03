@@ -2,12 +2,13 @@ namespace IdfOperation.Web.Models
 {
     public class F16 : Weapon, IFuelable
     {
-        private int _fuel = 100;
+        private int _fuel;
 
         //====================================
         public F16(int number)
             : base($"F16-{number}", 8, new List<string> { "buildings" }, 8)
         {
+            _fuel = 100;
         }
 
         //--------------------------------------------------------------
@@ -31,14 +32,23 @@ namespace IdfOperation.Web.Models
         //--------------------------------------------------------------
         public override void UseAmmo()
         {
-            throw new NotImplementedException("UseAmmo(double weight) must be used instead.");
+            throw new NotImplementedException("UseAmmo(double weight) must be used for F16.");
         }
 
         //--------------------------------------------------------------
-        public void UseAmmo(double weight)
+        public override void UseAmmo(double weight)
         {
-            if (weight != 0.5 && weight != 1)
-                throw new ArgumentException("Invalid bomb weight. Must be 0.5 or 1.");
+            switch (weight)
+            {
+                case 0.5:
+                case 1.0:
+                    break;
+                default:
+                    throw new ArgumentException("Invalid bomb weight. Must be 0.5 or 1.");
+            }
+
+            if (Ammo < weight)
+                throw new InvalidOperationException("Not enough ammo to fire.");
 
             Ammo -= weight;
         }

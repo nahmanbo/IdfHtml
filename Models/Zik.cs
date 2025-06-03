@@ -2,12 +2,13 @@ namespace IdfOperation.Web.Models
 {
     public class Zik : Weapon, IFuelable
     {
-        private int _fuel = 30;
+        private int _fuel;
 
         //====================================
         public Zik(int number)
             : base($"Zik-{number}", 3, new List<string> { "people", "vehicles" }, 3)
         {
+            _fuel = 30;
         }
 
         //--------------------------------------------------------------
@@ -31,7 +32,16 @@ namespace IdfOperation.Web.Models
         //--------------------------------------------------------------
         public override void UseAmmo()
         {
+            if (Ammo < 1)
+                throw new InvalidOperationException("Not enough ammo for Zik.");
+
             Ammo -= 1;
+        }
+
+        //--------------------------------------------------------------
+        public override void UseAmmo(double weight)
+        {
+            UseAmmo();
         }
     }
 }
