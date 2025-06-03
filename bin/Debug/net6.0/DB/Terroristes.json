@@ -1,161 +1,138 @@
 [
   {
-    "Name": "Mohammed Hussein",
-    "Id": 123456,
-    "Rank": 2,
-    "IsAlive": false,
-    "Weapons": [
-      "Gun",
-      "M16",
-      "AK47"
-    ]
-  },
-  {
-    "Name": "Mohammed Abu Bakr",
-    "Id": 234567,
-    "Rank": 2,
-    "IsAlive": false,
-    "Weapons": [
-      "Gun",
-      "AK47"
-    ]
-  },
-  {
-    "Name": "Ahmed Ali",
-    "Id": 345678,
+    "Name": "Yasir Al-Masri",
+    "Id": 182374,
     "Rank": 3,
-    "IsAlive": false,
+    "IsAlive": true,
     "Weapons": [
-      "M16",
+      "Gun",
       "AK47"
     ]
   },
   {
-    "Name": "Omar Hussein",
-    "Id": 456789,
-    "Rank": 4,
-    "IsAlive": false,
+    "Name": "Hassan Barghouti",
+    "Id": 947230,
+    "Rank": 5,
+    "IsAlive": true,
+    "Weapons": [
+      "M16"
+    ]
+  },
+  {
+    "Name": "Khaled Al-Farouq",
+    "Id": 602983,
+    "Rank": 2,
+    "IsAlive": true,
     "Weapons": [
       "Knife",
       "Gun"
     ]
   },
   {
-    "Name": "Ibrahim al-Jabr",
-    "Id": 567890,
-    "Rank": 5,
+    "Name": "Tariq Al-Mansour",
+    "Id": 731294,
+    "Rank": 1,
     "IsAlive": false,
     "Weapons": [
-      "M16"
+      "AK47",
+      "Gun",
+      "Knife"
     ]
   },
   {
-    "Name": "Yusuf Salman",
-    "Id": 678901,
-    "Rank": 1,
+    "Name": "Fadi Al-Rashid",
+    "Id": 582103,
+    "Rank": 4,
     "IsAlive": false,
+    "Weapons": [
+      "M16",
+      "AK47"
+    ]
+  },
+  {
+    "Name": "Omar Al-Zein",
+    "Id": 349201,
+    "Rank": 2,
+    "IsAlive": true,
+    "Weapons": [
+      "Gun"
+    ]
+  },
+  {
+    "Name": "Bilal Al-Husseini",
+    "Id": 413958,
+    "Rank": 5,
+    "IsAlive": true,
+    "Weapons": [
+      "Knife",
+      "Gun",
+      "AK47"
+    ]
+  },
+  {
+    "Name": "Nidal Al-Qassam",
+    "Id": 105672,
+    "Rank": 3,
+    "IsAlive": true,
+    "Weapons": [
+      "M16",
+      "Gun"
+    ]
+  },
+  {
+    "Name": "Sami Al-Khatib",
+    "Id": 789032,
+    "Rank": 4,
+    "IsAlive": true,
     "Weapons": [
       "AK47",
       "Knife"
     ]
   },
   {
-    "Name": "Nasser al-Rajhi",
-    "Id": 789012,
+    "Name": "Rami Al-Najjar",
+    "Id": 650219,
     "Rank": 2,
     "IsAlive": true,
     "Weapons": [
-      "Gun",
-      "M16"
+      "Gun"
     ]
   },
   {
-    "Name": "Suleiman Saad",
-    "Id": 890123,
-    "Rank": 3,
-    "IsAlive": false,
-    "Weapons": [
-      "AK47"
-    ]
-  },
-  {
-    "Name": "Zakir Zaid",
-    "Id": 901234,
-    "Rank": 4,
-    "IsAlive": false,
-    "Weapons": [
-      "Knife"
-    ]
-  },
-  {
-    "Name": "Qasim Ameen",
-    "Id": 128406,
-    "Rank": 5,
-    "IsAlive": false,
-    "Weapons": [
-      "M16",
-      "Gun",
-      "AK47"
-    ]
-  },
-  {
-    "Name": "Hisham Farouk",
-    "Id": 175309,
+    "Name": "Abed Al-Rahman",
+    "Id": 318940,
     "Rank": 1,
     "IsAlive": true,
     "Weapons": [
       "Knife",
-      "AK47"
+      "Gun"
     ]
   },
   {
-    "Name": "Faisal Tariq",
-    "Id": 293847,
-    "Rank": 2,
-    "IsAlive": false,
-    "Weapons": [
-      "Gun",
-      "M16",
-      "AK47"
-    ]
-  },
-  {
-    "Name": "Rashid Khalil",
-    "Id": 365498,
+    "Name": "Mohammed Al-Saleh",
+    "Id": 271438,
     "Rank": 3,
     "IsAlive": true,
     "Weapons": [
-      "Knife",
-      "Gun",
-      "M16"
-    ]
-  },
-  {
-    "Name": "Adil Hashim",
-    "Id": 485720,
-    "Rank": 4,
-    "IsAlive": true,
-    "Weapons": [
+      "M16",
       "AK47",
-      "Knife",
       "Gun"
     ]
   },
   {
-    "Name": "Bassam Naif",
-    "Id": 564389,
+    "Name": "Adnan Al-Hamdan",
+    "Id": 884510,
     "Rank": 5,
     "IsAlive": false,
     "Weapons": [
-      "M16",
       "AK47"
     ]
   },
   {
-    "Name": "Kareem Zamir",
-    "Id": 652897,
-    "Rank": 1,
-    "IsAlive": true,
+    "Name": "Younes Al-Banna",
+    "Id": 560823,
+    "Rank": 4,
+    "IsAlive": false,
     "Weapons": [
       "Knife",
       "Gun",
@@ -163,241 +140,65 @@
     ]
   },
   {
-    "Name": "Wahid Raheem",
-    "Id": 759216,
+    "Name": "Jamal Al-Amin",
+    "Id": 427195,
     "Rank": 2,
-    "IsAlive": false,
-    "Weapons": [
-      "Gun",
-      "AK47"
-    ]
-  },
-  {
-    "Name": "Sami Jaffer",
-    "Id": 837405,
-    "Rank": 3,
     "IsAlive": true,
     "Weapons": [
-      "Knife",
-      "Gun"
-    ]
-  },
-  {
-    "Name": "Munir Fahd",
-    "Id": 907623,
-    "Rank": 4,
-    "IsAlive": false,
-    "Weapons": [
-      "M16",
-      "AK47"
-    ]
-  },
-  {
-    "Name": "Najib Yasser",
-    "Id": 956918,
-    "Rank": 5,
-    "IsAlive": false,
-    "Weapons": [
-      "Knife",
-      "M16",
-      "AK47"
-    ]
-  },
-  {
-    "Name": "Omar Hussein",
-    "Id": 456789,
-    "Rank": 4,
-    "IsAlive": false,
-    "Weapons": [
-      "Knife",
-      "Gun"
-    ]
-  },
-  {
-    "Name": "Mohammed Hussein",
-    "Id": 123456,
-    "Rank": 2,
-    "IsAlive": false,
-    "Weapons": [
       "Gun",
-      "M16",
-      "AK47"
+      "Knife"
     ]
   },
   {
     "Name": "Mohammed Abdullah",
-    "Id": 125485,
-    "Rank": 2,
-    "IsAlive": true,
-    "Weapons": [
-      "Knife",
-      "Gun"
-    ]
-  },
-  {
-    "Name": "Muhammad Al-Dhubhani",
-    "Id": 874125,
-    "Rank": 3,
-    "IsAlive": true,
-    "Weapons": [
-      "Knife",
-      "AK47"
-    ]
-  },
-  {
-    "Name": "Mohammed Hussein",
     "Id": 123456,
-    "Rank": 2,
-    "IsAlive": false,
-    "Weapons": [
-      "Gun",
-      "M16",
-      "AK47"
-    ]
-  },
-  {
-    "Name": "Ahmed Al-Husseini",
-    "Id": 435678,
     "Rank": 3,
     "IsAlive": true,
     "Weapons": [
-      "Knife",
+      "M16",
       "Gun"
     ]
   },
   {
-    "Name": "Mohammed Al-Hussein",
-    "Id": 683217,
-    "Rank": 3,
-    "IsAlive": true,
-    "Weapons": [
-      "Gun",
-      "M16"
-    ]
-  },
-  {
-    "Name": "Mohammed Hussein",
-    "Id": 123456,
-    "Rank": 2,
-    "IsAlive": false,
-    "Weapons": [
-      "Gun",
-      "M16",
-      "AK47"
-    ]
-  },
-  {
-    "Name": "Ahmed Abdallah",
-    "Id": 654321,
-    "Rank": 3,
-    "IsAlive": true,
-    "Weapons": [
-      "Knife",
-      "AK47"
-    ]
-  },
-  {
-    "Name": "Mohammed Hussein",
-    "Id": 123456,
-    "Rank": 2,
-    "IsAlive": false,
-    "Weapons": [
-      "Gun",
-      "M16",
-      "AK47"
-    ]
-  },
-  {
-    "Name": "Ahmed Abdallah",
-    "Id": 879381,
-    "Rank": 3,
-    "IsAlive": false,
-    "Weapons": [
-      "Knife",
-      "Gun"
-    ]
-  },
-  {
-    "Name": "Abdul Al Kader",
-    "Id": 893626,
-    "Rank": 3,
-    "IsAlive": true,
-    "Weapons": [
-      "Knife",
-      "Gun"
-    ]
-  },
-  {
-    "Name": "Omar Al Maktoum",
-    "Id": 167830,
-    "Rank": 5,
-    "IsAlive": false,
-    "Weapons": [
-      "AK47",
-      "M16"
-    ]
-  },
-  {
-    "Name": "Mohammed Al Shaikh",
-    "Id": 773481,
-    "Rank": 4,
-    "IsAlive": true,
-    "Weapons": [
-      "M16"
-    ]
-  },
-  {
-    "Name": "Ali Al Thani",
-    "Id": 345872,
+    "Name": "Abu Bakar",
+    "Id": 789012,
     "Rank": 1,
     "IsAlive": true,
     "Weapons": [
-      "M16",
-      "Gun",
+      "Knife",
       "AK47"
     ]
   },
   {
-    "Name": "Saleh Al Sabah",
-    "Id": 889253,
+    "Name": "Yousef Salim",
+    "Id": 345678,
+    "Rank": 4,
+    "IsAlive": true,
+    "Weapons": [
+      "M16",
+      "AK47",
+      "Gun"
+    ]
+  },
+  {
+    "Name": "Omar Farouk",
+    "Id": 901234,
     "Rank": 2,
     "IsAlive": true,
     "Weapons": [
-      "Gun",
-      "Knife"
+      "Gun"
     ]
   },
   {
-    "Name": "Rashid Al Mansour",
-    "Id": 457839,
-    "Rank": 1,
-    "IsAlive": true,
-    "Weapons": [
-      "AK47",
-      "Knife"
-    ]
-  },
-  {
-    "Name": "Faisal Al Nahyan",
-    "Id": 678249,
+    "Name": "Ali Hussein",
+    "Id": 567890,
     "Rank": 5,
-    "IsAlive": true,
-    "Weapons": [
-      "Gun",
-      "Knife",
-      "M16"
-    ]
-  },
-  {
-    "Name": "Jassim Al Khalifa",
-    "Id": 918276,
-    "Rank": 4,
     "IsAlive": false,
     "Weapons": [
       "M16",
+      "AK47",
       "Knife",
-      "Gun",
-      "AK47"
+      "Gun"
     ]
   }
 ]

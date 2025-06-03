@@ -33,26 +33,36 @@ namespace IdfOperation.Web.Models
         {
             foreach (var target in weapon.GetTargetTypes())
             {
-                if (!_weaponsByTarget.ContainsKey(target))
-                    _weaponsByTarget[target] = new List<Weapon>();
+                var normalized = target.Trim().ToLower(); // ✅ נרמול מפתח
 
-                _weaponsByTarget[target].Add(weapon);
+                if (!_weaponsByTarget.ContainsKey(normalized))
+                    _weaponsByTarget[normalized] = new List<Weapon>();
+
+                _weaponsByTarget[normalized].Add(weapon);
             }
         }
 
-        //--------------------------------------------------------------
+//--------------------------------------------------------------
         public IReadOnlyDictionary<string, List<Weapon>> GetAllWeaponsByTarget()
         {
             return _weaponsByTarget;
         }
 
-        //--------------------------------------------------------------
+//--------------------------------------------------------------
         public Weapon? FindAvailableWeaponFor(string targetType)
         {
-            if (!_weaponsByTarget.ContainsKey(targetType))
-                return null;
+            var normalized = targetType.Trim().ToLower(); // ✅ נרמול קלט
 
-            foreach (var weapon in _weaponsByTarget[targetType])
+            if (!_weaponsByTarget.ContainsKey(normalized))
+            {
+                Console.WriteLine($"❌ No weapons mapped for: '{normalized}'");
+                Console.WriteLine("✅ Available target types:");
+                foreach (var key in _weaponsByTarget.Keys)
+                    Console.WriteLine($"- {key}");
+                return null;
+            }
+
+            foreach (var weapon in _weaponsByTarget[normalized])
             {
                 if (weapon.GetAmmo() <= 0)
                     continue;
