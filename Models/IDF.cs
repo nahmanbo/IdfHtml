@@ -1,4 +1,5 @@
 using System.Text.Json;
+using IdfOperation.Web.Models;
 
 namespace IdfOperation.Web.Models
 {
@@ -7,6 +8,7 @@ namespace IdfOperation.Web.Models
         public FirepowerDivision Firepower { get; private set; }
         public IntelligenceDivision Intelligence { get; private set; }
 
+        //====================================
         public Idf(string currentCommander)
             : base(new DateTime(1948, 5, 31), currentCommander)
         {
@@ -14,15 +16,19 @@ namespace IdfOperation.Web.Models
             Intelligence = new IntelligenceDivision();
         }
 
+        //--------------------------------------------------------------
+
+
+        //--------------------------------------------------------------
         public override string GetInfo()
         {
-            var info = new
-            {
-                Firepower = JsonSerializer.Deserialize<object>(Firepower.GetInfoJson()),
-                IntelligenceReports = JsonSerializer.Deserialize<object>(Intelligence.GetInfoJson())
-            };
+            var flat = new List<object>();
 
-            return JsonSerializer.Serialize(info, new JsonSerializerOptions { WriteIndented = true });
+            flat.AddRange(Firepower.GetInfo());
+            flat.AddRange(Intelligence.GetInfo());
+
+            return JsonSerializer.Serialize(flat, new JsonSerializerOptions { WriteIndented = true });
         }
+
     }
 }

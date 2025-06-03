@@ -17,6 +17,8 @@ namespace IdfOperation.Web.Models
         {
             foreach (var terrorist in Hamas.Instance.GetTerrorists())
             {
+                if (!terrorist.IsAlive) continue; // ✅ רק מחבלים חיים
+
                 string location = _locations[_rand.Next(_locations.Count)];
                 _reports.Add(new IntelligenceReport(terrorist, location, DateTime.Now));
             }
@@ -58,29 +60,32 @@ namespace IdfOperation.Web.Models
         }
 
         //--------------------------------------------------------------
-        public string GetInfoJson()
+        public object[] GetInfo()
         {
-            var grouped = _reports
+            var aliveReports = _reports
+                .Where(r => r.GetTerrorist().IsAlive) // ✅ רק חיים
                 .Select(r => new
                 {
                     Name = r.GetTerrorist().Name,
                     Id = r.GetTerrorist().Id,
                     Rank = r.GetTerrorist().Rank,
-                    Status = r.GetTerrorist().IsAlive ? "Alive" : "Dead",
+                    Status = "Alive",
                     Weapons = r.GetTerrorist().Weapons,
                     Threat = r.GetThreatLevel(),
                     Location = r.GetLastKnownLocation(),
                     ReportTime = r.GetReportTime().ToString("yyyy-MM-dd HH:mm")
                 })
-                .GroupBy(r => r.Status)
-                .ToDictionary(g => g.Key, g => g.ToList());
+                .ToList();
+
+            var grouped = new Dictionary<string, List<object>>
+            {
+                ["Alive"] = aliveReports.Cast<object>().ToList()
+            };
 
             var header = "IDF - Terrorist Reports";
-            var description = $"Alive: {grouped.GetValueOrDefault("Alive")?.Count ?? 0}, Dead: {grouped.GetValueOrDefault("Dead")?.Count ?? 0}";
+            var description = $"Alive: {aliveReports.Count}";
 
-            var wrapped = new object[] { header, description, grouped };
-
-            return JsonSerializer.Serialize(wrapped, new JsonSerializerOptions { WriteIndented = true });
+            return new object[] { header, description, grouped };
         }
     }
 }

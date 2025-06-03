@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Q0Q7ZhtJitz/OWnrcr3Knc9xnHJxrClASsCltyjZycE=",
+  "Hash": "npKCVigYsKN3+OskaRUcAAn9p7DcYCo/R5/qLk6sglU=",
   "Source": "IdfOperation.Web",
   "BasePath": "_content/IdfOperation.Web",
   "Mode": "Default",
@@ -31,8 +31,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "6kfdl6roaw",
-      "Integrity": "+rLVWABIQRGc3MPNnw2uRNbnSo+VrxLlos26CQjFMIw=",
+      "Fingerprint": "89d65okh5c",
+      "Integrity": "nI1YKrEwQP0aD/vfzA7WLTBHuCkRak+B4uSKg1EUpBU=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/index.html"
@@ -52,8 +52,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "c4mz0x58rd",
-      "Integrity": "vM6Efv2hWBxCOPL20kYevxWLd3LuC5FXiiVRSinDZTI=",
+      "Fingerprint": "p4hwncf2n1",
+      "Integrity": "R0qSXexWJjj0S5bkaPtGOM67b1KDTiwP5PTXEI/ka3Q=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/js/menu.js"
@@ -82,7 +82,7 @@
   ],
   "Endpoints": [
     {
-      "Route": "index.6kfdl6roaw.html",
+      "Route": "index.89d65okh5c.html",
       "AssetFile": "/Users/nahmanbo1/Downloads/IdfOperation.Web/wwwroot/index.html",
       "Selectors": [],
       "ResponseHeaders": [
@@ -92,7 +92,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1814"
+          "Value": "1685"
         },
         {
           "Name": "Content-Type",
@@ -100,11 +100,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"+rLVWABIQRGc3MPNnw2uRNbnSo+VrxLlos26CQjFMIw=\""
+          "Value": "\"nI1YKrEwQP0aD/vfzA7WLTBHuCkRak+B4uSKg1EUpBU=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 28 May 2025 13:21:20 GMT"
+          "Value": "Tue, 03 Jun 2025 06:59:35 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -114,7 +114,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "6kfdl6roaw"
+          "Value": "89d65okh5c"
         },
         {
           "Name": "label",
@@ -122,7 +122,7 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-+rLVWABIQRGc3MPNnw2uRNbnSo+VrxLlos26CQjFMIw="
+          "Value": "sha256-nI1YKrEwQP0aD/vfzA7WLTBHuCkRak+B4uSKg1EUpBU="
         }
       ]
     },
@@ -137,7 +137,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1814"
+          "Value": "1685"
         },
         {
           "Name": "Content-Type",
@@ -145,11 +145,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"+rLVWABIQRGc3MPNnw2uRNbnSo+VrxLlos26CQjFMIw=\""
+          "Value": "\"nI1YKrEwQP0aD/vfzA7WLTBHuCkRak+B4uSKg1EUpBU=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 28 May 2025 13:21:20 GMT"
+          "Value": "Tue, 03 Jun 2025 06:59:35 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -159,52 +159,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-+rLVWABIQRGc3MPNnw2uRNbnSo+VrxLlos26CQjFMIw="
-        }
-      ]
-    },
-    {
-      "Route": "js/menu.c4mz0x58rd.js",
-      "AssetFile": "/Users/nahmanbo1/Downloads/IdfOperation.Web/wwwroot/js/menu.js",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "5327"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/javascript"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"vM6Efv2hWBxCOPL20kYevxWLd3LuC5FXiiVRSinDZTI=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Thu, 29 May 2025 08:50:45 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "c4mz0x58rd"
-        },
-        {
-          "Name": "label",
-          "Value": "js/menu.js"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-vM6Efv2hWBxCOPL20kYevxWLd3LuC5FXiiVRSinDZTI="
+          "Value": "sha256-nI1YKrEwQP0aD/vfzA7WLTBHuCkRak+B4uSKg1EUpBU="
         }
       ]
     },
@@ -219,7 +174,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "5327"
+          "Value": "5422"
         },
         {
           "Name": "Content-Type",
@@ -227,11 +182,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"vM6Efv2hWBxCOPL20kYevxWLd3LuC5FXiiVRSinDZTI=\""
+          "Value": "\"R0qSXexWJjj0S5bkaPtGOM67b1KDTiwP5PTXEI/ka3Q=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 29 May 2025 08:50:45 GMT"
+          "Value": "Thu, 29 May 2025 17:10:36 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -241,7 +196,52 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-vM6Efv2hWBxCOPL20kYevxWLd3LuC5FXiiVRSinDZTI="
+          "Value": "sha256-R0qSXexWJjj0S5bkaPtGOM67b1KDTiwP5PTXEI/ka3Q="
+        }
+      ]
+    },
+    {
+      "Route": "js/menu.p4hwncf2n1.js",
+      "AssetFile": "/Users/nahmanbo1/Downloads/IdfOperation.Web/wwwroot/js/menu.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "5422"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"R0qSXexWJjj0S5bkaPtGOM67b1KDTiwP5PTXEI/ka3Q=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 29 May 2025 17:10:36 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "p4hwncf2n1"
+        },
+        {
+          "Name": "label",
+          "Value": "js/menu.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-R0qSXexWJjj0S5bkaPtGOM67b1KDTiwP5PTXEI/ka3Q="
         }
       ]
     },

@@ -2,7 +2,6 @@ using IdfOperation.Web.Models;
 using System.Text.Json;
 using System.Text.Encodings.Web;
 
-
 namespace IdfOperation.Web.Services
 {
     public class OperationService
@@ -32,90 +31,118 @@ namespace IdfOperation.Web.Services
         //--------------------------------------------------------------
         public string ViewFirepowerData()
         {
-            return _idf.Firepower.GetInfoJson();
+            return Serialize(_idf.Firepower.GetInfo());
         }
 
         //--------------------------------------------------------------
         public string ViewIntelligenceReports()
         {
-            return _idf.Intelligence.GetInfoJson();
+            return Serialize(_idf.Intelligence.GetInfo());
         }
-        
+
+        //--------------------------------------------------------------
         public string ViewReportById(int id)
         {
             var report = _idf.Intelligence.GetById(id);
-            return report != null ? report.GetInfoJson() : $"No report found for terrorist ID: {id}";
+            if (report == null)
+                return FormatResponse("❌ Report not found", $"No report found for terrorist ID: {id}");
+
+            var data = DeserializeArray(report.GetInfoJson());
+            return FormatResponse("📄 Report found", $"Terrorist ID: {id}", data);
         }
 
+        //--------------------------------------------------------------
         public string ViewMostDangerous()
         {
             var report = _idf.Intelligence.GetMostDangerous();
-            return report != null ? report.GetInfoJson() : "No alive terrorist reports available.";
+            if (report == null)
+                return FormatResponse("❌ No target", "No alive terrorist reports available.");
+
+            var data = DeserializeArray(report.GetInfoJson());
+            return FormatResponse("🎯 Target Found", $"Most dangerous terrorist: {report.GetTerrorist().Name}", data);
         }
 
         //--------------------------------------------------------------
         public string EliminateById(int id)
         {
             var report = _idf.Intelligence.GetById(id);
-            return report != null ? TryEliminate(report.GetTerrorist(), report.GetLastKnownLocation()) : $"No intelligence report found for terrorist ID: {id}";
+            if (report == null)
+                return FormatResponse("❌ Elimination failed", $"No intelligence report found for terrorist ID: {id}");
+
+            var result = TryEliminate(report.GetTerrorist(), report.GetLastKnownLocation());
+            return Serialize(result);
         }
 
+        //--------------------------------------------------------------
         public string EliminateMostDangerous()
         {
             var report = _idf.Intelligence.GetMostDangerous();
-            return report != null ? TryEliminate(report.GetTerrorist(), report.GetLastKnownLocation()) : "No alive intelligence reports available.";
+            if (report == null)
+                return FormatResponse("❌ Elimination failed", "No alive intelligence reports available.");
+
+            var result = TryEliminate(report.GetTerrorist(), report.GetLastKnownLocation());
+            return Serialize(result);
         }
 
+        //--------------------------------------------------------------
         public string EliminateByTargetType(string targetType)
         {
-            var normalizedTarget = targetType.Trim().ToLower();
+            var normalized = targetType.Trim().ToLower();
+
             var reports = _idf.Intelligence.GetReports()
-                .Where(r => r.GetLastKnownLocation().Trim().ToLower() == normalizedTarget)
+                .Where(r => r.GetLastKnownLocation().Trim().ToLower() == normalized)
                 .ToList();
 
             if (!reports.Any())
-                return $"No eligible terrorists found for target type: {targetType}";
+                return FormatResponse("❌ Elimination failed", $"No eligible terrorists found for target type: {targetType}");
 
             var results = reports
-                .Select(r => TryEliminate(r.GetTerrorist(), normalizedTarget))
+                .Select(r => TryEliminate(r.GetTerrorist(), normalized))
                 .ToList();
 
-            return JsonSerializer.Serialize(results, new JsonSerializerOptions
+            return Serialize(results, escape: false);
+        }
+
+        //--------------------------------------------------------------
+        private object[] TryEliminate(Terrorist terrorist, string targetType)
+        {
+            var report = _idf.Intelligence.GetById(terrorist.Id);
+            var data = report != null ? DeserializeArray(report.GetInfoJson()) : new object[0];
+
+            if (report == null)
+                return new object[] { "❌ Elimination failed", $"No report found for terrorist ID: {terrorist.Id}", data };
+
+            if (!terrorist.IsAlive)
+                return new object[] { "❌ Elimination failed", $"Target already dead | Target: {terrorist.Name}", data };
+
+            var weapon = _idf.Firepower.FindAvailableWeaponFor(targetType);
+            if (weapon == null)
+                return new object[] { "❌ Elimination failed", $"No weapon available for target type: {targetType} | Target: {terrorist.Name}", data };
+
+            weapon.AttackTarget(terrorist);
+            return new object[] { "✅ Elimination successful", $"Weapon: {weapon.GetType().Name} | Target: {terrorist.Name}", data };
+        }
+
+        //--------------------------------------------------------------
+        private static object[] DeserializeArray(string json)
+        {
+            return JsonSerializer.Deserialize<object[]>(json) ?? new object[0];
+        }
+
+        //--------------------------------------------------------------
+        private static string Serialize(object obj, bool escape = true)
+        {
+            return JsonSerializer.Serialize(obj, new JsonSerializerOptions
             {
                 WriteIndented = true,
-                Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping
+                Encoder = escape ? JavaScriptEncoder.Default : JavaScriptEncoder.UnsafeRelaxedJsonEscaping
             });
         }
 
         //--------------------------------------------------------------
-        private string TryEliminate(Terrorist terrorist, string targetType)
+        private static string FormatResponse(string status, string message, object data = null!)
         {
-            var report = _idf.Intelligence.GetById(terrorist.Id);
-            var reportData = report != null ? JsonSerializer.Deserialize<object>(report.GetInfoJson()) : null;
-
-            if (report == null)
-                return FormatResult("❌ Elimination failed", $"No report found for terrorist ID: {terrorist.Id}", null);
-
-            if (!terrorist.IsAlive)
-                return FormatResult("❌ Elimination failed", $"Target already dead | Target: {terrorist.Name}", reportData);
-
-            var weapon = _idf.Firepower.FindAvailableWeaponFor(targetType);
-            if (weapon == null)
-                return FormatResult("❌ Elimination failed", $"No weapon available for target type: {targetType} | Target: {terrorist.Name}", reportData);
-
-            weapon.AttackTarget(terrorist);
-
-            var status = terrorist.IsAlive ? "❌ Elimination failed" : "✅ Elimination successful";
-            var summary = $"Weapon: {weapon.GetType().Name} | Target: {terrorist.Name}";
-
-            return FormatResult(status, summary, reportData);
-        }
-
-        //--------------------------------------------------------------
-        private string FormatResult(string status, string message, object? data)
-        {
-            var result = new object[] { status, message, data };
-            return JsonSerializer.Serialize(result, new JsonSerializerOptions { WriteIndented = true });
+            return Serialize(new object[] { status, message, data ?? new object[0] });
         }
     }
 }

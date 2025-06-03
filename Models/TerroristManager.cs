@@ -5,7 +5,7 @@ namespace IdfOperation.Web.Models
     public static class TerroristManager
     {
         //====================================
-        private const int MinAliveTerrorists = 20;
+        private const int MinAliveTerrorists = 10;
         
         //--------------------------------------------------------------
         public static async Task<List<Terrorist>> GetOrGenerateAsync()
