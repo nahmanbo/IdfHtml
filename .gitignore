@@ -6,3 +6,48 @@ riderModule.iml
 /_ReSharper.Caches/
 
 Secrets.cs
+
+
+# Build results
+bin/
+obj/
+[Bb]uild/
+[Bb]uild[Ll]og.*
+
+# Visual Studio
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Rider / JetBrains
+.idea/
+
+# Debug files
+*.pdb
+*.cache
+*.log
+
+# ASP.NET
+wwwroot/*.cache
+wwwroot/*.gz
+wwwroot/*.br
+
+# NuGet
+*.nupkg
+packages/
+*.snupkg
+
+# Others
+*.dbmdl
+*.bak
+*.tmp
+*.vspscc
+
+# Publish results
+publish/
+out/
+
+# Environment settings
+.env
