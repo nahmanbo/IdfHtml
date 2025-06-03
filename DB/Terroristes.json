@@ -134,7 +134,7 @@
     "Name": "Adil Hashim",
     "Id": 485720,
     "Rank": 4,
-    "IsAlive": true,
+    "IsAlive": false,
     "Weapons": [
       "AK47",
       "Knife",
@@ -155,7 +155,7 @@
     "Name": "Kareem Zamir",
     "Id": 652897,
     "Rank": 1,
-    "IsAlive": true,
+    "IsAlive": false,
     "Weapons": [
       "Knife",
       "Gun",
@@ -238,7 +238,7 @@
     "Name": "Muhammad Al-Dhubhani",
     "Id": 874125,
     "Rank": 3,
-    "IsAlive": true,
+    "IsAlive": false,
     "Weapons": [
       "Knife",
       "AK47"
@@ -290,7 +290,7 @@
     "Name": "Ahmed Abdallah",
     "Id": 654321,
     "Rank": 3,
-    "IsAlive": true,
+    "IsAlive": false,
     "Weapons": [
       "Knife",
       "AK47"
@@ -321,7 +321,7 @@
     "Name": "Abdul Al Kader",
     "Id": 893626,
     "Rank": 3,
-    "IsAlive": true,
+    "IsAlive": false,
     "Weapons": [
       "Knife",
       "Gun"
@@ -361,7 +361,7 @@
     "Name": "Saleh Al Sabah",
     "Id": 889253,
     "Rank": 2,
-    "IsAlive": true,
+    "IsAlive": false,
     "Weapons": [
       "Gun",
       "Knife"

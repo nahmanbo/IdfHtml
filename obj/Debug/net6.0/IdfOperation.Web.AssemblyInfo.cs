@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("IdfOperation.Web")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a20875e598e62603108d397cc8e3b8e3dbbc5611")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f5699e55f630c675f378b309a5b5ab2efb73fd92")]
 [assembly: System.Reflection.AssemblyProductAttribute("IdfOperation.Web")]
 [assembly: System.Reflection.AssemblyTitleAttribute("IdfOperation.Web")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

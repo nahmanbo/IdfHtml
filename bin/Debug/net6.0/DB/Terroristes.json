@@ -331,7 +331,7 @@
     "Name": "Omar Al Maktoum",
     "Id": 167830,
     "Rank": 5,
-    "IsAlive": true,
+    "IsAlive": false,
     "Weapons": [
       "AK47",
       "M16"

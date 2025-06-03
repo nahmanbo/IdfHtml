@@ -124,6 +124,7 @@ namespace IdfOperation.Web.Services
         public string EliminateByTargetType(string targetType)
         {
             var normalizedTarget = targetType.Trim().ToLower();
+
             var reports = _idf.Intelligence.GetReports()
                 .Where(r => r.GetLastKnownLocation().Trim().ToLower() == normalizedTarget)
                 .ToList();
