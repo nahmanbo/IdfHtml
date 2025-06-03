@@ -7,6 +7,7 @@
         {
             public static readonly string Terrorists = @"DB/Terroristes.json";
             public const string IntelligenceReports = @"DB/Reports.json";
+            public const string Log = @"DB/Log.txt";
         }
 
         // API Tokens / Keys (לא מומלץ לשים כאן מפתחות אמיתיים בקוד פתוח!)

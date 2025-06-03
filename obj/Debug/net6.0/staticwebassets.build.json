@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Byyo8R38C2Rpkc0FaM1qYY+0Qbsfe81TPdtD2HmjCbs=",
+  "Hash": "VQMEtJ94HxY0B2h3knUWiG48RMr90BrJTV3ApJularE=",
   "Source": "IdfOperation.Web",
   "BasePath": "_content/IdfOperation.Web",
   "Mode": "Default",
@@ -8,324 +8,70 @@
   "ReferencedProjectsConfiguration": [],
   "DiscoveryPatterns": [
     {
-      "Name": "IdfOperation.Web/wwwroot",
+      "Name": "IdfOperation.Web\\wwwroot",
       "Source": "IdfOperation.Web",
-      "ContentRoot": "/Users/nahmanbo1/Downloads/IdfOperation.Web/wwwroot/",
+      "ContentRoot": "C:\\Users\\user\\Desktop\\קודקוד\\פרויקטים מגיטהאב\\IdfHtml\\wwwroot\\",
       "BasePath": "_content/IdfOperation.Web",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "/Users/nahmanbo1/Downloads/IdfOperation.Web/wwwroot/index.html",
+      "Identity": "C:\\Users\\user\\Desktop\\קודקוד\\פרויקטים מגיטהאב\\IdfHtml\\wwwroot\\index.html",
       "SourceId": "IdfOperation.Web",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/nahmanbo1/Downloads/IdfOperation.Web/wwwroot/",
+      "ContentRoot": "C:\\Users\\user\\Desktop\\קודקוד\\פרויקטים מגיטהאב\\IdfHtml\\wwwroot\\",
       "BasePath": "_content/IdfOperation.Web",
-      "RelativePath": "index#[.{fingerprint}]?.html",
+      "RelativePath": "index.html",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
+      "AssetMergeBehavior": "PreferTarget",
       "AssetMergeSource": "",
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "cvbno4ok26",
-      "Integrity": "2MNS49eSkM1PNfrDCdL8r4GqYLS/Naj4sCiCyNO10Fc=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot/index.html"
+      "OriginalItemSpec": "wwwroot\\index.html"
     },
     {
-      "Identity": "/Users/nahmanbo1/Downloads/IdfOperation.Web/wwwroot/js/menu.js",
+      "Identity": "C:\\Users\\user\\Desktop\\קודקוד\\פרויקטים מגיטהאב\\IdfHtml\\wwwroot\\js\\menu.js",
       "SourceId": "IdfOperation.Web",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/nahmanbo1/Downloads/IdfOperation.Web/wwwroot/",
+      "ContentRoot": "C:\\Users\\user\\Desktop\\קודקוד\\פרויקטים מגיטהאב\\IdfHtml\\wwwroot\\",
       "BasePath": "_content/IdfOperation.Web",
-      "RelativePath": "js/menu#[.{fingerprint}]?.js",
+      "RelativePath": "js/menu.js",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
+      "AssetMergeBehavior": "PreferTarget",
       "AssetMergeSource": "",
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "em9x0es783",
-      "Integrity": "CtllPZfTvs2PqdODPcxivrrpzUDYHR2xD4Tv+bE/4Pw=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot/js/menu.js"
+      "OriginalItemSpec": "wwwroot\\js\\menu.js"
     },
     {
-      "Identity": "/Users/nahmanbo1/Downloads/IdfOperation.Web/wwwroot/styles.css",
+      "Identity": "C:\\Users\\user\\Desktop\\קודקוד\\פרויקטים מגיטהאב\\IdfHtml\\wwwroot\\styles.css",
       "SourceId": "IdfOperation.Web",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/nahmanbo1/Downloads/IdfOperation.Web/wwwroot/",
+      "ContentRoot": "C:\\Users\\user\\Desktop\\קודקוד\\פרויקטים מגיטהאב\\IdfHtml\\wwwroot\\",
       "BasePath": "_content/IdfOperation.Web",
-      "RelativePath": "styles#[.{fingerprint}]?.css",
+      "RelativePath": "styles.css",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
+      "AssetMergeBehavior": "PreferTarget",
       "AssetMergeSource": "",
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "zvunj9tjp8",
-      "Integrity": "4bx7Ic5pGMreqED/RW+74cNNQoxG+T0f2bZu5iOLbxI=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot/styles.css"
-    }
-  ],
-  "Endpoints": [
-    {
-      "Route": "index.cvbno4ok26.html",
-      "AssetFile": "/Users/nahmanbo1/Downloads/IdfOperation.Web/wwwroot/index.html",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "1388"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/html"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"2MNS49eSkM1PNfrDCdL8r4GqYLS/Naj4sCiCyNO10Fc=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Wed, 28 May 2025 06:12:38 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "cvbno4ok26"
-        },
-        {
-          "Name": "label",
-          "Value": "index.html"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-2MNS49eSkM1PNfrDCdL8r4GqYLS/Naj4sCiCyNO10Fc="
-        }
-      ]
-    },
-    {
-      "Route": "index.html",
-      "AssetFile": "/Users/nahmanbo1/Downloads/IdfOperation.Web/wwwroot/index.html",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "1388"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/html"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"2MNS49eSkM1PNfrDCdL8r4GqYLS/Naj4sCiCyNO10Fc=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Wed, 28 May 2025 06:12:38 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-2MNS49eSkM1PNfrDCdL8r4GqYLS/Naj4sCiCyNO10Fc="
-        }
-      ]
-    },
-    {
-      "Route": "js/menu.em9x0es783.js",
-      "AssetFile": "/Users/nahmanbo1/Downloads/IdfOperation.Web/wwwroot/js/menu.js",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "2722"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/javascript"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"CtllPZfTvs2PqdODPcxivrrpzUDYHR2xD4Tv+bE/4Pw=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Wed, 28 May 2025 08:47:52 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "em9x0es783"
-        },
-        {
-          "Name": "label",
-          "Value": "js/menu.js"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-CtllPZfTvs2PqdODPcxivrrpzUDYHR2xD4Tv+bE/4Pw="
-        }
-      ]
-    },
-    {
-      "Route": "js/menu.js",
-      "AssetFile": "/Users/nahmanbo1/Downloads/IdfOperation.Web/wwwroot/js/menu.js",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "2722"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/javascript"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"CtllPZfTvs2PqdODPcxivrrpzUDYHR2xD4Tv+bE/4Pw=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Wed, 28 May 2025 08:47:52 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-CtllPZfTvs2PqdODPcxivrrpzUDYHR2xD4Tv+bE/4Pw="
-        }
-      ]
-    },
-    {
-      "Route": "styles.css",
-      "AssetFile": "/Users/nahmanbo1/Downloads/IdfOperation.Web/wwwroot/styles.css",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "2433"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"4bx7Ic5pGMreqED/RW+74cNNQoxG+T0f2bZu5iOLbxI=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Wed, 28 May 2025 08:47:52 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-4bx7Ic5pGMreqED/RW+74cNNQoxG+T0f2bZu5iOLbxI="
-        }
-      ]
-    },
-    {
-      "Route": "styles.zvunj9tjp8.css",
-      "AssetFile": "/Users/nahmanbo1/Downloads/IdfOperation.Web/wwwroot/styles.css",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "2433"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"4bx7Ic5pGMreqED/RW+74cNNQoxG+T0f2bZu5iOLbxI=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Wed, 28 May 2025 08:47:52 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "zvunj9tjp8"
-        },
-        {
-          "Name": "label",
-          "Value": "styles.css"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-4bx7Ic5pGMreqED/RW+74cNNQoxG+T0f2bZu5iOLbxI="
-        }
-      ]
+      "OriginalItemSpec": "wwwroot\\styles.css"
     }
   ]
 }
