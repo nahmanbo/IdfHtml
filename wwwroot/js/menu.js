@@ -131,24 +131,3 @@ function buildTable(dataArray) {
     return html;
 }
 
-// ✅ TEST MODE (optional)
-window.onload = function () {
-    const testOutput = [
-        "Firepower",
-        "🔥 Weapons Available",
-        {
-            "vehicles": [
-                { "Name": "Zik", "Ammo": "2/5" }
-            ]
-        },
-        "Intelligence",
-        "🧠 Status Overview",
-        {
-            "Alive": [
-                { "Name": "Ahmed", "Id": 123 }
-            ],
-            "Dead": []
-        }
-    ];
-    displaySequentialTriplets(testOutput);
-};
