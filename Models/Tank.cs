@@ -40,11 +40,11 @@ namespace IdfOperation.Web.Models
         {
             switch (weight)
             {
-                case 0.5:
-                case 1.0:
+                case 2:
+                case 3:
                     break;
                 default:
-                    throw new ArgumentException("Invalid bomb weight. Must be 0.5 or 1.");
+                    throw new ArgumentException("Invalid bomb weight. Must be 2 or 3.");
             }
 
             if (Ammo < weight)

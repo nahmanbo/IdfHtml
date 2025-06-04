@@ -84,12 +84,29 @@ namespace IdfOperation.Web.Services
             if (!reports.Any())
                 return FormatResponse("❌ Elimination failed", $"No eligible terrorists found for target type: {targetType}");
 
+            var requiresInput = normalized is "buildings" or "open areas";
+            if (requiresInput)
+            {
+                var batchList = reports
+                    .Select(r => new { Id = r.GetTerrorist().Id, Target = normalized })
+                    .ToList();
+
+                return Serialize(new object[]
+                {
+                    "🕓 Batch Ammo Input Required",
+                    $"Multiple targets found for '{normalized}', ammo input required per target",
+                    batchList
+                });
+            }
+
+            // fallback for all other target types — eliminate all at once
             var results = reports
                 .Select(r => TryEliminate(r.GetTerrorist(), normalized))
                 .ToList();
 
             return Serialize(results, escape: false);
         }
+
 
         //--------------------------------------------------------------
         public string ExecuteStrikeWithAmmo(StrikePayload payload)
