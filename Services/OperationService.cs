@@ -55,7 +55,7 @@ namespace IdfOperation.Web.Services
         {
             var report = _idf.Intelligence.GetById(id);
             if (report == null)
-                return FormatResponse("❌ Elimination failed", $"No intelligence report found for terrorist ID: {id}");
+                return FormatResponse("❌ Elimination failed", $"We couldn’t find an intelligence report for terrorist ID {id}.");
 
             var result = TryEliminate(report.GetTerrorist(), report.GetLastKnownLocation());
             return Serialize(result);
@@ -66,7 +66,7 @@ namespace IdfOperation.Web.Services
         {
             var report = _idf.Intelligence.GetMostDangerous();
             if (report == null)
-                return FormatResponse("❌ Elimination failed", "No alive intelligence reports available.");
+                return FormatResponse("❌ Elimination failed", "No alive terrorist reports available.");
 
             var result = TryEliminate(report.GetTerrorist(), report.GetLastKnownLocation());
             return Serialize(result);
@@ -76,7 +76,6 @@ namespace IdfOperation.Web.Services
         public string EliminateByTargetType(string targetType)
         {
             var normalized = targetType.Trim().ToLower();
-
             var reports = _idf.Intelligence.GetReports()
                 .Where(r => r.GetLastKnownLocation().Trim().ToLower() == normalized)
                 .ToList();
@@ -84,8 +83,7 @@ namespace IdfOperation.Web.Services
             if (!reports.Any())
                 return FormatResponse("❌ Elimination failed", $"No eligible terrorists found for target type: {targetType}");
 
-            var requiresInput = normalized is "buildings" or "open areas";
-            if (requiresInput)
+            if (normalized is "buildings" or "open areas")
             {
                 var batchList = reports
                     .Select(r => new { Id = r.GetTerrorist().Id, Target = normalized })
@@ -99,7 +97,6 @@ namespace IdfOperation.Web.Services
                 });
             }
 
-            // fallback for all other target types — eliminate all at once
             var results = reports
                 .Select(r => TryEliminate(r.GetTerrorist(), normalized))
                 .ToList();
@@ -107,91 +104,96 @@ namespace IdfOperation.Web.Services
             return Serialize(results, escape: false);
         }
 
-
         //--------------------------------------------------------------
-        public string ExecuteStrikeWithAmmo(StrikePayload payload)
+        public string ExecuteStrikeWithAmmo(JsonElement payload)
         {
-            var terrorist = _idf.Intelligence.GetById(payload.Id)?.GetTerrorist();
-            if (terrorist == null)
-                return Serialize(new object[] { "❌", "Terrorist not found", new object[0] });
+            var id = payload.GetProperty("Id").GetInt32();
+            var target = payload.GetProperty("Target").GetString()?.Trim().ToLower() ?? "";
+            var ammo = payload.GetProperty("Ammo").GetDouble();
 
-            var result = TryEliminate(terrorist, payload.Target.Trim().ToLower(), payload.Ammo);
+            var terrorist = _idf.Intelligence.GetById(id)?.GetTerrorist();
+            if (terrorist == null)
+                return Serialize(new object[] { "❌", "Terrorist not found", Array.Empty<object>() });
+
+            var result = TryEliminate(terrorist, target, ammo);
             return Serialize(result);
         }
 
         //--------------------------------------------------------------
-        private object[] TryEliminate(Terrorist terrorist, string targetType, double? optionalWeight = null)
+        private object[] TryEliminate(Terrorist terrorist, string targetType, double? ammo = null)
         {
             var report = _idf.Intelligence.GetById(terrorist.Id);
-            var data = report != null ? DeserializeArray(report.GetInfoJson()) : new object[0];
+            var data = report != null ? DeserializeArray(report.GetInfoJson()) : Array.Empty<object>();
 
             if (report == null)
-                return new object[] { "❌ Elimination failed", $"No report found for terrorist ID: {terrorist.Id}", data };
+                return new object[]
+                {
+                    "❌ Elimination failed",
+                    $"We couldn’t find an intelligence report for terrorist ID {terrorist.Id}.",
+                    data
+                };
 
             if (!terrorist.IsAlive)
-                return new object[] { "❌ Elimination failed", $"Target already dead | Target: {terrorist.Name}", data };
+                return new object[]
+                {
+                    "❌ Elimination failed",
+                    $"Target '{terrorist.Name}' has already been eliminated.",
+                    data
+                };
 
             var weapon = _idf.Firepower.FindAvailableWeaponFor(targetType);
             if (weapon == null)
-                return new object[] { "❌ Elimination failed", $"No weapon available for target type: {targetType} | Target: {terrorist.Name}", data };
+                return new object[]
+                {
+                    "❌ Elimination failed",
+                    $"No available weapon found for target type '{targetType}'. Cannot eliminate '{terrorist.Name}'.",
+                    data
+                };
 
-            var requiresInput = targetType is "buildings" or "open areas";
-            if (requiresInput && optionalWeight == null)
-            {
+            if ((targetType is "buildings" or "open areas") && ammo == null)
                 return new object[]
                 {
                     "🕓 Ammo Input Required",
-                    $"Target type '{targetType}' requires selecting ammo amount (0.5 or 1)",
+                    $"Please choose how much ammo to use for target type '{targetType}'.",
                     new { Target = targetType, Id = terrorist.Id }
                 };
-            }
 
-            var weight = optionalWeight ?? 1;
             try
             {
-                weapon.AttackTarget(terrorist, weight);
+                weapon.AttackTarget(terrorist, ammo ?? 1);
             }
             catch (Exception ex)
             {
-                return new object[] { "❌ Attack failed", ex.Message, data };
+                return new object[]
+                {
+                    "❌ Attack failed",
+                    $"Something went wrong during the attack: {ex.Message}",
+                    data
+                };
             }
 
             return new object[]
             {
                 "✅ Elimination successful",
-                $"Weapon: {weapon.GetType().Name} | Target: {terrorist.Name} | Ammo Used: {weight}",
+                $"The weapon '{weapon.GetType().Name}' successfully eliminated terrorist '{terrorist.Name}' using {ammo ?? 1} ammo.",
                 data
             };
         }
 
         //--------------------------------------------------------------
-        private static object[] DeserializeArray(string json)
-        {
-            return JsonSerializer.Deserialize<object[]>(json) ?? new object[0];
-        }
+        private static object[] DeserializeArray(string json) =>
+            JsonSerializer.Deserialize<object[]>(json) ?? Array.Empty<object>();
 
         //--------------------------------------------------------------
-        private static string Serialize(object obj, bool escape = true)
-        {
-            return JsonSerializer.Serialize(obj, new JsonSerializerOptions
+        private static string Serialize(object obj, bool escape = true) =>
+            JsonSerializer.Serialize(obj, new JsonSerializerOptions
             {
                 WriteIndented = true,
                 Encoder = escape ? JavaScriptEncoder.Default : JavaScriptEncoder.UnsafeRelaxedJsonEscaping
             });
-        }
 
         //--------------------------------------------------------------
-        private static string FormatResponse(string status, string message, object data = null!)
-        {
-            return Serialize(new object[] { status, message, data ?? new object[0] });
-        }
+        private static string FormatResponse(string status, string message, object data = null) =>
+            Serialize(new object[] { status, message, data ?? Array.Empty<object>() });
     }
-
-    //====================================
-    public class StrikePayload
-    {
-        public string Target { get; set; } = "";
-        public int Id { get; set; }
-        public double Ammo { get; set; }
-    }
-}
+} 

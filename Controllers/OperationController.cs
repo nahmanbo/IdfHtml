@@ -38,7 +38,7 @@ namespace IdfOperation.Web.Controllers
                     9 => string.IsNullOrWhiteSpace(requestBody)
                         ? "❌ Missing target type"
                         : _service.EliminateByTargetType(requestBody.Trim()),
-                    10 => _service.ExecuteStrikeWithAmmo(JsonSerializer.Deserialize<StrikePayload>(requestBody)!),
+                    10 => _service.ExecuteStrikeWithAmmo(JsonDocument.Parse(requestBody).RootElement),
                     _ => "❌ Invalid option"
                 };
 
