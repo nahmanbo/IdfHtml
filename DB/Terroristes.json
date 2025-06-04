@@ -293,5 +293,54 @@
       "AK47",
       "M16"
     ]
+  },
+  {
+    "Name": "Mohammed Hassan",
+    "Id": 123456,
+    "Rank": 3,
+    "IsAlive": true,
+    "Weapons": [
+      "Knife",
+      "Gun"
+    ]
+  },
+  {
+    "Name": "Ahmed Abdullah",
+    "Id": 654321,
+    "Rank": 2,
+    "IsAlive": true,
+    "Weapons": [
+      "M16"
+    ]
+  },
+  {
+    "Name": "Ali Jamal",
+    "Id": 789123,
+    "Rank": 5,
+    "IsAlive": true,
+    "Weapons": [
+      "AK47",
+      "Gun"
+    ]
+  },
+  {
+    "Name": "Ibrahim Khalil",
+    "Id": 987654,
+    "Rank": 1,
+    "IsAlive": true,
+    "Weapons": [
+      "Knife",
+      "M16",
+      "AK47"
+    ]
+  },
+  {
+    "Name": "Yusuf Salah",
+    "Id": 564738,
+    "Rank": 4,
+    "IsAlive": true,
+    "Weapons": [
+      "Gun"
+    ]
   }
 ]

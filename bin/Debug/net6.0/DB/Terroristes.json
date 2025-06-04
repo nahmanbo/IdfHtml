@@ -112,7 +112,7 @@
     "Name": "Mohammed Al-Saleh",
     "Id": 271438,
     "Rank": 3,
-    "IsAlive": true,
+    "IsAlive": false,
     "Weapons": [
       "M16",
       "AK47",
@@ -170,14 +170,13 @@
     ]
   },
   {
-    "Name": "Yousef Salim",
+    "Name": "Ahmed Al Jabari",
     "Id": 345678,
-    "Rank": 4,
+    "Rank": 5,
     "IsAlive": false,
     "Weapons": [
-      "M16",
-      "AK47",
-      "Gun"
+      "Knife",
+      "M16"
     ]
   },
   {
@@ -215,7 +214,7 @@
     "Name": "Mohammed Abdul",
     "Id": 528497,
     "Rank": 4,
-    "IsAlive": true,
+    "IsAlive": false,
     "Weapons": [
       "Gun",
       "AK47",
@@ -267,7 +266,7 @@
     "Name": "Ali Bin Khalid",
     "Id": 827431,
     "Rank": 5,
-    "IsAlive": true,
+    "IsAlive": false,
     "Weapons": [
       "Gun",
       "AK47",
@@ -278,7 +277,7 @@
     "Name": "Ahmed Al Jabari",
     "Id": 345678,
     "Rank": 5,
-    "IsAlive": true,
+    "IsAlive": false,
     "Weapons": [
       "Knife",
       "M16"
@@ -288,7 +287,7 @@
     "Name": "Khaled Mashal",
     "Id": 789123,
     "Rank": 4,
-    "IsAlive": true,
+    "IsAlive": false,
     "Weapons": [
       "Gun",
       "AK47",
