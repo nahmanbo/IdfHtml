@@ -83,7 +83,7 @@
     "Name": "Sami Al-Khatib",
     "Id": 789032,
     "Rank": 4,
-    "IsAlive": true,
+    "IsAlive": false,
     "Weapons": [
       "AK47",
       "Knife"
@@ -102,7 +102,7 @@
     "Name": "Abed Al-Rahman",
     "Id": 318940,
     "Rank": 1,
-    "IsAlive": true,
+    "IsAlive": false,
     "Weapons": [
       "Knife",
       "Gun"

@@ -73,7 +73,7 @@
     "Name": "Nidal Al-Qassam",
     "Id": 105672,
     "Rank": 3,
-    "IsAlive": true,
+    "IsAlive": false,
     "Weapons": [
       "M16",
       "Gun"
@@ -83,7 +83,7 @@
     "Name": "Sami Al-Khatib",
     "Id": 789032,
     "Rank": 4,
-    "IsAlive": true,
+    "IsAlive": false,
     "Weapons": [
       "AK47",
       "Knife"

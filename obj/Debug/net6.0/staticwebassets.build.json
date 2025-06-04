@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "piJQlXTxDTEZd/BAuqjJhpZyqfCLrKCYVt5/2rnlg2A=",
+  "Hash": "wzdBNcnEjdiMC7ItGnFIuQtwO3SBFsM8nrfMKZyHTbk=",
   "Source": "IdfOperation.Web",
   "BasePath": "_content/IdfOperation.Web",
   "Mode": "Default",
@@ -52,8 +52,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "wujivpdlr7",
-      "Integrity": "CMinz8IsN6h7jU+hrMjZf7LeSDxk/3qAZYYUyA9UYhE=",
+      "Fingerprint": "i9bsyli9zn",
+      "Integrity": "Bl45O5EPI2t58S1uTvQ37wsNELBTTSKRQiSJEZYGa/s=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/js/menu.js"
@@ -164,6 +164,51 @@
       ]
     },
     {
+      "Route": "js/menu.i9bsyli9zn.js",
+      "AssetFile": "/Users/nahmanbo1/Downloads/IdfOperation.Web/wwwroot/js/menu.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "6534"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Bl45O5EPI2t58S1uTvQ37wsNELBTTSKRQiSJEZYGa/s=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 04 Jun 2025 11:57:44 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "i9bsyli9zn"
+        },
+        {
+          "Name": "label",
+          "Value": "js/menu.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-Bl45O5EPI2t58S1uTvQ37wsNELBTTSKRQiSJEZYGa/s="
+        }
+      ]
+    },
+    {
       "Route": "js/menu.js",
       "AssetFile": "/Users/nahmanbo1/Downloads/IdfOperation.Web/wwwroot/js/menu.js",
       "Selectors": [],
@@ -174,7 +219,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "4938"
+          "Value": "6534"
         },
         {
           "Name": "Content-Type",
@@ -182,11 +227,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"CMinz8IsN6h7jU+hrMjZf7LeSDxk/3qAZYYUyA9UYhE=\""
+          "Value": "\"Bl45O5EPI2t58S1uTvQ37wsNELBTTSKRQiSJEZYGa/s=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 03 Jun 2025 09:03:39 GMT"
+          "Value": "Wed, 04 Jun 2025 11:57:44 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -196,52 +241,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-CMinz8IsN6h7jU+hrMjZf7LeSDxk/3qAZYYUyA9UYhE="
-        }
-      ]
-    },
-    {
-      "Route": "js/menu.wujivpdlr7.js",
-      "AssetFile": "/Users/nahmanbo1/Downloads/IdfOperation.Web/wwwroot/js/menu.js",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "4938"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/javascript"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"CMinz8IsN6h7jU+hrMjZf7LeSDxk/3qAZYYUyA9UYhE=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Tue, 03 Jun 2025 09:03:39 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "wujivpdlr7"
-        },
-        {
-          "Name": "label",
-          "Value": "js/menu.js"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-CMinz8IsN6h7jU+hrMjZf7LeSDxk/3qAZYYUyA9UYhE="
+          "Value": "sha256-Bl45O5EPI2t58S1uTvQ37wsNELBTTSKRQiSJEZYGa/s="
         }
       ]
     },
@@ -268,7 +268,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 03 Jun 2025 09:04:25 GMT"
+          "Value": "Tue, 03 Jun 2025 09:51:10 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -305,7 +305,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 03 Jun 2025 09:04:25 GMT"
+          "Value": "Tue, 03 Jun 2025 09:51:10 GMT"
         },
         {
           "Name": "Cache-Control",

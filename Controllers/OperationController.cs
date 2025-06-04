@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using IdfOperation.Web.Services;
+using System.Text.Json;
 
 namespace IdfOperation.Web.Controllers
 {
@@ -47,6 +48,8 @@ namespace IdfOperation.Web.Controllers
                     9 => !string.IsNullOrWhiteSpace(body)
                         ? _service.EliminateByTargetType(body.Trim())
                         : "❌ Missing target type",
+
+                    10 => _service.ExecuteStrikeWithAmmo(JsonSerializer.Deserialize<StrikePayload>(body)),
 
                     _ => "❌ Invalid option"
                 };

@@ -17,28 +17,16 @@ namespace IdfOperation.Web.Services
         }
 
         //--------------------------------------------------------------
-        public string ViewFullIdfInfo()
-        {
-            return _idf.GetInfo();
-        }
+        public string ViewFullIdfInfo() => _idf.GetInfo();
 
         //--------------------------------------------------------------
-        public string ViewFullHamasInfo()
-        {
-            return _hamas.GetInfo();
-        }
+        public string ViewFullHamasInfo() => _hamas.GetInfo();
 
         //--------------------------------------------------------------
-        public string ViewFirepowerData()
-        {
-            return Serialize(_idf.Firepower.GetInfo());
-        }
+        public string ViewFirepowerData() => Serialize(_idf.Firepower.GetInfo());
 
         //--------------------------------------------------------------
-        public string ViewIntelligenceReports()
-        {
-            return Serialize(_idf.Intelligence.GetInfo());
-        }
+        public string ViewIntelligenceReports() => Serialize(_idf.Intelligence.GetInfo());
 
         //--------------------------------------------------------------
         public string ViewReportById(int id)
@@ -104,7 +92,18 @@ namespace IdfOperation.Web.Services
         }
 
         //--------------------------------------------------------------
-        private object[] TryEliminate(Terrorist terrorist, string targetType)
+        public string ExecuteStrikeWithAmmo(StrikePayload payload)
+        {
+            var terrorist = _idf.Intelligence.GetById(payload.Id)?.GetTerrorist();
+            if (terrorist == null)
+                return Serialize(new object[] { "❌", "Terrorist not found", new object[0] });
+
+            var result = TryEliminate(terrorist, payload.Target.Trim().ToLower(), payload.Ammo);
+            return Serialize(result);
+        }
+
+        //--------------------------------------------------------------
+        private object[] TryEliminate(Terrorist terrorist, string targetType, double? optionalWeight = null)
         {
             var report = _idf.Intelligence.GetById(terrorist.Id);
             var data = report != null ? DeserializeArray(report.GetInfoJson()) : new object[0];
@@ -119,8 +118,33 @@ namespace IdfOperation.Web.Services
             if (weapon == null)
                 return new object[] { "❌ Elimination failed", $"No weapon available for target type: {targetType} | Target: {terrorist.Name}", data };
 
-            weapon.AttackTarget(terrorist);
-            return new object[] { "✅ Elimination successful", $"Weapon: {weapon.GetType().Name} | Target: {terrorist.Name}", data };
+            var requiresInput = targetType is "buildings" or "open areas";
+            if (requiresInput && optionalWeight == null)
+            {
+                return new object[]
+                {
+                    "🕓 Ammo Input Required",
+                    $"Target type '{targetType}' requires selecting ammo amount (0.5 or 1)",
+                    new { Target = targetType, Id = terrorist.Id }
+                };
+            }
+
+            var weight = optionalWeight ?? 1;
+            try
+            {
+                weapon.AttackTarget(terrorist, weight);
+            }
+            catch (Exception ex)
+            {
+                return new object[] { "❌ Attack failed", ex.Message, data };
+            }
+
+            return new object[]
+            {
+                "✅ Elimination successful",
+                $"Weapon: {weapon.GetType().Name} | Target: {terrorist.Name} | Ammo Used: {weight}",
+                data
+            };
         }
 
         //--------------------------------------------------------------
@@ -144,5 +168,13 @@ namespace IdfOperation.Web.Services
         {
             return Serialize(new object[] { status, message, data ?? new object[0] });
         }
+    }
+
+    //====================================
+    public class StrikePayload
+    {
+        public string Target { get; set; } = "";
+        public int Id { get; set; }
+        public double Ammo { get; set; }
     }
 }

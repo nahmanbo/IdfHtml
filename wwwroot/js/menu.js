@@ -1,19 +1,23 @@
-// menu.js - handles various response formats including triplets and flat triplet sequences
+// ✅ Enhanced support for strikes that require user-provided ammo weight (F16, Tank)
+
+const targetTypesThatRequireWeight = ["buildings", "open areas"];
+let currentPendingRequest = null;
 
 async function sendRequest(option) {
     const output = document.getElementById("output");
     output.innerHTML = "⌛ Loading...";
 
+    const headers = { "Content-Type": "text/plain" };
     let endpoint = `/api/operation/option/${option}`;
-    let headers = { "Content-Type": "text/plain" };
     let body = "";
 
     if (option === 5 || option === 7) {
+        // handle ID input as usual
         const id = prompt("Enter terrorist ID:");
         if (!id) return;
         body = id;
     } else if (option === 9) {
-        const targetType = prompt("Enter target type:");
+        const targetType = prompt("Enter target type:").trim().toLowerCase();
         if (!targetType) return;
         body = targetType;
     }
@@ -26,36 +30,91 @@ async function sendRequest(option) {
         });
 
         const text = await response.text();
-        console.log("📨 Server response:\n" + text);
-
-        try {
-            const parsed = JSON.parse(text);
-
-            if (Array.isArray(parsed)) {
-                // Flat array of triplet groups (title, subtitle, table or grouped data)
-                if (parsed.length % 3 === 0 && typeof parsed[0] === "string" && typeof parsed[1] === "string") {
-                    displaySequentialTriplets(parsed);
-                }
-                else if (parsed.length === 3 && typeof parsed[0] === "string" && isDictionaryOfArrays(parsed[2])) {
-                    displayTripletWithGroupedTables(parsed);
-                }
-                else if (parsed.length === 3 && typeof parsed[0] === "string" && Array.isArray(parsed[2])) {
-                    displayTripletWithArray(parsed);
-                }
-                else if (parsed.every(item => Array.isArray(item) && item.length === 3)) {
-                    displayMultipleTriplets(parsed);
-                }
-                else {
-                    output.innerHTML = `<pre>${JSON.stringify(parsed, null, 2)}</pre>`;
-                }
-            } else {
-                output.innerHTML = `<pre>${JSON.stringify(parsed, null, 2)}</pre>`;
-            }
-        } catch (e) {
-            output.textContent = text;
-        }
+        handleServerResponse(text);
     } catch (err) {
         output.textContent = "⚠️ Error: " + err.message;
+    }
+}
+
+function handleServerResponse(text) {
+    const output = document.getElementById("output");
+    try {
+        const parsed = JSON.parse(text);
+        if (Array.isArray(parsed) && parsed[0] === "🕓 Ammo Input Required") {
+            const meta = parsed[2];
+            currentPendingRequest = meta;
+            showInputBox("Enter ammo amount ():");
+            return;
+        }
+        renderResponse(text);
+    } catch {
+        output.textContent = text;
+    }
+}
+
+function showInputBox(labelText) {
+    document.getElementById("input-label").textContent = labelText;
+    document.getElementById("input-section").style.display = "flex";
+    document.getElementById("input-field").value = "";
+}
+
+async function submitInput() {
+    const field = document.getElementById("input-field");
+    const value = parseFloat(field.value);
+
+    if (![0.5, 1].includes(value)) {
+        alert("Invalid input. Please enter 0.5 or 1.");
+        return;
+    }
+
+    const { Id, Target } = currentPendingRequest;
+    const payload = {
+        Id,
+        Target,
+        Ammo: value
+    };
+
+    try {
+        const response = await fetch("/api/operation/option/10", {
+            method: 'POST',
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(payload)
+        });
+
+        const text = await response.text();
+        document.getElementById("input-section").style.display = "none";
+        renderResponse(text);
+    } catch (err) {
+        document.getElementById("output").textContent = "⚠️ Error: " + err.message;
+    }
+}
+
+function renderResponse(text) {
+    const output = document.getElementById("output");
+    try {
+        const parsed = JSON.parse(text);
+
+        if (Array.isArray(parsed)) {
+            if (parsed.length % 3 === 0 && typeof parsed[0] === "string" && typeof parsed[1] === "string") {
+                displaySequentialTriplets(parsed);
+            }
+            else if (parsed.length === 3 && typeof parsed[0] === "string" && isDictionaryOfArrays(parsed[2])) {
+                displayTripletWithGroupedTables(parsed);
+            }
+            else if (parsed.length === 3 && typeof parsed[0] === "string" && Array.isArray(parsed[2])) {
+                displayTripletWithArray(parsed);
+            }
+            else if (parsed.every(item => Array.isArray(item) && item.length === 3)) {
+                displayMultipleTriplets(parsed);
+            }
+            else {
+                output.innerHTML = `<pre>${JSON.stringify(parsed, null, 2)}</pre>`;
+            }
+        } else {
+            output.innerHTML = `<pre>${JSON.stringify(parsed, null, 2)}</pre>`;
+        }
+    } catch {
+        output.textContent = text;
     }
 }
 
@@ -130,4 +189,3 @@ function buildTable(dataArray) {
     html += "</tbody></table>";
     return html;
 }
-
