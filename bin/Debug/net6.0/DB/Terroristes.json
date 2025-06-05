@@ -3,7 +3,7 @@
     "Name": "Yasir Al-Masri",
     "Id": 182374,
     "Rank": 3,
-    "IsAlive": true,
+    "IsAlive": false,
     "Weapons": [
       "Gun",
       "AK47"
@@ -22,7 +22,7 @@
     "Name": "Khaled Al-Farouq",
     "Id": 602983,
     "Rank": 2,
-    "IsAlive": true,
+    "IsAlive": false,
     "Weapons": [
       "Knife",
       "Gun"
@@ -150,12 +150,12 @@
     ]
   },
   {
-    "Name": "Mohammed Abdullah",
+    "Name": "Mohammed Hassan",
     "Id": 123456,
     "Rank": 3,
     "IsAlive": false,
     "Weapons": [
-      "M16",
+      "Knife",
       "Gun"
     ]
   },
@@ -246,7 +246,7 @@
     "Name": "Yusuf Al Ghazali",
     "Id": 823456,
     "Rank": 5,
-    "IsAlive": true,
+    "IsAlive": false,
     "Weapons": [
       "Knife",
       "Gun"
@@ -284,21 +284,20 @@
     ]
   },
   {
-    "Name": "Khaled Mashal",
+    "Name": "Ali Jamal",
     "Id": 789123,
-    "Rank": 4,
+    "Rank": 5,
     "IsAlive": false,
     "Weapons": [
-      "Gun",
       "AK47",
-      "M16"
+      "Gun"
     ]
   },
   {
     "Name": "Mohammed Hassan",
     "Id": 123456,
     "Rank": 3,
-    "IsAlive": true,
+    "IsAlive": false,
     "Weapons": [
       "Knife",
       "Gun"
@@ -308,7 +307,7 @@
     "Name": "Ahmed Abdullah",
     "Id": 654321,
     "Rank": 2,
-    "IsAlive": true,
+    "IsAlive": false,
     "Weapons": [
       "M16"
     ]
@@ -317,7 +316,7 @@
     "Name": "Ali Jamal",
     "Id": 789123,
     "Rank": 5,
-    "IsAlive": true,
+    "IsAlive": false,
     "Weapons": [
       "AK47",
       "Gun"
@@ -340,6 +339,67 @@
     "Rank": 4,
     "IsAlive": true,
     "Weapons": [
+      "Gun"
+    ]
+  },
+  {
+    "Name": "Ali Hassan",
+    "Id": 123456,
+    "Rank": 3,
+    "IsAlive": true,
+    "Weapons": [
+      "Knife",
+      "Gun"
+    ]
+  },
+  {
+    "Name": "Mohammad Abdullah",
+    "Id": 654321,
+    "Rank": 4,
+    "IsAlive": true,
+    "Weapons": [
+      "M16",
+      "AK47"
+    ]
+  },
+  {
+    "Name": "Ahmed Ibrahim",
+    "Id": 789012,
+    "Rank": 2,
+    "IsAlive": true,
+    "Weapons": [
+      "Knife"
+    ]
+  },
+  {
+    "Name": "Omar Sayed",
+    "Id": 345678,
+    "Rank": 1,
+    "IsAlive": true,
+    "Weapons": [
+      "Gun",
+      "M16",
+      "AK47"
+    ]
+  },
+  {
+    "Name": "Ahmed Abdullah",
+    "Id": 123456,
+    "Rank": 3,
+    "IsAlive": true,
+    "Weapons": [
+      "Knife",
+      "Gun"
+    ]
+  },
+  {
+    "Name": "Mustafa Hassan",
+    "Id": 654321,
+    "Rank": 5,
+    "IsAlive": true,
+    "Weapons": [
+      "M16",
+      "AK47",
       "Gun"
     ]
   }

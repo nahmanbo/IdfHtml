@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>IDF Operation Dashboard</title>
+  <title>🛡️ IDF Operation Dashboard</title>
   <link rel="stylesheet" href="styles.css" />
   <script src="js/menu.js" defer></script>
 </head>
@@ -14,27 +14,28 @@
 <div class="layout">
   <aside class="sidebar">
     <nav class="menu">
-      <button onclick="sendRequest(1)">🛡️ View complete IDF structure & data</button>
-      <button onclick="sendRequest(2)">☠️ View Hamas terrorist organization info</button>
-      <button onclick="sendRequest(3)">🔥 View available firepower by target type</button>
-      <button onclick="sendRequest(4)">📡 View active intelligence reports (alive only)</button>
-      <button onclick="sendRequest(5)">📡 Get terrorist report by ID</button>
-      <button onclick="sendRequest(6)">📡 Identify most dangerous terrorist</button>
-      <button onclick="sendRequest(7)">🎯 Eliminate terrorist by ID</button>
-      <button onclick="sendRequest(8)">🎯 Eliminate most dangerous terrorist</button>
-      <button onclick="sendRequest(9)">🎯 Eliminate terrorists by target location</button>
+      <h2>Menu</h2>
+
+      <button onclick="sendRequest(1)">Full IDF info</button>
+      <button onclick="sendRequest(2)">Full Hamas info</button>
+      <button onclick="sendRequest(3)">Firepower division</button>
+      <button onclick="sendRequest(4)">Intelligence division</button>
+      <button onclick="sendRequest(5)">View by ID</button>
+      <button onclick="sendRequest(6)">View Most Dangerous</button>
+      <button onclick="sendRequest(7)">Eliminate by ID</button>
+      <button onclick="sendRequest(8)">Eliminate Most Dangerous</button>
+      <button onclick="sendRequest(9)">Eliminate by Location</button>
     </nav>
   </aside>
 
   <main class="content">
     <section class="output-box" id="output">
-      🧭 Select an action from the right menu to begin
+      🧭 Select an operation from the left menu to begin.
     </section>
 
-    <!-- ✅ תא קלט דינאמי שמופיע רק כשצריך -->
-    <section id="input-section" style="display: none; margin-top: 1em;">
+    <section id="input-section" style="display: none;">
       <label id="input-label" for="input-field"></label>
-      <input type="text" id="input-field" />
+      <input type="text" id="input-field" placeholder="Enter value..." />
       <button onclick="submitInput()">Submit</button>
     </section>
   </main>
