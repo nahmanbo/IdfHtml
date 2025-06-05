@@ -1,3 +1,32 @@
+C:/Users/user/Desktop/קודקוד/פרויקטים מגיטהאב/IdfHtml/bin/Debug/net6.0/DB/Reports.json
+C:/Users/user/Desktop/קודקוד/פרויקטים מגיטהאב/IdfHtml/bin/Debug/net6.0/DB/Terroristes.json
+C:/Users/user/Desktop/קודקוד/פרויקטים מגיטהאב/IdfHtml/bin/Debug/net6.0/IdfOperation.Web.staticwebassets.runtime.json
+C:/Users/user/Desktop/קודקוד/פרויקטים מגיטהאב/IdfHtml/bin/Debug/net6.0/IdfOperation.Web.exe
+C:/Users/user/Desktop/קודקוד/פרויקטים מגיטהאב/IdfHtml/bin/Debug/net6.0/IdfOperation.Web.deps.json
+C:/Users/user/Desktop/קודקוד/פרויקטים מגיטהאב/IdfHtml/bin/Debug/net6.0/IdfOperation.Web.runtimeconfig.json
+C:/Users/user/Desktop/קודקוד/פרויקטים מגיטהאב/IdfHtml/bin/Debug/net6.0/IdfOperation.Web.dll
+C:/Users/user/Desktop/קודקוד/פרויקטים מגיטהאב/IdfHtml/bin/Debug/net6.0/IdfOperation.Web.pdb
+C:/Users/user/Desktop/קודקוד/פרויקטים מגיטהאב/IdfHtml/obj/Debug/net6.0/IdfOperation.Web.GeneratedMSBuildEditorConfig.editorconfig
+C:/Users/user/Desktop/קודקוד/פרויקטים מגיטהאב/IdfHtml/obj/Debug/net6.0/IdfOperation.Web.AssemblyInfoInputs.cache
+C:/Users/user/Desktop/קודקוד/פרויקטים מגיטהאב/IdfHtml/obj/Debug/net6.0/IdfOperation.Web.AssemblyInfo.cs
+C:/Users/user/Desktop/קודקוד/פרויקטים מגיטהאב/IdfHtml/obj/Debug/net6.0/IdfOperation.Web.csproj.CoreCompileInputs.cache
+C:/Users/user/Desktop/קודקוד/פרויקטים מגיטהאב/IdfHtml/obj/Debug/net6.0/IdfOperation.Web.MvcApplicationPartsAssemblyInfo.cache
+C:/Users/user/Desktop/קודקוד/פרויקטים מגיטהאב/IdfHtml/obj/Debug/net6.0/IdfOperation.Web.sourcelink.json
+C:/Users/user/Desktop/קודקוד/פרויקטים מגיטהאב/IdfHtml/obj/Debug/net6.0/staticwebassets.build.json
+C:/Users/user/Desktop/קודקוד/פרויקטים מגיטהאב/IdfHtml/obj/Debug/net6.0/staticwebassets.development.json
+C:/Users/user/Desktop/קודקוד/פרויקטים מגיטהאב/IdfHtml/obj/Debug/net6.0/staticwebassets/msbuild.IdfOperation.Web.Microsoft.AspNetCore.StaticWebAssets.props
+C:/Users/user/Desktop/קודקוד/פרויקטים מגיטהאב/IdfHtml/obj/Debug/net6.0/staticwebassets/msbuild.build.IdfOperation.Web.props
+C:/Users/user/Desktop/קודקוד/פרויקטים מגיטהאב/IdfHtml/obj/Debug/net6.0/staticwebassets/msbuild.buildMultiTargeting.IdfOperation.Web.props
+C:/Users/user/Desktop/קודקוד/פרויקטים מגיטהאב/IdfHtml/obj/Debug/net6.0/staticwebassets/msbuild.buildTransitive.IdfOperation.Web.props
+C:/Users/user/Desktop/קודקוד/פרויקטים מגיטהאב/IdfHtml/obj/Debug/net6.0/staticwebassets.pack.json
+C:/Users/user/Desktop/קודקוד/פרויקטים מגיטהאב/IdfHtml/obj/Debug/net6.0/scopedcss/bundle/IdfOperation.Web.styles.css
+C:/Users/user/Desktop/קודקוד/פרויקטים מגיטהאב/IdfHtml/obj/Debug/net6.0/IdfOperation.Web.dll
+C:/Users/user/Desktop/קודקוד/פרויקטים מגיטהאב/IdfHtml/obj/Debug/net6.0/refint/IdfOperation.Web.dll
+C:/Users/user/Desktop/קודקוד/פרויקטים מגיטהאב/IdfHtml/obj/Debug/net6.0/IdfOperation.Web.pdb
+C:/Users/user/Desktop/קודקוד/פרויקטים מגיטהאב/IdfHtml/obj/Debug/net6.0/IdfOperation.Web.genruntimeconfig.cache
+C:/Users/user/Desktop/קודקוד/פרויקטים מגיטהאב/IdfHtml/obj/Debug/net6.0/ref/IdfOperation.Web.dll
+/Users/nahmanbo1/Downloads/IdfOperation.Web/bin/Debug/net6.0/DB/Reports.json
+/Users/nahmanbo1/Downloads/IdfOperation.Web/bin/Debug/net6.0/DB/Terroristes.json
 /Users/nahmanbo1/Downloads/IdfOperation.Web/bin/Debug/net6.0/IdfOperation.Web.staticwebassets.runtime.json
 /Users/nahmanbo1/Downloads/IdfOperation.Web/bin/Debug/net6.0/IdfOperation.Web.staticwebassets.endpoints.json
 /Users/nahmanbo1/Downloads/IdfOperation.Web/bin/Debug/net6.0/IdfOperation.Web
@@ -10,6 +39,7 @@
 /Users/nahmanbo1/Downloads/IdfOperation.Web/obj/Debug/net6.0/IdfOperation.Web.AssemblyInfo.cs
 /Users/nahmanbo1/Downloads/IdfOperation.Web/obj/Debug/net6.0/IdfOperation.Web.csproj.CoreCompileInputs.cache
 /Users/nahmanbo1/Downloads/IdfOperation.Web/obj/Debug/net6.0/IdfOperation.Web.MvcApplicationPartsAssemblyInfo.cache
+/Users/nahmanbo1/Downloads/IdfOperation.Web/obj/Debug/net6.0/IdfOperation.Web.sourcelink.json
 /Users/nahmanbo1/Downloads/IdfOperation.Web/obj/Debug/net6.0/scopedcss/bundle/IdfOperation.Web.styles.css
 /Users/nahmanbo1/Downloads/IdfOperation.Web/obj/Debug/net6.0/staticwebassets.build.json
 /Users/nahmanbo1/Downloads/IdfOperation.Web/obj/Debug/net6.0/staticwebassets.development.json
@@ -25,33 +55,3 @@
 /Users/nahmanbo1/Downloads/IdfOperation.Web/obj/Debug/net6.0/IdfOperation.Web.pdb
 /Users/nahmanbo1/Downloads/IdfOperation.Web/obj/Debug/net6.0/IdfOperation.Web.genruntimeconfig.cache
 /Users/nahmanbo1/Downloads/IdfOperation.Web/obj/Debug/net6.0/ref/IdfOperation.Web.dll
-/Users/nahmanbo1/Downloads/IdfOperation.Web/obj/Debug/net6.0/IdfOperation.Web.sourcelink.json
-/Users/nahmanbo1/Downloads/IdfOperation.Web/bin/Debug/net6.0/DB/Reports.json
-/Users/nahmanbo1/Downloads/IdfOperation.Web/bin/Debug/net6.0/DB/Terroristes.json
-C:\Users\user\Desktop\קודקוד\פרויקטים מגיטהאב\IdfHtml\bin\Debug\net6.0\DB\Reports.json
-C:\Users\user\Desktop\קודקוד\פרויקטים מגיטהאב\IdfHtml\bin\Debug\net6.0\DB\Terroristes.json
-C:\Users\user\Desktop\קודקוד\פרויקטים מגיטהאב\IdfHtml\bin\Debug\net6.0\IdfOperation.Web.staticwebassets.runtime.json
-C:\Users\user\Desktop\קודקוד\פרויקטים מגיטהאב\IdfHtml\bin\Debug\net6.0\IdfOperation.Web.exe
-C:\Users\user\Desktop\קודקוד\פרויקטים מגיטהאב\IdfHtml\bin\Debug\net6.0\IdfOperation.Web.deps.json
-C:\Users\user\Desktop\קודקוד\פרויקטים מגיטהאב\IdfHtml\bin\Debug\net6.0\IdfOperation.Web.runtimeconfig.json
-C:\Users\user\Desktop\קודקוד\פרויקטים מגיטהאב\IdfHtml\bin\Debug\net6.0\IdfOperation.Web.dll
-C:\Users\user\Desktop\קודקוד\פרויקטים מגיטהאב\IdfHtml\bin\Debug\net6.0\IdfOperation.Web.pdb
-C:\Users\user\Desktop\קודקוד\פרויקטים מגיטהאב\IdfHtml\obj\Debug\net6.0\IdfOperation.Web.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\user\Desktop\קודקוד\פרויקטים מגיטהאב\IdfHtml\obj\Debug\net6.0\IdfOperation.Web.AssemblyInfoInputs.cache
-C:\Users\user\Desktop\קודקוד\פרויקטים מגיטהאב\IdfHtml\obj\Debug\net6.0\IdfOperation.Web.AssemblyInfo.cs
-C:\Users\user\Desktop\קודקוד\פרויקטים מגיטהאב\IdfHtml\obj\Debug\net6.0\IdfOperation.Web.csproj.CoreCompileInputs.cache
-C:\Users\user\Desktop\קודקוד\פרויקטים מגיטהאב\IdfHtml\obj\Debug\net6.0\IdfOperation.Web.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\user\Desktop\קודקוד\פרויקטים מגיטהאב\IdfHtml\obj\Debug\net6.0\IdfOperation.Web.sourcelink.json
-C:\Users\user\Desktop\קודקוד\פרויקטים מגיטהאב\IdfHtml\obj\Debug\net6.0\staticwebassets.build.json
-C:\Users\user\Desktop\קודקוד\פרויקטים מגיטהאב\IdfHtml\obj\Debug\net6.0\staticwebassets.development.json
-C:\Users\user\Desktop\קודקוד\פרויקטים מגיטהאב\IdfHtml\obj\Debug\net6.0\staticwebassets\msbuild.IdfOperation.Web.Microsoft.AspNetCore.StaticWebAssets.props
-C:\Users\user\Desktop\קודקוד\פרויקטים מגיטהאב\IdfHtml\obj\Debug\net6.0\staticwebassets\msbuild.build.IdfOperation.Web.props
-C:\Users\user\Desktop\קודקוד\פרויקטים מגיטהאב\IdfHtml\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.IdfOperation.Web.props
-C:\Users\user\Desktop\קודקוד\פרויקטים מגיטהאב\IdfHtml\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.IdfOperation.Web.props
-C:\Users\user\Desktop\קודקוד\פרויקטים מגיטהאב\IdfHtml\obj\Debug\net6.0\staticwebassets.pack.json
-C:\Users\user\Desktop\קודקוד\פרויקטים מגיטהאב\IdfHtml\obj\Debug\net6.0\scopedcss\bundle\IdfOperation.Web.styles.css
-C:\Users\user\Desktop\קודקוד\פרויקטים מגיטהאב\IdfHtml\obj\Debug\net6.0\IdfOperation.Web.dll
-C:\Users\user\Desktop\קודקוד\פרויקטים מגיטהאב\IdfHtml\obj\Debug\net6.0\refint\IdfOperation.Web.dll
-C:\Users\user\Desktop\קודקוד\פרויקטים מגיטהאב\IdfHtml\obj\Debug\net6.0\IdfOperation.Web.pdb
-C:\Users\user\Desktop\קודקוד\פרויקטים מגיטהאב\IdfHtml\obj\Debug\net6.0\IdfOperation.Web.genruntimeconfig.cache
-C:\Users\user\Desktop\קודקוד\פרויקטים מגיטהאב\IdfHtml\obj\Debug\net6.0\ref\IdfOperation.Web.dll

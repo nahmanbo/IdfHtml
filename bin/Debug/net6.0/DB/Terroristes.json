@@ -337,7 +337,7 @@
     "Name": "Yusuf Salah",
     "Id": 564738,
     "Rank": 4,
-    "IsAlive": true,
+    "IsAlive": false,
     "Weapons": [
       "Gun"
     ]

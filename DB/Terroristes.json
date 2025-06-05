@@ -402,5 +402,15 @@
       "AK47",
       "Gun"
     ]
+  },
+  {
+    "Name": "Abdullah Al-Mahmud",
+    "Id": 687451,
+    "Rank": 3,
+    "IsAlive": true,
+    "Weapons": [
+      "Knife",
+      "M16"
+    ]
   }
 ]
